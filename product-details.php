@@ -141,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="buy-step-number">3</div>
         <div class="buy-step-content">
           <strong>Select your edition at checkout</strong>
-          <p>Talk through available versions, licenses, and options with our sales representative.</p>
+          <p>We confirm your edition and quantity by email.</p>
         </div>
       </div>
       <div class="buy-step">

@@ -166,7 +166,7 @@
     "short_desc": "Optimize, clean, and accelerate unlimited PCs in your home with iolo's award-winning toolkit.",
     "long_desc": "iolo System Mechanic optimizes Windows performance, removes junk, and boosts speed across all your home PCs. Includes PC security, privacy cleaner, and startup optimizer.",
     "problem_solved": [
-      "Resolves Windows performance issues & boosts overall system speed",
+      "Optimizes Windows performance & boosts overall system speed",
       "Startup optimizer prevents unnecessary program slowdowns",
       "Privacy cleaner removes traces & keeps your system healthy"
     ],
@@ -276,7 +276,7 @@
     "long_desc": "Our pre-configured Windows Recovery USB lets you reset or reinstall Windows without needing the original disc. Works with Windows 10 and 11.",
     "problem_solved": [
       "Restores Windows 10 & 11 without the original disc",
-      "Multiple recovery modes: reset, reinstall",
+      "Multiple modes: reset, reinstall",
       "Pre-configured 32 GB bootable USB — ready to use out of the box"
     ],
     "description1": "Restore your Windows 10 or 11 system with ease using a bootable recovery USB. Includes a 32 GB drive and step-by-step recovery guide for quick repairs.",
@@ -289,7 +289,7 @@
     "specs": {
       "Format": "Bootable USB (32 GB)",
       "Compatible": "Windows 10 & 11",
-      "Recovery Modes": "Reset, Repair, Reinstall"
+      "Recovery Modes": "Reset, Reinstall"
     },
     "image": "assets/images/products/Recovery USB - Drive single.webp",
     "related": [
@@ -669,10 +669,10 @@
     "price": "22.99",
     "badge": "",
     "short_desc": "Scan and update PC drivers automatically with one click.",
-    "long_desc": "Driver Booster Pro scans your entire PC for outdated, missing, or corrupt drivers and updates them from a database of 8 million+ driver versions — fixing hardware issues without manual searching.",
+    "long_desc": "Driver Booster Pro scans your entire PC for outdated, missing, or corrupt drivers and updates them from a database of 8 million+ driver versions — updating hardware drivers without manual searching.",
     "problem_solved": [
       "Scans & updates from a database of 8 million+ certified drivers",
-      "One-click update for hardware compatibility issues on up to 3 PCs",
+      "One-click update for hardware compatibility",
       "Game Boost mode optimizes drivers for better performance"
     ],
     "description1": "Automatically update drivers with Driver Booster Pro for faster performance, smoother gameplay, and improved system stability. Supports up to 3 PCs!",

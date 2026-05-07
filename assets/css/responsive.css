@@ -789,6 +789,10 @@ html, body {
     /* background: var(--bg-alt); */
 }
 
+.top-bar-email{
+   display: none ;
+}
+
 /* Header Fixed Below Top Bar */
 .site-header{
     position: fixed !important;
@@ -815,10 +819,19 @@ body{
     }
 
     .site-header{
-        top: 37px; /* mobile top-bar height */
+        top: 50px; /* mobile top-bar height */
     }
 
     body{
         padding-top: 106px;
     }
+    .top-bar-email{
+   display: block ;
+  
+}
+
+.top-bar-inner{
+ flex-direction: column;
+    /* height: 10vh; */
+}
 }

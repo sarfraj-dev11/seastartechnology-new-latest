@@ -1,29 +1,38 @@
 User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /data/
 
- Allow: /
+# 1. Prevent AI Crawlers from training/caching your content
+User-agent: GPTBot
+Disallow: /
 
- Disallow: /admin/
+User-agent: ChatGPT-User
+Disallow: /
 
- Disallow: /includes/
+User-agent: Google-Extended
+Disallow: /
 
- Disallow: /data/
- 
-User-agent: AdsBot-Google
+User-agent: CCBot
+Disallow: /
 
- Allow: /
- 
-User-agent: Googlebot
+User-agent: AnthropicAI
+Disallow: /
 
- Allow: /
- 
-X-Robots-Tag: noarchive
- 
+# 2. Prevent Archiving Bots (Wayback Machine / Internet Archive)
 User-agent: ia_archiver
+Disallow: /
 
- Disallow: /
- 
 User-agent: archive.org_bot
+Disallow: /
 
- Disallow: /
- 
+# 3. Allow Search & Ads Bots (Ensures campaigns stay live)
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# 4. Sitemap Location
 Sitemap: https://www.seastartechnology.com/sitemap.xml

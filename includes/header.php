@@ -3,8 +3,9 @@ require_once __DIR__ . '/config.php';
 
 // Development mode: allow crawling but prevent caching/archiving
 header('X-Robots-Tag: noarchive, nosnippet');
-header('Cache-Control: no-store, no-cache, must-revalidate');
-header('Pragma: no-cache');
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
 
 $current_page = basename($_SERVER['PHP_SELF'], '.php');
 
@@ -33,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo isset($page_title) ? $page_title . ' | ' . SITE_NAME : SITE_NAME . ' — ' . SITE_TAGLINE; ?></title>
   <meta name="description" content="<?php echo isset($page_desc) ? $page_desc : 'Seastar Technology is an authorized US reseller of trusted computer security software, hardware, and accessories. Genuine products delivered to your door.'; ?>">
-  <meta name="robots" content="noindex, nofollow">
+
   <meta name="googlebot" content="noarchive, nosnippet">
   <link rel="canonical" href="<?php echo SITE_URL . '/' . basename($_SERVER['PHP_SELF']); ?>">
   <link rel="icon" href="https://seastartechnology.com/assets/images/icons/seastar-technology-favicon.ico" type="image/x-icon">

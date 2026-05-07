@@ -1,0 +1,358 @@
+/* home.css — Hero · USP · Trust Strip · CTA Banner */
+
+/* ── Hero ── */
+.hero {
+  background: var(--grad-hero);
+  padding: 5.5rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient teal glow at bottom */
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(46,196,182,.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Geometric accent right */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  background: rgba(46,196,182,.05);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  pointer-events: none;
+}
+
+.hero-bg-shapes { display: none }
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(46,196,182,.16);
+  color: var(--color-teal);
+  padding: .36rem 1rem;
+  border-radius: 99px;
+  font-size: .78rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(46,196,182,.32);
+  box-shadow: 0 0 24px rgba(46,196,182,.18);
+  letter-spacing: .02em;
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
+  line-height: 1.12;
+  margin-bottom: 1.2rem;
+  color: var(--bg);
+  letter-spacing: -.02em;
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, var(--color-teal) 0%, #7EEEE7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  color: rgba(253,255,252,.75);
+  font-size: 1.02rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  line-height: 1.74;
+}
+
+.hero-actions {
+  display: flex;
+  gap: .95rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.9rem;
+}
+
+.hero-trust-badges {
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(253,255,252,.1);
+}
+
+.hero-trust-badges span {
+  font-size: .78rem;
+  color: rgba(253,255,252,.62);
+  display: flex;
+  align-items: center;
+  gap: .32rem;
+}
+
+.hero-trust-badges i { color: var(--color-teal) }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.hero-card {
+  background: rgba(253,255,252,.07);
+  border: 1px solid rgba(253,255,252,.12);
+  border-radius: var(--r-lg);
+  padding: 1.85rem 1.25rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all .28s ease;
+  box-shadow: 0 4px 24px rgba(0,0,0,.18);
+}
+
+.hero-card:hover {
+  background: rgba(46,196,182,.16);
+  border-color: rgba(46,196,182,.35);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.25), 0 0 20px rgba(46,196,182,.12);
+}
+
+.hero-card i {
+  font-size: 1.9rem;
+  margin-bottom: .7rem;
+  display: block;
+}
+
+.hero-card span {
+  font-size: .82rem;
+  font-weight: 600;
+  color: rgba(253,255,252,.92);
+  line-height: 1.35;
+}
+
+.hc-1 i { color: var(--color-teal) }
+.hc-2 i { color: rgba(253,255,252,.9) }
+.hc-3 i { color: var(--color-orange) }
+.hc-4 i { color: var(--color-red) }
+
+/* ── USP Section ── */
+.usp-section { background: var(--bg-alt) }
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.usp-card {
+  background: var(--grad-card);
+  border: 1px solid var(--border-lt);
+  border-radius: var(--r-lg);
+  padding: 1.9rem;
+  transition: all .25s ease;
+  position: relative;
+  border-left: 3px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.usp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-left-color: var(--accent);
+  border-color: var(--border);
+}
+
+.usp-card--highlight {
+  border-left-color: var(--accent);
+  background: linear-gradient(145deg, #E8F9F8, #D6F7F5);
+  border-color: var(--border);
+}
+
+.usp-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, rgba(46,196,182,.2), rgba(46,196,182,.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.28rem;
+  color: var(--primary);
+  margin-bottom: 1.1rem;
+  border: 1px solid rgba(46,196,182,.2);
+}
+
+.usp-card h3 { font-size: 1rem; margin-bottom: .48rem }
+.usp-card p  { font-size: .855rem; color: var(--text-2); line-height: 1.67 }
+
+.usp-highlight-badge {
+  display: inline-block;
+  margin-top: .85rem;
+  background: var(--success-bg);
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 700;
+  padding: .24rem .75rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  border: 1px solid rgba(46,196,182,.3);
+  letter-spacing: .04em;
+}
+
+/* ── Trust Strip ── */
+.trust-strip {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border-lt);
+  border-bottom: 1px solid var(--border-lt);
+  padding: 1.75rem 0;
+  overflow: hidden;
+}
+
+.trust-strip-label {
+  text-align: center;
+  font-size: .72rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 1.1rem;
+}
+
+.trust-logos-ticker { overflow: hidden; position: relative }
+
+.trust-logos-ticker::before,
+.trust-logos-ticker::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trust-logos-ticker::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-alt), transparent);
+}
+
+.trust-logos-ticker::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-alt), transparent);
+}
+
+.trust-logos-track {
+  display: flex;
+  gap: 0;
+  animation: ticker 28s linear infinite;
+  width: max-content;
+}
+
+.trust-logos-track:hover { animation-play-state: paused }
+
+.trust-logo-item {
+  padding: 0 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.trust-logo-item span {
+  font-family: var(--font-h);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text-3);
+  transition: var(--t);
+}
+
+.trust-logo-item:hover span { color: var(--accent) }
+
+@keyframes ticker {
+  0%   { transform: translateX(0) }
+  100% { transform: translateX(-50%) }
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: var(--grad-hero);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -70px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,196,182,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: 8%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,159,28,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-banner-content h2 {
+  font-size: 1.75rem;
+  margin-bottom: .45rem;
+  color: var(--bg);
+  letter-spacing: -.015em;
+}
+
+.cta-banner-content p { color: rgba(253,255,252,.72); font-size: .935rem }
+
+.cta-banner-actions {
+  display: flex;
+  gap: .95rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}

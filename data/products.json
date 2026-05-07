@@ -1,0 +1,804 @@
+[
+  {
+    "id": 2,
+    "slug": "mcafee-total-protection",
+    "title": "McAfee Total Protection",
+    "brand": "McAfee",
+    "category": "Security Software",
+    "price": "39.99",
+    "badge": "Top Rated",
+    "short_desc": "AV-TEST Certified + identity protection for unlimited devices in your household.",
+    "long_desc": "McAfee Total Protection shields your family with AV-TEST Certified, web protection, identity monitoring, and a password manager — all from a single subscription covering unlimited devices.",
+    "problem_solved": [
+      "Protects against malware, viruses & security threats in real time",
+      "Advanced malware detection & automatic removal",
+      "Blocks phishing sites & fake security pop-ups",
+      "Identity monitoring alerts you to suspicious account activity",
+      "Multi-layer ransomware protection keeps your files safe"
+    ],
+    "whats_included": [
+      "1-Year McAfee Total Protection License",
+      "Unlimited devices",
+      "License activation guidance included"
+    ],
+    "description1": "McAfee Antivirus provides strong all-in-one protection with features like safe browsing (WebAdvisor) and a Vulnerability Scanner that detects risks before they become threats. It helps block malicious sites, phishing attacks, and keeps your system updated against the latest vulnerabilities.",
+    "description2": "It also focuses on privacy and performance with tools like File Lock, Shredder, and QuickClean, while Safe Family and Identity Theft Protection add extra layers for family safety and personal data security—making it a complete, easy-to-use security solution.",
+    "how_to_use": [
+      "Go to mcafee.com/activate and enter your product key",
+      "Register or log in to your account",
+      "Download and install McAfee Antivirus",
+      "Agree to the license and note your serial number"
+    ],
+    "specs": {
+      "Devices": "Unlimited",
+      "OS": "Windows, macOS, iOS, Android",
+      "Identity Monitoring": "Yes",
+      "VPN": "Yes",
+      "Password Manager": "Yes"
+    },
+    "image": "assets/images/products/mcafee-total-protection.webp",
+    "related": [
+      "bitdefender",
+      "malwarebytes-premium",
+      "annual-antivirus-renewal"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "malwarebytes-premium",
+    "title": "Malwarebytes Premium",
+    "brand": "Malwarebytes",
+    "category": "Security Software",
+    "price": "59.99",
+    "badge": "Editor's Pick",
+    "short_desc": "Advanced malware & ransomware removal with real-time protection for 3 devices.",
+    "long_desc": "Malwarebytes Premium crushes malware, spyware, and ransomware that traditional antivirus misses. Features real-time protection, exploit shielding, and web protection for 3 devices.",
+    "problem_solved": [
+      "Advanced real-time malware & spyware detection",
+      "Blocks threats that traditional antivirus misses",
+      "Ransomware rollback protects your files automatically",
+      "Web protection blocks malicious sites, infected links & harmful ads"
+    ],
+    "description1": "Malwarebytes Anti-Malware Premium delivers advanced, real-time protection against malware, spyware, rootkits, and ransomware. Its proactive technology blocks both known and unknown threats, prevents files from being locked, and stops exploits that target software vulnerabilities—keeping your system secure at all times.",
+    "description2": "It also enhances safe browsing by blocking malicious websites, infected links, and harmful ads. With its fast, intelligent scanning mode, Malwarebytes detects active threats without slowing down your system, ensuring strong protection with minimal impact on performance.",
+    "whats_included": [
+      "1-Year Malwarebytes Premium License",
+      "3 device coverage",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "3",
+      "OS": "Windows 7+, macOS 10.12+, iOS, Android",
+      "Real-Time Protection": "Yes",
+      "Ransomware Rollback": "Yes"
+    },
+    "image": "assets/images/products/Malwarebytes Premium-1.webp",
+    "related": [
+      "mcafee-total-protection",
+      "bitdefender",
+      "ccleaner-pro"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "bitdefender",
+    "title": "Bitdefender Total Security",
+    "brand": "Bitdefender",
+    "category": "Security Software",
+    "price": "59.99",
+    "badge": "",
+    "short_desc": "Military-grade cybersecurity for up to 5 devices with multi-layer ransomware protection.",
+    "long_desc": "Bitdefender Total Security delivers advanced threat defense, multi-layer ransomware protection, network threat prevention, and a VPN for 5 devices — with near-zero performance impact.",
+    "problem_solved": [
+      "Military-grade multi-layer threat defense for 5 devices",
+      "Real-time malware & ransomware protection with auto-restore",
+      "Network threat prevention keeps your connection secure",
+      "Anti-phishing & anti-fraud web protection built in",
+      "VPN, webcam protection & parental controls included"
+    ],
+    "description1": " Bitdefender Total Security 1 User 1 Year offers complete, all-in-one protection for Windows, macOS, Android, and iOS devices. It guards against viruses, malware, ransomware, phishing, and other online threats with advanced real-time security, while keeping your system fast and responsive.",
+    "description2": "It also includes essential features like privacy tools, parental controls, and anti-theft protection, all managed from a simple, user-friendly dashboard—giving you reliable security and peace of mind across all your devices. ",
+    "whats_included": [
+      "1-Year Bitdefender Total Security License",
+      "5 device coverage",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "5",
+      "OS": "Windows, macOS, iOS, Android",
+      "VPN": "200 MB/day",
+      "Anti-Ransomware": "Yes",
+      "Webcam Protection": "Yes"
+    },
+    "image": "assets/images/products/bitdefender total  - security.webp",
+    "related": [
+      "malwarebytes-premium",
+      "mcafee-total-protection",
+      "annual-antivirus-renewal"
+    ]
+  },
+  {
+    "id": 5,
+    "duplicat_price":"40.50",
+    "slug": "ccleaner-pro",
+    "title": "CCleaner Professional",
+    "brand": "CCleaner",
+    "category": "PC Optimization",
+    "price": "29.95",
+    "badge": "",
+    "short_desc": "Clean, speed up, and protect your PC automatically with the world's #1 PC optimizer.",
+    "long_desc": "CCleaner Professional automatically cleans junk files, fixes registry errors, and updates outdated software so your PC runs faster. Includes real-time monitoring and scheduled cleaning.",
+    "problem_solved": [
+      "Automatically removes junk files & speeds up your PC",
+      "Fixes registry errors that cause app failures",
+      "Keeps software updated to prevent compatibility issues"
+    ],
+    "description1": "Optimize your PC with CCleaner Professional. Speed up your system, fix issues, and enhance performance with automated cleaning and registry fixes.",
+    "description2": "CCleaner Professional is your go-to tool for keeping your PC running smoothly and efficiently. Designed for users who want a faster, more responsive system, CCleaner Professional helps clean up unnecessary files, fix system errors, and free up space on your computer. With automatic cleaning, scheduled tasks, and registry cleaning, CCleaner makes it easier than ever to maintain your PC’s performance. Whether you’re dealing with system crashes, slow performance, or apps that won’t open, CCleaner quickly resolves these issues by cleaning out junk files, fixing broken registries, and optimizing system settings. It even helps with stuck updates, ensuring your PC is up-to-date and functioning well. The 1-Year Pro License provides full access to all features, including priority support.",
+    "whats_included": [
+      "1-Year CCleaner Pro License",
+      "1 PC",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "1 PC",
+      "OS": "Windows 7/8/10/11",
+      "Auto-Clean": "Yes",
+      "Scheduled Cleaning": "Yes",
+      "Registry Cleaner": "Yes"
+    },
+    "image": "assets/images/products/CCleaner -Professional.webp",
+    "related": [
+      "iolo-system-mechanic",
+      "avg-tuneup",
+      "driver-booster"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "iolo-system-mechanic",
+    "title": "iolo System Mechanic",
+     "duplicat_price":"55.00",
+    "brand": "iolo",
+    "category": "PC Optimization",
+    "price": "34.95",
+    "badge": "",
+    "short_desc": "Optimize, clean, and accelerate unlimited PCs in your home with iolo's award-winning toolkit.",
+    "long_desc": "iolo System Mechanic optimizes Windows performance, removes junk, and boosts speed across all your home PCs. Includes PC security, privacy cleaner, and startup optimizer.",
+    "problem_solved": [
+      "Resolves Windows performance issues & boosts overall system speed",
+      "Startup optimizer prevents unnecessary program slowdowns",
+      "Privacy cleaner removes traces & keeps your system healthy"
+    ],
+    "description1": "Maximize PC performance with iolo System Mechanic. Speed up startup, clean privacy traces, and optimize your system for smoother and faster operation.",
+    "description2": "iolo System Mechanic is the all-in-one solution to improve the performance, speed, and security of your PC. With unlimited home PC support, this software is designed to keep your computers running at peak performance by removing junk files and optimizing performance, including startup times. It features an advanced Startup Optimizer to prevent unnecessary programs from slowing down your boot time, and a Privacy Cleaner to remove sensitive data that could compromise your privacy. Whether you're dealing with sluggish performance, system freezes, or unwanted programs hogging resources, iolo System Mechanic helps ensure that your PC runs at its best. With support for Windows 7, 8, 10, and 11, it’s a must-have tool for anyone looking to keep their PC running fast and secure over time.",
+    "whats_included": [
+      "1-Year iolo System Mechanic License",
+      "Unlimited home PCs",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "Unlimited home PCs",
+      "OS": "Windows 7/8/10/11",
+      "Startup Optimizer": "Yes",
+      "Privacy Cleaner": "Yes"
+    },
+    "image": "assets/images/products/iolo System - Mechanic.webp",
+    "related": [
+      "ccleaner-pro",
+      "avg-tuneup",
+      "driver-easy-pro"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "avg-tuneup",
+    "title": "AVG TuneUp",
+    "brand": "AVG",
+    "category": "PC Optimization",
+     "duplicat_price":"53.00",
+    "price": "39.99",
+    "badge": "",
+    "short_desc": "Automatically puts sleeping mode on unused apps to give your PC a speed boost.",
+    "long_desc": "AVG TuneUp silently optimizes your PC in the background — freeing up RAM, cleaning disk space, and fixing software issues for up to 10 devices.",
+    "problem_solved": [
+      "Sleep Mode frees RAM by pausing unused background apps",
+      "Removes bloatware & unnecessary processes automatically",
+      "Automated disk cleaning maintains peak PC performance"
+    ],
+    "description1": "Boost your PC’s performance with AVG TuneUp. Clean junk files, remove bloatware, and optimize startup for a faster, smoother system experience.",
+    "description2": "AVG TuneUp is designed to keep your PC running at peak performance by removing clutter, fixing errors, and optimizing your system. With support for up to 10 devices, AVG TuneUp is perfect for home users with multiple PCs.",
+    "whats_included": [
+      "1-Year AVG TuneUp License",
+      "Up to 10 devices",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "10",
+      "OS": "Windows 7/8/10/11",
+      "Sleep Mode": "Yes",
+      "Disk Cleaner": "Yes",
+      "Bloatware Remover": "Yes"
+    },
+    "image": "assets/images/products/AVG - TuneUp.webp",
+    "related": [
+      "ccleaner-pro",
+      "iolo-system-mechanic",
+      "driver-booster"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "windows-11-home-pro-usb",
+    "title": "Windows 11 Home/Pro USB",
+    "brand": "Microsoft",
+    "category": "OS & Recovery",
+    "price": "139.99",
+    "badge": "Physical Media",
+    "short_desc": "Official Windows 11 Home or Pro installation USB. Clean install or upgrade — ready to ship.",
+    "long_desc": "Genuine Microsoft Windows 11 Home or Pro on a bootable USB drive. Use for clean installation, system upgrade, or full PC recovery. Includes product key card.",
+    "problem_solved": [
+      "Bootable USB for a clean Windows 11 installation",
+      "Supports in-place upgrade from Windows 10 to Windows 11",
+      "Includes genuine product key — Home or Pro edition",
+      "64-bit architecture with TPM 2.0 support"
+    ],
+    "description1": "Reinstall or upgrade your system to Windows 11 with this bootable USB. Includes a genuine product key and a full installation guide.",
+    "description2": "Upgrade or reinstall your operating system with the Windows 11 Home/Pro USB from Microsoft. This bootable USB drive contains a genuine product key for either the Home or Pro edition of Windows 11 (choose at checkout), making it perfect for users who need a fresh installation or want to upgrade their current system to the latest version.",
+    "whats_included": [
+      "Bootable Windows 11 USB Drive",
+      "Genuine Product Key Card",
+      "Installation guide",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Format": "Bootable USB (32 GB)",
+      "Edition": "Home or Pro (specify at checkout)",
+      "Architecture": "64-bit",
+      "TPM Required": "2.0"
+    },
+    "image": "assets/images/products/Windows 11 HomePro - USB.webp",
+    "related": [
+      "windows-recovery-usb",
+      "samsung-ssd-980",
+      "ccleaner-pro"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "windows-recovery-usb",
+    "title": "Windows Recovery USB Drive",
+    "brand": "Seastar Technology",
+    "category": "OS & Recovery",
+    "price": "29.99",
+    "badge": "",
+    "short_desc": "Pre-built bootable Windows reinstallation USB — without needing the original disc.",
+    "long_desc": "Our pre-configured Windows Recovery USB lets you reset or reinstall Windows without needing the original disc. Works with Windows 10 and 11.",
+    "problem_solved": [
+      "Restores Windows 10 & 11 without the original disc",
+      "Multiple recovery modes: reset, reinstall",
+      "Pre-configured 32 GB bootable USB — ready to use out of the box"
+    ],
+    "description1": "Restore your Windows 10 or 11 system with ease using a bootable recovery USB. Includes a 32 GB drive and step-by-step recovery guide for quick repairs.",
+    "description2": "The Windows Recovery USB Drive from Seastar Technology is the ultimate solution for restoring your system when it fails to start, crashes, or shuts down unexpectedly. This bootable USB (32 GB) allows you to perform crucial recovery operations on Windows 10 and 11 systems. Whether you need to reset or reinstall your operating system, this USB drive has you covered with built-in recovery modes for each scenario. Along with the USB, you’ll receive a step-by-step recovery guide, ensuring you can perform the recovery process quickly and without hassle.",
+    "whats_included": [
+      "Bootable Recovery USB (32 GB)",
+      "Step-by-step recovery guide",
+      "Product setup documentation"
+    ],
+    "specs": {
+      "Format": "Bootable USB (32 GB)",
+      "Compatible": "Windows 10 & 11",
+      "Recovery Modes": "Reset, Repair, Reinstall"
+    },
+    "image": "assets/images/products/Recovery USB - Drive single.webp",
+    "related": [
+      "windows-11-home-pro-usb",
+      "samsung-ssd-980",
+      "iolo-system-mechanic"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "samsung-ssd-980",
+    "title": "Samsung 980 SSD (1TB)",
+    "brand": "Samsung",
+    "category": "Storage",
+    "price": "79.99",
+    "badge": "Fast Shipping",
+    "short_desc": "NVMe M.2 SSD delivering up to 3,500 MB/s read speeds — breathe new life into any PC.",
+    "long_desc": "The Samsung 980 NVMe SSD delivers blazing sequential read speeds up to 3,500 MB/s. Perfect for upgrading a slow or failing drive, running a clean Windows install, or expanding storage.",
+    "problem_solved": [
+      "NVMe PCIe 3.0 x4 — up to 3,500 MB/s read speed",
+      "Drop-in M.2 upgrade for laptops & desktops",
+      "5-year warranty with proven Samsung reliability"
+    ],
+    "description1": "Upgrade your system speed with the Samsung 980 1TB NVMe SSD. Enjoy ultra-fast boot times, rapid file transfers, and improved overall performance.",
+    "description2": "The Samsung 980 1TB NVMe SSD is designed to deliver a major performance upgrade for your PC or laptop. Built with PCIe 3.0 x4 and NVMe 1.4 technology, it offers significantly faster data access compared to traditional hard drives and SATA SSDs. With read speeds up to 3,500 MB/s and write speeds up to 3,000 MB/s, this SSD ensures quick boot times, faster application loading, and smooth multitasking.",
+    "whats_included": [
+      "Samsung 980 1TB NVMe SSD",
+      "Mounting screw",
+      "Setup documentation included"
+    ],
+    "specs": {
+      "Capacity": "1 TB",
+      "Interface": "PCIe 3.0 x4, NVMe 1.4",
+      "Form Factor": "M.2 2280",
+      "Sequential Read": "3,500 MB/s",
+      "Sequential Write": "3,000 MB/s",
+      "Warranty": "5 Years"
+    },
+    "image": "assets/images/products/Samsung 980 SSD (1TB).webp",
+    "related": [
+      "wd-blue-hdd",
+      "crucial-mx500",
+      "windows-11-home-pro-usb"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "wd-blue-hdd",
+    "title": "WD Blue 2TB HDD",
+    "brand": "Western Digital",
+    "category": "Storage",
+    "price": "54.99",
+    "badge": "",
+    "short_desc": "Reliable 2TB 3.5-inch desktop hard drive for data storage and PC upgrades.",
+    "long_desc": "The WD Blue 2TB desktop HDD is built for everyday computing with 7200 RPM performance and a 256 MB cache. A reliable choice for replacing a failing drive or expanding storage.",
+    "problem_solved": [
+      "2TB capacity for files, games, videos & backups",
+      "7200 RPM with 256 MB cache for consistent performance"
+    ],
+    "whats_included": [
+      "WD Blue 2TB HDD",
+      "Mounting screws",
+      "Setup documentation included"
+    ],
+    "description1": "Reliable 2TB storage solution with stable performance and high capacity for everyday computing, backups, and file storage needs.",
+    "description2": "The WD Blue 2TB HDD is a dependable storage solution designed for everyday computing needs. With a large 2TB capacity, it provides ample space for documents, media files, games, and backups. Built with a 7200 RPM speed and a 256MB cache, this hard drive ensures smooth data access and consistent performance for general use and system upgrades.",
+    "specs": {
+      "Capacity": "2 TB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "3.5-inch",
+      "RPM": "7200",
+      "Cache": "256 MB",
+      "Warranty": "2 Years"
+    },
+    "image": "assets/images/products/WD Blue 2TB - HDD.webp",
+    "related": [
+      "samsung-ssd-980",
+      "seagate-barracuda",
+      "crucial-mx500"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "seagate-barracuda",
+    "title": "Seagate Barracuda 2TB HDD",
+    "brand": "Seagate",
+    "category": "Storage",
+    "price": "49.99",
+    "badge": "",
+    "short_desc": "Seagate's most popular desktop HDD — 2TB of fast, reliable storage.",
+    "long_desc": "The Seagate Barracuda 2TB offers dependable storage at an affordable price. Ideal for desktop upgrades, backups, or replacing a failing hard drive.",
+    "problem_solved": [
+      "2TB high-speed SATA storage for desktops",
+      "7200 RPM spin rate with 256 MB cache for fast transfers",
+      "Backed by Seagate's 2-year manufacturer warranty"
+    ],
+    "description1": "Expand your storage with the Seagate Barracuda 2TB HDD. High-speed 7200 RPM performance and reliable storage for all your data needs.",
+    "description2": "The Seagate Barracuda 2TB HDD is the perfect choice for those looking for reliable and high-performance storage. With a spacious 2TB capacity, this hard drive is ideal for storing large files, games, videos, and much more. The 7200 RPM spin rate and 256MB cache ensure fast read and write speeds, enhancing your system’s overall performance and reducing delays during file transfers. This 3.5-inch HDD comes with a SATA 6 Gb/s interface for fast data transfers, and it’s built for reliability, backed by a 2-year warranty. Whether you're upgrading your existing storage or replacing a failing drive, the Seagate Barracuda offers exceptional performance at a great price.",
+    "whats_included": [
+      "Seagate Barracuda 2TB HDD",
+      "Mounting screws",
+      "Setup documentation included"
+    ],
+    "specs": {
+      "Capacity": "2 TB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "3.5-inch",
+      "RPM": "7200",
+      "Cache": "256 MB",
+      "Warranty": "2 Years"
+    },
+    "image": "assets/images/products/Seagate Barracuda - 2TB hard drive.webp",
+    "related": [
+      "wd-blue-hdd",
+      "samsung-ssd-980",
+      "crucial-mx500"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "crucial-mx500",
+    "title": "Crucial MX500 1TB SSD",
+    "brand": "Crucial",
+    "category": "Storage",
+    "price": "69.99",
+    "badge": "",
+    "short_desc": "SATA SSD with hardware encryption — drop-in upgrade for laptops and desktops.",
+    "long_desc": "The Crucial MX500 is a 2.5-inch SATA SSD perfect for upgrading laptops and older desktops. Up to 560 MB/s reads with integrated AES 256-bit hardware encryption.",
+    "problem_solved": [
+      "SATA SSD — drop-in upgrade for laptops & older desktops",
+      "Up to 560 MB/s read speed with AES 256-bit hardware encryption"
+    ],
+    "whats_included": [
+      "Crucial MX500 1TB SSD",
+      "Spacer adapter (7mm to 9.5mm)",
+      "Setup documentation included"
+    ],
+    "description1": "Upgrade your computer's performance with the Crucial BX500 SSD, designed to deliver fast and reliable speed. With read speeds up to 540MB/s and write speeds up to 500MB/s, the BX500 offers an instant performance boost for all your computing tasks.",
+    "description2": "Built with Micron’s thousands of hours of pre-release validation and rigorous qualification tests, the BX500 has been thoroughly vetted for reliability. This award-winning SSD is engineered to improve system responsiveness, making boot-up and file loading faster than ever.",
+    "specs": {
+      "Capacity": "1 TB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "2.5-inch",
+      "Sequential Read": "560 MB/s",
+      "Sequential Write": "510 MB/s",
+      "Warranty": "5 Years"
+    },
+    "image": "assets/images/products/Crucial MX500 1TB SSD.jpg",
+    "related": [
+      "samsung-ssd-980",
+      "wd-blue-hdd",
+      "seagate-barracuda"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "lcd-led-screen",
+    "title": "Laptop LCD/LED Replacement Screen",
+    "brand": "Seastar Technology",
+    "category": "Display Components",
+    "price": "89.99",
+    "badge": "",
+    "short_desc": "OEM-grade laptop replacement screens — specify your model at checkout for a perfect fit.",
+    "long_desc": "High-quality LCD/LED replacement panels for major laptop brands including Dell, HP, Lenovo, Asus, and Acer. Full HD IPS panels where available. Specify laptop model number at checkout.",
+    "problem_solved": [
+      "OEM-grade IPS/TN panels for Dell, HP, Lenovo, Asus & Acer",
+      "Full HD 1920×1080 resolution where available",
+      "Anti-static packaging ensures safe delivery"
+    ],
+    "whats_included": [
+      "Replacement LCD/LED Panel",
+      "Anti-static packaging",
+      "Installation guide",
+      "Product setup documentation"
+    ],
+    "description1": "OEM-quality replacement screens for laptops. Simply specify your model at checkout for the perfect fit.",
+    "description2": "Upgrade or replace your laptop's display with a high-quality LCD/LED panel from Seastar Technology. Our replacement screens are compatible with major laptop brands such as Dell, HP, Lenovo, Asus, and Acer. Wherever possible, we provide Full HD IPS panels for vibrant, clear visuals. Just provide your laptop model number at checkout to ensure a seamless fit.",
+    "specs": {
+      "Resolution": "1920x1080 FHD (model dependent)",
+      "Panel Type": "IPS / TN (model dependent)",
+      "Compatibility": "Dell, HP, Lenovo, Asus, Acer"
+    },
+    "image": "assets/images/products/Laptop LCDLED Replacement - Screen.webp",
+    "related": [
+      "laptop-battery",
+      "keyboard-logitech"
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "laptop-battery",
+    "title": "Laptop Replacement Battery",
+    "brand": "Seastar Technology",
+    "category": "Power Accessories",
+    "price": "49.99",
+    "badge": "",
+    "short_desc": "High-capacity OEM-compatible replacement batteries for Dell, HP, and Lenovo laptops.",
+    "long_desc": "Genuine-grade replacement laptop batteries for Dell, HP, and Lenovo models. All cells tested to meet or exceed original manufacturer specifications. Specify your laptop model at checkout.",
+    "problem_solved": [
+      "High-capacity OEM-compatible cells for Dell, HP & Lenovo",
+      "CE / RoHS certified — tested to meet original specifications",
+      "12-month warranty included"
+    ],
+    "whats_included": [
+      "Replacement Battery Pack",
+      "Installation guide",
+      "License activation guidance included"
+    ],
+    "description1": "High-quality replacement battery packs for your laptop. Compatible with major brands like Dell, HP, and Lenovo, ensuring reliable power once again.",
+    "description2": "Restore the battery life of your laptop with a reliable, high-quality replacement battery pack from Seastar Technology. Whether you're dealing with a battery that isn't charging or one that holds a poor charge, our replacement batteries are built to last. Specifically designed for Dell, HP, and Lenovo laptops, these batteries come with a 12-month warranty and are CE / RoHS certified for your peace of mind.",
+    "specs": {
+      "Compatible Brands": "Dell, HP, Lenovo",
+      "Warranty": "12 Months",
+      "Certification": "CE / RoHS Certified",
+      "Capacity": "Model dependent"
+    },
+    "image": "assets/images/products/Laptop Replacement -Battery.webp",
+    "related": [
+      "lcd-led-screen",
+      "keyboard-logitech"
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "keyboard-logitech",
+    "title": "Logitech Wireless Keyboard (K380)",
+    "brand": "Logitech",
+    "category": "Input Peripherals",
+    "price": "39.99",
+    "badge": "",
+    "short_desc": "Multi-device Bluetooth keyboard — seamlessly switch between 3 devices with one click.",
+    "long_desc": "The Logitech K380 Bluetooth keyboard connects to up to 3 devices simultaneously. Compact, slim design with 2-year battery life. Works with Windows, macOS, iOS, and Android.",
+    "problem_solved": [
+      "Bluetooth 3.0 — pairs with up to 3 devices simultaneously",
+      "2-year battery life on 2x AAA batteries",
+      "Compatible with Windows, macOS, iOS & Android"
+    ],
+    "whats_included": [
+      "Logitech K380 Keyboard",
+      "2x AAA Batteries",
+      "License activation guidance included"
+    ],
+    "description1": "Compact and versatile, the Logitech K380 Wireless Keyboard connects seamlessly to multiple devices and delivers a reliable, quiet typing experience",
+    "description2": "tay productive and comfortable with the Logitech K380 Wireless Keyboard, a compact and lightweight solution for typing on multiple devices. Using Bluetooth 3.0 technology, this keyboard can pair with up to three devices at once, allowing you to easily switch between your laptop, tablet, or smartphone with just the press of a button.",
+    "specs": {
+      "Connection": "Bluetooth 3.0",
+      "Devices": "Up to 3",
+      "Battery": "2 AAA (2-year life)",
+      "OS": "Windows, macOS, Chrome OS, iOS, Android",
+      "Warranty": "2 Years"
+    },
+    "image": "assets/images/products/Logitech Wireless Keyboard- (K380).webp",
+    "related": [
+      "wifi-router-tplink",
+      "laptop-battery",
+      "lcd-led-screen"
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "wifi-router-tplink",
+    "title": "TP-Link Archer AX55 WiFi 6 Router",
+    "brand": "TP-Link",
+    "category": "Networking",
+    "price": "99.99",
+    "badge": "WiFi 6",
+    "short_desc": "Dual-band WiFi 6 router with AX3000 speeds — eliminate buffering and dead zones.",
+    "long_desc": "The TP-Link Archer AX55 delivers AX3000 WiFi 6 speeds across your entire home. Supports 40+ devices simultaneously, features OFDMA & MU-MIMO, and includes OneMesh compatibility.",
+    "problem_solved": [
+      "WiFi 6 AX3000 — stable coverage across your entire home",
+      "Supports 40+ devices simultaneously with OFDMA & MU-MIMO",
+      "OneMesh compatible for seamless whole-home WiFi"
+    ],
+    "description1": "Upgrade to blazing-fast WiFi 6 speeds with the TP-Link Archer AX55, offering dual-band coverage and impressive speeds up to 3000 Mbps for a seamless online experience.",
+    "description2": "Experience the future of home networking with the TP-Link Archer AX55 WiFi 6 Router. Designed to handle the demands of modern homes with multiple connected devices, this router offers ultra-fast speeds of up to 3000 Mbps (AX3000), including 2402 Mbps on 5 GHz and 574 Mbps on 2.4 GHz bands.",
+    "whats_included": [
+      "TP-Link Archer AX55 Router",
+      "Power Adapter",
+      "Ethernet Cable",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Standard": "WiFi 6 (802.11ax)",
+      "Speed": "AX3000 (2402 + 574 Mbps)",
+      "Bands": "Dual Band (2.4 GHz + 5 GHz)",
+      "Ports": "1x WAN + 4x Gigabit LAN",
+      "USB": "1x USB 3.0",
+      "Warranty": "2 Years"
+    },
+    "image": "assets/images/products/TP-Link Archer AX55 WiFi 6- Router.png",
+    "related": [
+      "wifi-extender",
+      "hp-printer-allinone",
+      "keyboard-logitech"
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "wifi-extender",
+    "title": "TP-Link WiFi Range Extender (RE550)",
+    "brand": "TP-Link",
+    "category": "Networking",
+    "price": "49.99",
+    "badge": "",
+    "short_desc": "AC1900 dual-band extender to eliminate WiFi dead zones anywhere in your home.",
+    "long_desc": "The TP-Link RE550 extends your existing WiFi coverage with AC1900 speeds, Gigabit Ethernet port, and OneMesh assistance for seamless roaming. Easy 1-button setup.",
+    "problem_solved": [
+      "AC1900 dual-band extends WiFi coverage to dead zones",
+      "OneMesh compatible — roam seamlessly without reconnecting",
+      "1-button WPS setup for quick installation"
+    ],
+    "description1": "Boost your WiFi coverage with the TP-Link RE550 WiFi Range Extender, offering dual-band speeds up to 1900 Mbps and a simple setup to eliminate dead zones.",
+    "description2": "Extend your WiFi network to every corner of your home with the TP-Link RE550 WiFi Range Extender. Designed to improve your network coverage, the RE550 offers dual-band speeds up to 1900 Mbps, ensuring that you can stream, game, and work without interruption in any room.",
+    "whats_included": [
+      "TP-Link RE550 Extender",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Standard": "AC1900",
+      "Speed": "1900 Mbps",
+      "Bands": "Dual Band",
+      "Ethernet": "1x Gigabit LAN",
+      "Setup": "WPS / Web UI",
+      "Warranty": "2 Years"
+    },
+    "image": "assets/images/products/TP-Link WiFi Range Extender - (RE550).webp",
+    "related": [
+      "wifi-router-tplink",
+      "hp-printer-allinone"
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "hp-printer-allinone",
+    "title": "HP ENVY All-in-One Printer",
+    "brand": "HP",
+    "category": "Printers",
+    "price": "169.99",
+    "badge": "Popular",
+    "short_desc": "Wireless all-in-one printer with auto-duplex printing, scanning, and HP Instant Ink enrollment.",
+    "long_desc": "The HP ENVY All-in-One lets you print, scan, and copy wirelessly from any device. Includes auto-duplex printing, 35-page ADF, Bluetooth, WiFi Direct, and compatibility with HP Instant Ink.",
+    "problem_solved": [
+      "Wireless print, scan & copy from any device",
+      "Auto-duplex printing saves paper automatically",
+      "WiFi Direct & Bluetooth for flexible connectivity"
+    ],
+    "description1": "Efficient all-in-one printing solution that prints, scans, and copies with Wi-Fi and Bluetooth connectivity. Reliable, fast, and ready for home office or personal use.",
+    "description2": "The HP ENVY All-in-One Printer combines versatility with ease of use, making it the ideal choice for home offices and personal use. This multi-function printer can print, scan, and copy, allowing you to handle all your everyday printing tasks with one device. With Wi-Fi, USB, and Bluetooth connectivity, it provides flexible printing options whether you're connecting from your laptop, smartphone, or tablet.",
+    "whats_included": [
+      "HP ENVY Printer",
+      "Black & Color Ink Cartridges",
+      "USB Cable",
+      "Power Cord",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Functions": "Print, Scan, Copy",
+      "Connectivity": "WiFi, USB, Bluetooth",
+      "Print Speed": "Up to 10 ppm (black)",
+      "Duplex": "Auto (2-sided)",
+      "Paper Tray": "100-sheet input",
+      "Warranty": "1 Year"
+    },
+    "image": "assets/images/products/HP ENVY All-in-One Printer.webp",
+    "related": [
+      "driver-booster",
+      "wifi-router-tplink",
+      "driver-easy-pro"
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "driver-booster",
+    "title": "Driver Booster Pro",
+    "brand": "IObit",
+    "category": "Driver Software",
+    "price": "22.99",
+    "badge": "",
+    "short_desc": "Scan and update PC drivers automatically with one click.",
+    "long_desc": "Driver Booster Pro scans your entire PC for outdated, missing, or corrupt drivers and updates them from a database of 8 million+ driver versions — fixing hardware issues without manual searching.",
+    "problem_solved": [
+      "Scans & updates from a database of 8 million+ certified drivers",
+      "One-click update for hardware compatibility issues on up to 3 PCs",
+      "Game Boost mode optimizes drivers for better performance"
+    ],
+    "description1": "Automatically update drivers with Driver Booster Pro for faster performance, smoother gameplay, and improved system stability. Supports up to 3 PCs!",
+    "description2": "Keep your PC running at its best with Driver Booster Pro. This powerful driver update tool scans and downloads the latest drivers for your system, ensuring your computer runs smoothly and is protected from potential issues caused by outdated drivers. With access to a database of over 8 million drivers, Driver Booster Pro provides the most accurate updates for all your devices, improving performance and system stability.",
+    "whats_included": [
+      "1-Year Driver Booster Pro License",
+      "3 PCs",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "3 PCs",
+      "OS": "Windows 7/8/10/11",
+      "Driver Database": "8,000,000+",
+      "Scan Speed": "60% faster than manual",
+      "Game Boost": "Yes"
+    },
+    "image": "assets/images/products/Driver Booster-  Pro.webp",
+    "related": [
+      "driver-easy-pro",
+      "ccleaner-pro",
+      "hp-printer-allinone"
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "driver-easy-pro",
+    "title": "Driver Easy Pro",
+    "brand": "Easeware",
+    "category": "Driver Software",
+     "duplicat_price":"49.40",
+    "price": "29.95",
+    "badge": "",
+    "short_desc": "Find and download the correct drivers for any hardware in minutes — no technical skills needed.",
+    "long_desc": "Driver Easy Pro automatically detects your PC hardware and finds the correct, certified drivers. Offline scan mode lets you fix driver problems even without internet on the affected machine.",
+    "problem_solved": [
+      "Offline scan mode — find & install correct drivers without internet",
+      "WHQL certified drivers for guaranteed hardware compatibility",
+      "Supports up to 3 PCs with a single license"
+    ],
+    "description1": "Automatically find and download the correct drivers for your PC. Driver Easy Pro supports up to 3 PCs and offers offline scanning for convenience.",
+    "description2": "Keep your system running smoothly and efficiently with Driver Easy Pro. This advanced driver management tool scans your PC for missing or outdated drivers and provides the latest updates to keep your devices performing at their best. Supporting up to 3 PCs, Driver Easy Pro is the perfect solution for households or small offices with multiple computers. Driver Easy Pro also solves common PC issues like missing drivers and printer not responding by quickly fixing the problems that can lead to device malfunctions or slow performance.",
+    "whats_included": [
+      "1-Year Driver Easy Pro License",
+      "3 PCs",
+      "License activation guidance included"
+    ],
+    "specs": {
+      "Devices": "3 PCs",
+      "OS": "Windows XP/Vista/7/8/10/11",
+      "Offline Scan": "Yes",
+      "WHQL Certified Drivers": "Yes"
+    },
+    "image": "assets/images/products/Driver Easy - Pro.webp",
+    "related": [
+      "driver-booster",
+      "ccleaner-pro",
+      "iolo-system-mechanic"
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "annual-antivirus-renewal",
+    "title": "Annual Antivirus Renewal Plan",
+    "brand": "Seastar Technology",
+    "category": "Coverage Plans",
+    "price": "34.99",
+    "badge": "Save 30%",
+    "short_desc": "Renew any antivirus subscription through us and save up to 30% vs. manufacturer retail price.",
+    "long_desc": "Keep your protection active without paying full retail. We offer renewal pricing on McAfee, Bitdefender, and Malwarebytes subscriptions — delivered as an activation code within 24 hours.",
+    "problem_solved": [
+      "Save up to 30% vs. manufacturer retail renewal price",
+      "Renewal code delivered by email within 24 hours",
+      "Covers McAfee, Bitdefender & Malwarebytes subscriptions"
+    ],
+    "description1": "Keep your devices protected with a seamless renewal of antivirus coverage for McAfee, Bitdefender, or Malwarebytes. Delivered digitally within 24 hours.",
+    "description2": "Ensure your digital security is always up to date with the Annual Antivirus Renewal Plan. This convenient plan allows you to quickly renew your antivirus coverage for trusted brands like McAfee, Bitdefender, and Malwarebytes. You’ll receive a 1-Year Renewal Activation Code delivered directly to your inbox within 24 hours, ensuring you can continue to protect your devices without interruption.",
+    "whats_included": [
+      "1-Year Renewal Activation Code",
+      "Delivery within 24 hours",
+      "Renewal activation guidance included"
+    ],
+    "specs": {
+      "Supported Products": "McAfee, Bitdefender, Malwarebytes",
+      "Delivery": "Email (digital code)",
+      "Turnaround": "Within 24 hours"
+    },
+    "image": "assets/images/products/Annual Antivirus Renewal-  Plan.webp",
+    "related": [
+      "malwarebytes-premium",
+      "mcafee-total-protection",
+      "bitdefender"
+    ]
+  },
+  {
+    "id": 23,
+    "slug": "extended-warranty-plan",
+    "title": "Extended Hardware Warranty Plan",
+    "brand": "Seastar Technology",
+    "category": "Coverage Plans",
+    "price": "59.99",
+    "badge": "",
+    "short_desc": "Extend your hardware coverage with 1-year protection against defects and failures.",
+    "long_desc": "Our Extended Hardware Warranty Plan adds 12 months of coverage on any hardware purchased through Seastar Technology — including SSDs, HDDs, printers, routers, and laptop components.",
+    "problem_solved": [
+      "12-month extended coverage on all hardware purchased",
+      "Replacement or credit for any covered defect or failure",
+      "Claims resolved within 1 business day via phone or email"
+    ],
+    "description1": "Get peace of mind with a 12-month extended warranty plan, covering all hardware purchased from Seastar Technology. Enjoy priority support and quick resolution for any failures.",
+    "description2": "Protect your valuable hardware investment with the Extended Hardware Warranty Plan from Seastar Technology. This plan extends the warranty coverage for all hardware purchased from us, giving you an additional 12 months of security. If any covered failure occurs, you’ll receive a replacement or credit, ensuring your equipment is always up and running. We aim to respond to all warranty claims within 1 business day via phone or email.",
+    "whats_included": [
+      "12-Month Extended Coverage Certificate",
+      "Priority order assistance",
+      "Replacement or credit for covered failures"
+    ],
+    "specs": {
+      "Coverage Duration": "12 Months",
+      "Covered Items": "All hardware purchased from Seastar Technology",
+      "Claim Process": "Phone or email",
+      "Response Time": "Within 1 business day"
+    },
+    "image": "assets/images/products/Extended Hardware Warranty - Plan.webp",
+    "related": [
+      "annual-antivirus-renewal",
+      "samsung-ssd-980",
+      "hp-printer-allinone"
+    ]
+  }
+]

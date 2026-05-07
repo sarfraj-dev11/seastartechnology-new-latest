@@ -1,0 +1,176 @@
+/* base.css — Reset · Typography · Buttons · Utilities
+   Color variables live in theme.css              */
+
+:root {
+  --font-h: 'Outfit', sans-serif;
+  --font-b: 'Inter', sans-serif;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+
+  --t: .22s ease;
+  --max-w: 1200px;
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0 }
+html { scroll-behavior: smooth }
+
+body {
+  font-family: var(--font-b);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.nav-open { overflow: hidden }
+
+a { color: var(--accent); text-decoration: none; transition: var(--t) }
+a:hover { color: var(--primary) }
+
+img { max-width: 100%; height: auto; display: block }
+ul, ol { list-style: none }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-h);
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--text);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .48rem;
+  font-family: var(--font-b);
+  font-weight: 600;
+  font-size: .875rem;
+  padding: .65rem 1.5rem;
+  border-radius: var(--r-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .22s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: .015em;
+}
+
+.btn-sm  { padding: .42rem .95rem; font-size: .8rem }
+.btn-lg  { padding: .78rem 1.95rem; font-size: .95rem }
+.btn-full { width: 100%; justify-content: center }
+
+/* Orange primary CTA */
+.btn-primary {
+  background: var(--grad-orange);
+  color: var(--primary);
+  border-color: transparent;
+  box-shadow: var(--shadow-orange);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #FFCA6E 0%, #FFBA52 50%, #FF9F1C 100%);
+  box-shadow: 0 6px 28px rgba(255,159,28,.52);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+.btn-primary:active { transform: translateY(0) }
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btn-white {
+  background: var(--bg-alt);
+  color: var(--primary);
+  border-color: var(--bg-alt);
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+}
+.btn-white:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,.18);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--bg);
+  border-color: rgba(253,255,252,.5);
+}
+.btn-outline-white:hover {
+  background: rgba(253,255,252,.14);
+  border-color: rgba(253,255,252,.85);
+  color: var(--bg);
+}
+
+/* ── Sections ── */
+.section { padding: 5.5rem 0 }
+
+.section-header {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .38rem;
+  padding: .3rem 1rem;
+  border-radius: 99px;
+  background: rgba(46,196,182,.12);
+  color: var(--primary);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: .75rem;
+  border: 1px solid rgba(46,196,182,.28);
+  box-shadow: 0 1px 6px rgba(46,196,182,.1);
+}
+
+.section-title   { font-size: 2.15rem; margin-bottom: .7rem; letter-spacing: -.015em }
+.section-subtitle { color: var(--text-2); font-size: 1rem; line-height: 1.74 }
+.section-cta     { text-align: center; margin-top: 2.5rem }
+
+.gradient-text {
+  background: linear-gradient(135deg, #2EC4B6 0%, #011627 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Utilities ── */
+.hidden    { display: none !important }
+.text-center { text-align: center }
+.mt-1 { margin-top: .5rem }
+.mt-2 { margin-top: 1rem }
+.mt-3 { margin-top: 1.5rem }
+.mt-4 { margin-top: 2rem }
+.mb-1 { margin-bottom: .5rem }
+.mb-2 { margin-bottom: 1rem }
+.mb-3 { margin-bottom: 1.5rem }
+
+/* ── Scroll Fade ── */
+.fade-up { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease }
+.fade-up.visible { opacity: 1; transform: translateY(0) }
+
+main { min-height: 60vh }

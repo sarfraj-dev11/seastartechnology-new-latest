@@ -1,0 +1,29 @@
+User-agent: *
+
+ Allow: /
+
+ Disallow: /admin/
+
+ Disallow: /includes/
+
+ Disallow: /data/
+ 
+User-agent: AdsBot-Google
+
+ Allow: /
+ 
+User-agent: Googlebot
+
+ Allow: /
+ 
+X-Robots-Tag: noarchive
+ 
+User-agent: ia_archiver
+
+ Disallow: /
+ 
+User-agent: archive.org_bot
+
+ Disallow: /
+ 
+Sitemap: https://www.seastartechnology.com/sitemap.xml

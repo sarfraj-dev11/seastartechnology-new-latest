@@ -832,6 +832,6 @@ body{
 
 .top-bar-inner{
  flex-direction: column;
-    height: 9vh;
+    /* height: 10vh; */
 }
 }

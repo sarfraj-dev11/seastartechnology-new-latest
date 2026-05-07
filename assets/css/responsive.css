@@ -22,7 +22,7 @@
 /* ── Mobile ≤ 768px ── */
 @media (max-width:768px){
   /* Sticky header */
-  .site-header{position:-webkit-sticky;position:sticky;top:0;z-index:1000}
+  /* .site-header{position:-webkit-sticky;position:sticky;top:0;z-index:1000} */
   .site-header .header-inner{padding:.5rem 1rem}
   .logo-icon{width:130px;height:34px}
   .top-bar-support{display:none}
@@ -773,4 +773,52 @@ html, body {
     .sst-discount-sticker { top: 0rem; right: 1rem; width: 75px; height: 75px; }
     .sst-sticker-text { font-size: 0.65rem; }
     .sst-sticker-text strong { font-size: 1.4rem; }
+}
+
+/* ==========================================================
+   FIXED TOP BAR + HEADER FOR ALL SCREENS
+   ========================================================== */
+
+/* Top Bar Fixed */
+.top-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99998;
+    /* background: var(--bg-alt); */
+}
+
+/* Header Fixed Below Top Bar */
+.site-header{
+    position: fixed !important;
+    top: 34px; /* top-bar height */
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background: #fff;
+}
+
+/* Prevent Content Overlap */
+body{
+    padding-top: 118px; /* top-bar + header height */
+}
+
+/* Tablet & Mobile */
+@media (max-width:768px){
+
+    .top-bar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .site-header{
+        top: 37px; /* mobile top-bar height */
+    }
+
+    body{
+        padding-top: 106px;
+    }
 }

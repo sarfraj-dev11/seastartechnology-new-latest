@@ -408,3 +408,33 @@
 }
 
 .footer-bottom-links a:hover { color: var(--color-teal) }
+
+
+/* footer social Icons  */
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: start; /* Center on all screen sizes */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    margin: 10px 0;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e8f9f8; 
+    color: #000; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #fff; 
+    transform: scale(1.1);
+}
+

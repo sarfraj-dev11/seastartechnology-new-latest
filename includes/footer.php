@@ -15,6 +15,19 @@
           <!-- <span class="logo-name">seastartechnology</span> -->
         </div>
         <p class="footer-tagline">Authorized US reseller of genuine computer security software, hardware, and accessories.</p>
+         <div class="social-icons">
+    <?php if(SOCIAL_PINITEREST): ?>
+        <a href="<?php echo SOCIAL_PINITEREST; ?>" target="_blank" aria-label="Pinterest">
+            <i class="fab fa-pinterest-p"></i>
+        </a>
+    <?php endif; ?>
+
+    <?php if(SOCIAL_INSTAGRAM): ?>
+        <a href="<?php echo SOCIAL_INSTAGRAM; ?>" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    <?php endif; ?>
+</div>
         <div class="footer-social">
           <?php if(SOCIAL_FACEBOOK): ?><a href="<?php echo SOCIAL_FACEBOOK; ?>" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><?php endif; ?>
           <?php if(SOCIAL_TWITTER): ?><a href="<?php echo SOCIAL_TWITTER; ?>" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a><?php endif; ?>

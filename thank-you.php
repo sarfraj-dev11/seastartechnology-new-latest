@@ -1,20 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KJT36XWT');</script>
-<!-- End Google Tag Manager -->
-<head>
-<meta charset="UTF-8">
-<title>Thank You | Support Team</title>
+<?php
+$page_title = 'Thank You';
+$page_desc  = 'SEASTAR TECHNOLOGIES LLC is a U.S.-registered authorized reseller of leading consumer technology products including antivirus software, hardware, and accessories, located in Tampa, Florida.';
+include 'includes/header.php';
+?>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<meta name="googlebot" content="noarchive, nosnippet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<div class="thank-you">
+    <div class="wrapper">
+
+    <div class="check-circle">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <h1>Thank You!</h1>
+
+    <p class="desc">
+        Your support request has been received successfully.
+        Our security specialists are reviewing your information
+        and will contact you shortly.
+    </p>
+
+  
+
+    <div class="call-box">
+        <small>📞 Can't wait? Call us now!</small>
+        <div class="phone">(855) 460-3303</div>
+        <a href="tel:(855) 460-3303" class="call-btn">
+            <i class="fa-solid fa-phone"></i>
+            CALL NOW FOR IMMEDIATE SERVICE
+        </a>
+    </div>
+
+</div>
+</div>
 
 <style>
 :root {
@@ -29,21 +46,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * {
     box-sizing: border-box;
 }
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    background: radial-gradient(circle at top, #ffffff 0%, #f1f5f9 70%);
-    display: grid;
-    place-items: center;
-    padding: 32px;
+.thank-you{
+    display: flex;
+    justify-content: center;
+    padding: 18px 10px;
 }
 
 /* MAIN CARD */
 .wrapper {
     width: 100%;
-    max-width: 820px; /* 🔥 BIGGER */
+    max-width: 820px;
     background: #ffffff;
     border-radius: 26px;
     padding: 56px 56px 48px;
@@ -222,90 +234,13 @@ h1 {
     h1 {
         font-size: 30px;
     }
+    .phone{
+        font-size: 21px;
+    }
 }
 </style>
 
-<!-- Google tag (gtag.js) -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16759477570">
-
-</script>
-
-<script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){dataLayer.push(arguments);}
-
-gtag('js', new Date());
-
-
-gtag('config', 'AW-16759477570');
-
-</script>
-
-<!-- Google Tag Manager -->
-
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
-})(window,document,'script','dataLayer','GTM-T2KLTWGM');</script>
-
-<!-- End Google Tag Manager -->
-
-
-</head>
-
-<body>
-    
-    
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJT36XWT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<div class="wrapper">
-
-    <div class="check-circle">
-        <i class="fa-solid fa-check"></i>
-    </div>
-
-    <h1>Thank You!</h1>
-
-    <p class="desc">
-        Your support request has been received successfully.
-        Our security specialists are reviewing your information
-        and will contact you shortly.
-    </p>
-
-    <!--<div class="estimate">-->
-    <!--    <div class="estimate-title">-->
-    <!--        <i class="fa-regular fa-clock"></i>-->
-    <!--        ESTIMATED CONTACT TIME-->
-    <!--    </div>-->
-
-    <!--    <div class="timeline">-->
-    <!--        <span class="active"></span>-->
-    <!--        <span class="active"></span>-->
-    <!--        <span class="active"></span>-->
-    <!--        <span></span>-->
-    <!--        <span></span>-->
-    <!--    </div>-->
-
-    <!--    <div class="estimate-text">-->
-    <!--        One of our agents will reach out within this time-->
-    <!--    </div>-->
-    <!--</div>-->
-
-    <div class="call-box">
-        <small>📞 Can't wait? Call us now!</small>
-        <div class="phone">(855) 460-3303</div>
-        <a href="tel:(855) 460-3303" class="call-btn">
-            <i class="fa-solid fa-phone"></i>
-            CALL NOW FOR IMMEDIATE SERVICE
-        </a>
+<?php
+// Include dynamic footer
+include 'includes/footer.php';
+?>

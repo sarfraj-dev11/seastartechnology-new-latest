@@ -31,3 +31,5 @@ define('ROOT_PATH', __DIR__ . '/..');
 define('SOCIAL_FACEBOOK', '');
 define('SOCIAL_TWITTER',  '');
 define('SOCIAL_LINKEDIN', '');
+define('SOCIAL_PINITEREST', 'https://in.pinterest.com/brocusv/');
+define('SOCIAL_INSTAGRAM', 'https://www.instagram.com/seastartechnologiesfl/?hl=en');

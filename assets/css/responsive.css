@@ -852,3 +852,26 @@ body{
         gap: 10px;
     }
 }
+
+
+
+
+@media (max-width: 768px) {
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .site-header {
+    position: fixed !important;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    background: #fff;
+    transition: top 0.3s ease;
+            height: 79px;
+  }
+}

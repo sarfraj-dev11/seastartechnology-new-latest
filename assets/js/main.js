@@ -297,3 +297,32 @@ function showError(fieldId, message) {
   field.parentNode.appendChild(error);
 }
 
+
+
+
+
+
+
+// Mobile only (<768px)
+if (window.innerWidth < 768) {
+  const header = document.querySelector('.site-header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // scroll down -> move header to top
+    if (currentScroll > lastScroll && currentScroll > 20) {
+      header.style.top = '0px';
+    } 
+    // scroll up -> keep below top-bar
+    else {
+      header.style.top = '50px';
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // smooth animation
+  header.style.transition = 'top 0.3s ease';
+}

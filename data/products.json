@@ -1,8 +1,8 @@
 [
   {
     "id": 2,
-    "slug": "mcafee-total-protection",
-    "title": "McAfee Total Protection",
+        "slug": "mcafee-total-protection",
+        "title": "McAfee Total Protection",
     "brand": "McAfee",
     "category": "Security Software",
     "price": "39.99",

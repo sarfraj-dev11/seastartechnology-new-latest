@@ -115,5 +115,6 @@
 <!-- Scripts -->
 <script src="<?php echo isset($depth) ? $depth : ''; ?>assets/js/main.js"></script>
 <?php if(isset($extra_scripts)) echo $extra_scripts; ?>
+<script src="assets/js/search.js"></script>
 </body>
 </html>

@@ -105,9 +105,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav>
 
     <div class="header-cta">
+  <button class="mobile-search-btn" id="searchToggle" aria-label="Search">
+  <i class="fas fa-search"></i>
+</button>
+
       <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn btn-primary btn-sm">
         <i class="fas fa-phone"></i> Sales Line
       </a>
+
+    
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -117,4 +123,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="nav-overlay" id="nav-overlay"></div>
 
+
+
+<div class="search-modal" id="searchModal">
+
+  <div class="search-box">
+    <i class="fas fa-search"></i>
+
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search products..."
+      autocomplete="off"
+    >
+
+    <button id="searchClose">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="search-quick" id="quickLinks">
+    <h4>Quick Links</h4>
+
+    <a href="product-details.php?slug=mcafee-total-protection">McAfee Total Protection</a>
+    <a href="product-details.php?slug=windows-11-home-pro-usb">Windows 11 USB</a>
+    <a href="product-details.php?slug=samsung-ssd-980">Samsung 980 SSD</a>
+  </div>
+
+  <!-- Results -->
+  <div class="search-results" id="searchResults"></div>
+
+</div>
 <main>

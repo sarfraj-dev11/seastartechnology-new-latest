@@ -12,8 +12,12 @@ $cats     = get_categories();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Dashboard — MCC Admin</title>
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="googlebot" content="noarchive, nosnippet">
+
+  <meta name="robots" content="noindex,nofollow,noarchive,nocache">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nocache">
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nocache">
+    <meta name="adsbot-google" content="noarchive,nocache">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

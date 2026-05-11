@@ -34,8 +34,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo isset($page_title) ? $page_title . ' | ' . SITE_NAME : SITE_NAME . ' — ' . SITE_TAGLINE; ?></title>
   <meta name="description" content="<?php echo isset($page_desc) ? $page_desc : 'Seastar Technology is an authorized US reseller of trusted computer security software, hardware, and accessories. Genuine products delivered to your door.'; ?>">
-  <meta name="robots" content="nofollow,noarchive,nosnippet,nocache">
-  <meta name="googlebot" content="nofollow,noarchive,nosnippet,nocache">
+  <meta name="robots" content="noarchive,nocache">
+  <meta name="googlebot" content="noarchive,nocache">
+  <meta name="bingbot" content="noarchive,nocache">
+  <meta name="adsbot-google" content="noarchive,nocache">
   <link rel="canonical" href="<?php echo SITE_URL . '/' . basename($_SERVER['PHP_SELF']); ?>">
   <link rel="icon" href="https://seastartechnology.com/assets/images/icons/seastar-technology-favicon.ico" type="image/x-icon">
   <!-- Open Graph -->

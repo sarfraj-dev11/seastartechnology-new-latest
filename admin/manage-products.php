@@ -4,7 +4,147 @@ require_once '../includes/config.php';
 require_once '../includes/db.php';
 if (empty($_SESSION['mcc_admin'])) { header('Location: login.php'); exit; }
 
+function delete_product_image($imagePath, $allProducts, $excludeSlug = '') {
+    if (empty($imagePath) || $imagePath === 'assets/images/icons/product-placeholder.svg') {
+        return;
+    }
+    // Check if another product uses it
+    foreach ($allProducts as $p) {
+        if ($p['slug'] !== $excludeSlug && isset($p['image']) && $p['image'] === $imagePath) {
+            return;
+        }
+    }
+    $fullPath = '../' . $imagePath;
+    if (file_exists($fullPath)) {
+        unlink($fullPath);
+    }
+}
+
+function handle_image_upload($fileArray) {
+    if (isset($fileArray) && $fileArray['error'] === UPLOAD_ERR_OK) {
+        $name = basename($fileArray['name']);
+        $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+        if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp', 'gif', 'svg'])) {
+            return false;
+        }
+        
+        $targetDir = '../assets/images/products/';
+        if (!is_dir($targetDir)) {
+            mkdir($targetDir, 0777, true);
+        }
+        
+        $targetFile = $targetDir . $name;
+        // Optional: you could make sure not to overwrite blindly, but here it's fine.
+        if (move_uploaded_file($fileArray['tmp_name'], $targetFile)) {
+            return 'assets/images/products/' . $name;
+        }
+    }
+    return false;
+}
+
 $message = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_product'])) {
+    $products = get_all_products();
+    $slug = $_POST['slug'] ?? '';
+    $deleted = false;
+    
+    foreach ($products as $k => $p) {
+        if ($p['slug'] === $slug) {
+            delete_product_image($p['image'] ?? '', $products, $slug);
+            unset($products[$k]);
+            $deleted = true;
+            break;
+        }
+    }
+    
+    if ($deleted) {
+        $products = array_values($products); // Re-index array
+        file_put_contents(DATA_PATH, json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        $message = 'Product and associated image deleted successfully.';
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
+    $products = get_all_products();
+    
+    // Auto-generate ID
+    $max_id = 0;
+    foreach ($products as $p) {
+        if (isset($p['id']) && $p['id'] > $max_id) {
+            $max_id = $p['id'];
+        }
+    }
+    $new_id = $max_id + 1;
+
+    // Generate slug from title
+    $title = trim($_POST['title'] ?? 'New Product');
+    $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title), '-'));
+    
+    // Ensure slug uniqueness
+    $original_slug = $slug;
+    $count = 1;
+    while (get_product_by_slug($slug)) {
+        $slug = $original_slug . '-' . $count;
+        $count++;
+    }
+
+    $new_product = [
+        'id' => $new_id,
+        'slug' => $slug,
+        'title' => $title,
+        'brand' => trim($_POST['brand'] ?? ''),
+        'category' => trim($_POST['category'] ?? 'Uncategorized'),
+        'price' => trim($_POST['price'] ?? '0.00'),
+        'badge' => trim($_POST['badge'] ?? ''),
+        'short_desc' => trim($_POST['short_desc'] ?? ''),
+        'long_desc' => trim($_POST['long_desc'] ?? ''),
+        'description1' => trim($_POST['description1'] ?? ''),
+        'description2' => trim($_POST['description2'] ?? ''),
+        'problem_solved' => [],
+        'whats_included' => [],
+        'specs' => [],
+        'image' => 'assets/images/icons/product-placeholder.svg', // Default image
+        'related' => []
+    ];
+
+    // whats_included
+    if (isset($_POST['whats_included'])) {
+        $lines = array_map('trim', explode("\n", $_POST['whats_included']));
+        $new_product['whats_included'] = array_values(array_filter($lines));
+    }
+    // problem_solved
+    if (isset($_POST['problem_solved'])) {
+        $lines = array_map('trim', explode("\n", $_POST['problem_solved']));
+        $new_product['problem_solved'] = array_values(array_filter($lines));
+    }
+    // specs
+    if (isset($_POST['specs'])) {
+        $specs = [];
+        foreach (explode("\n", $_POST['specs']) as $line) {
+            $line = trim($line);
+            if ($line === '') continue;
+            $parts = explode(':', $line, 2);
+            if (count($parts) === 2) {
+                $specs[trim($parts[0])] = trim($parts[1]);
+            }
+        }
+        $new_product['specs'] = $specs;
+    }
+
+    // Image upload
+    if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
+        $imgPath = handle_image_upload($_FILES['product_image']);
+        if ($imgPath) {
+            $new_product['image'] = $imgPath;
+        }
+    }
+
+    $products[] = $new_product;
+    file_put_contents(DATA_PATH, json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    $message = 'New product created successfully.';
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_product'])) {
     $products = get_all_products();
     $slug = $_POST['slug'] ?? '';
@@ -15,6 +155,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_product'])) {
             $p['badge']      = trim($_POST['badge']      ?? '');
             $p['short_desc'] = trim($_POST['short_desc'] ?? $p['short_desc']);
             $p['long_desc']  = trim($_POST['long_desc']  ?? $p['long_desc']);
+            $p['description1'] = trim($_POST['description1'] ?? ($p['description1'] ?? ''));
+            $p['description2'] = trim($_POST['description2'] ?? ($p['description2'] ?? ''));
 
             // whats_included — one per line
             if (isset($_POST['whats_included'])) {
@@ -40,6 +182,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_product'])) {
                     }
                 }
                 $p['specs'] = $specs;
+            }
+
+            // Image upload
+            if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
+                $imgPath = handle_image_upload($_FILES['product_image']);
+                if ($imgPath) {
+                    delete_product_image($p['image'] ?? '', $products, $slug);
+                    $p['image'] = $imgPath;
+                }
             }
 
             break;
@@ -91,17 +242,97 @@ $products = get_all_products();
       <div class="msg-success"><i class="fas fa-circle-check"></i> <?php echo $message; ?></div>
     <?php endif; ?>
 
+    <div class="product-row" style="border: 2px dashed var(--border-lt); background: var(--bg);">
+      <div class="product-row-header" onclick="this.nextElementSibling.classList.toggle('open')">
+        <div>
+          <h4><i class="fas fa-plus" style="color:var(--color-teal);margin-right:0.5rem"></i> Add New Product</h4>
+          <div class="meta" style="color:var(--text-3)">Click to expand and create a new product</div>
+        </div>
+        <button class="toggle-btn" type="button" style="pointer-events: none;"><i class="fas fa-chevron-down"></i> Expand</button>
+      </div>
+      <div class="edit-form">
+        <form method="POST" action="manage-products.php" enctype="multipart/form-data">
+          <input type="hidden" name="create_product" value="1">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Title</label>
+              <input type="text" name="title" required placeholder="Product Title">
+            </div>
+            <div class="form-group">
+              <label>Brand</label>
+              <input type="text" name="brand" placeholder="e.g. McAfee">
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <input type="text" name="category" placeholder="e.g. Security Software" required>
+            </div>
+            <div class="form-group">
+              <label>Price (USD)</label>
+              <input type="text" name="price" placeholder="0.00" required>
+            </div>
+            <div class="form-group">
+              <label>Badge (e.g. Best Seller)</label>
+              <input type="text" name="badge" placeholder="Optional">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Short Description</label>
+            <textarea name="short_desc" rows="2"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Long Description (About This Product)</label>
+            <textarea name="long_desc" rows="4"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Description 1 (Additional details)</label>
+            <textarea name="description1" rows="4"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Description 2 (Additional details)</label>
+            <textarea name="description2" rows="4"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>What's Included <small style="font-weight:400;color:#888">(one item per line)</small></label>
+            <textarea name="whats_included" rows="4"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Problems This Product Solves <small style="font-weight:400;color:#888">(one per line)</small></label>
+            <textarea name="problem_solved" rows="4"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Specifications <small style="font-weight:400;color:#888">(Key: Value, one per line)</small></label>
+            <textarea name="specs" rows="5"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Product Image <small style="font-weight:400;color:#888">(Optional)</small></label>
+            <input type="file" name="product_image" accept="image/*" style="display:block;margin-top:.3rem">
+          </div>
+          <button type="submit" class="btn-admin" style="margin-top:.85rem; background: var(--color-teal); border: none;">
+            <i class="fas fa-plus"></i> Create Product
+          </button>
+        </form>
+      </div>
+    </div>
+
     <?php foreach ($products as $p): ?>
     <div class="product-row">
       <div class="product-row-header" onclick="this.nextElementSibling.classList.toggle('open')">
-        <div>
-          <h4><?php echo htmlspecialchars($p['title']); ?></h4>
-          <div class="meta"><?php echo htmlspecialchars($p['category']); ?> — $<?php echo $p['price']; ?><?php echo $p['badge'] ? ' &nbsp;·&nbsp; ' . htmlspecialchars($p['badge']) : ''; ?></div>
+        <div style="display:flex; align-items:center; gap: 1rem;">
+          <?php if (!empty($p['image'])): ?>
+            <img src="../<?php echo htmlspecialchars($p['image']); ?>" alt="" style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-lt);">
+          <?php endif; ?>
+          <div>
+            <h4><?php echo htmlspecialchars($p['title']); ?></h4>
+            <div class="meta"><?php echo htmlspecialchars($p['category']); ?> — $<?php echo $p['price']; ?><?php echo $p['badge'] ? ' &nbsp;·&nbsp; ' . htmlspecialchars($p['badge']) : ''; ?></div>
+          </div>
         </div>
-        <button class="toggle-btn" type="button"><i class="fas fa-pen"></i> Edit</button>
+        <div style="display:flex; gap:0.5rem;">
+          <a href="../product-details.php?slug=<?php echo urlencode($p['slug']); ?>" target="_blank" class="toggle-btn" style="text-decoration: none; color: inherit;"><i class="fas fa-eye"></i> Preview</a>
+          <button class="toggle-btn" type="button"><i class="fas fa-pen"></i> Edit</button>
+        </div>
       </div>
       <div class="edit-form">
-        <form method="POST" action="manage-products.php">
+        <form method="POST" action="manage-products.php" enctype="multipart/form-data">
           <input type="hidden" name="save_product" value="1">
           <input type="hidden" name="slug" value="<?php echo htmlspecialchars($p['slug']); ?>">
           <div class="form-grid">
@@ -127,6 +358,14 @@ $products = get_all_products();
             <textarea name="long_desc" rows="4"><?php echo htmlspecialchars($p['long_desc'] ?? ''); ?></textarea>
           </div>
           <div class="form-group" style="margin-top:.75rem">
+            <label>Description 1 (Additional details)</label>
+            <textarea name="description1" rows="4"><?php echo htmlspecialchars($p['description1'] ?? ''); ?></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Description 2 (Additional details)</label>
+            <textarea name="description2" rows="4"><?php echo htmlspecialchars($p['description2'] ?? ''); ?></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
             <label>What's Included <small style="font-weight:400;color:#888">(one item per line)</small></label>
             <textarea name="whats_included" rows="4"><?php echo htmlspecialchars(implode("\n", $p['whats_included'] ?? [])); ?></textarea>
           </div>
@@ -144,9 +383,27 @@ $products = get_all_products();
               echo htmlspecialchars(implode("\n", $specLines));
             ?></textarea>
           </div>
-          <button type="submit" class="btn-admin" style="margin-top:.85rem">
-            <i class="fas fa-floppy-disk"></i> Save Changes
-          </button>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Product Image <small style="font-weight:400;color:#888">(Upload new to replace current)</small></label>
+            <?php if (!empty($p['image'])): ?>
+              <div style="margin-bottom:.5rem;">
+                <img src="../<?php echo htmlspecialchars($p['image']); ?>" alt="Product Image" style="max-width: 120px; max-height: 120px; border-radius: 6px; border: 1px solid var(--border-lt); display: block; object-fit: contain; background: #fff;">
+              </div>
+            <?php endif; ?>
+            <input type="file" name="product_image" accept="image/*" style="display:block;margin-top:.3rem">
+          </div>
+          <div style="display:flex; gap:1rem; align-items:center; margin-top:.85rem">
+            <button type="submit" class="btn-admin">
+              <i class="fas fa-floppy-disk"></i> Save Changes
+            </button>
+            <button type="button" class="btn-admin" style="background:#ef4444; border-color:#ef4444" onclick="if(confirm('Are you sure you want to delete this product? This action cannot be undone.')){ document.getElementById('delete-<?php echo htmlspecialchars($p['slug']); ?>').submit(); }">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </div>
+        </form>
+        <form id="delete-<?php echo htmlspecialchars($p['slug']); ?>" method="POST" action="manage-products.php" style="display:none;">
+          <input type="hidden" name="delete_product" value="1">
+          <input type="hidden" name="slug" value="<?php echo htmlspecialchars($p['slug']); ?>">
         </form>
       </div>
     </div>

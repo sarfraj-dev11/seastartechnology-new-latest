@@ -10,17 +10,47 @@ include 'includes/header.php';
 ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJT36XWT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- ═══════════════════════════════════════════════
      HERO SECTION
 ═══════════════════════════════════════════════ -->
 <section class="hero" id="hero">
-  <div class="hero-bg-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
+  <!-- Hero Slider Background -->
+  <div class="hero-slider" id="heroSlider">
+
+
+    <div class="hero-slide active">
+      <picture>
+        <!-- MOBILE IMAGE: 767px wide or less -->
+        <source media="(max-width: 767px)" srcset="https://seastartechnology.com/assets/images/icons/trusted-computer3.webp">
+        <!-- DESKTOP IMAGE: Default -->
+        <img src="https://seastartechnology.com/assets/images/icons/trusted-computer3.webp" alt="Cyber Security Slide 2" onerror="this.src='https://seastartechnology.com/assets/images/icons/trusted-computer3.webp'">
+      </picture>
+    </div>
+    <div class="hero-slide ">
+      <picture>
+        <!-- MOBILE IMAGE: 767px wide or less -->
+        <source media="(max-width: 767px)" srcset="https://seastartechnology.com/assets/images/icons/trusted-computer2.jpg">
+        <!-- DESKTOP IMAGE: Default -->
+        <img src="https://seastartechnology.com/assets/images/icons/trusted-computer2.jpg" alt="Cyber Security Slide 1" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80'">
+      </picture>
+    </div>
+
+    <div class="hero-slide">
+      <picture>
+        <!-- MOBILE IMAGE: 767px wide or less -->
+        <source media="(max-width: 767px)" srcset="https://seastartechnology.com/assets/images/icons/trusted-computer4.webp">
+        <!-- DESKTOP IMAGE: Default -->
+        <img src="https://seastartechnology.com/assets/images/icons/trusted-computer4.webp" alt="Cyber Security Slide 3" onerror="this.src='https://images.unsplash.com/photo-1614064641913-6b7140414c71?auto=format&fit=crop&w=1920&q=80'">
+      </picture>
+    </div>
+    <div class="hero-slider-overlay"></div>
+    <button class="slider-btn prev" id="sliderPrev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-btn next" id="sliderNext" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+    <!-- <div class="slider-dots" id="sliderDots"></div> -->
   </div>
+
   <div class="container hero-inner">
     <div class="hero-content">
       <div class="hero-badge">
@@ -38,10 +68,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="products.php" class="btn btn-primary btn-lg">
           <i class="fas fa-th-large"></i> Shop All Products
         </a>
-        <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn btn-primary btn-lg">
-          <i class="fas fa-phone"></i> Talk to a Sales Specialist: <?php echo SITE_PHONE; ?>
-        </a>
       </div>
+
+
+
       <div class="hero-trust-badges">
         <span><i class="fas fa-lock"></i> Secure Checkout</span>
         <span><i class="fas fa-rotate-left"></i> 30-Day Returns</span>
@@ -57,28 +87,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ssl-note"><i class="fas fa-lock"></i> SSL Encrypted</span>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card-stack">
-        <div class="hero-card hc-1">
-          <i class="fas fa-shield-halved"></i>
-          <span>Antivirus Protection</span>
-        </div>
-        <div class="hero-card hc-2">
-          <i class="fas fa-hard-drive"></i>
-          <span>Storage Upgrades</span>
-        </div>
-        <div class="hero-card hc-3">
-          <i class="fas fa-wifi"></i>
-          <span>Networking</span>
-        </div>
-        <div class="hero-card hc-4">
-          <i class="fas fa-desktop"></i>
-          <span>Computers &amp; Printers</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     FEATURES STRIP
+═══════════════════════════════════════════════ -->
+<!-- <section class="features-strip">
+  <div class="container features-strip-inner">
+    <div class="fs-item">
+      <div class="fs-icon"><i class="fas fa-shield-halved"></i></div>
+      <div class="fs-text">Antivirus Protection</div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-icon"><i class="fas fa-hard-drive"></i></div>
+      <div class="fs-text">Storage Upgrades</div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-icon"><i class="fas fa-wifi"></i></div>
+      <div class="fs-text">Networking</div>
+    </div>
+    <div class="fs-item">
+      <div class="fs-icon"><i class="fas fa-desktop"></i></div>
+      <div class="fs-text">Computers &amp; Printers</div>
+    </div>
+  </div>
+</section> -->
 
 
 
@@ -102,6 +136,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wwa-item"><i class="fas fa-location-dot"></i> Tampa, FL</div>
     <span class="wwa-divider" aria-hidden="true">·</span>
     <div class="wwa-item"><i class="fas fa-box-open"></i> Security software, storage, networking &amp; accessories</div>
+    <!-- <span class="wwa-divider" aria-hidden="true">·</span>
+    <div class="wwa-item"><i class="fa-brands fa-servicestack"></i> Antivirus Protection
+      , Storage Upgrades
+      , Networking
+      &amp; Computers & Printers
+    </div> -->
   </div>
 </div>
 
@@ -118,30 +158,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="products-grid">
       <?php foreach ($featured as $p): ?>
-      <div class="product-card" data-category="<?php echo htmlspecialchars($p['category']); ?>">
-        <?php if (!empty($p['badge'])): ?>
-          <div class="product-badge"><?php echo htmlspecialchars($p['badge']); ?></div>
-        <?php endif; ?>
-        <div class="product-img-wrap">
-          <img src="<?php echo htmlspecialchars($p['image']); ?>"
-               alt="<?php echo htmlspecialchars($p['title']); ?>"
-               onerror="this.src='assets/images/icons/product-placeholder.svg'"
-               loading="lazy">
-        </div>
-        <div class="product-card-body">
-          <div class="product-brand"><?php echo htmlspecialchars($p['brand']); ?></div>
-          <h3 class="product-name"><?php echo htmlspecialchars($p['title']); ?></h3>
-          <p class="product-short-desc"><?php echo htmlspecialchars($p['short_desc']); ?></p>
-          <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC. Not affiliated with <?php echo htmlspecialchars($p['brand']); ?>.</p>
-        </div>
-        <div class="product-card-footer">
-          <div>
-            <div class="product-price">$<?php echo htmlspecialchars($p['price']); ?></div>
-            <small class="product-stock-status"><i class="fas fa-circle-check" style="color:#22c55e;font-size:0.7rem;"></i> In Stock &middot; Ships 1–2 days</small>
+        <div class="product-card" data-category="<?php echo htmlspecialchars($p['category']); ?>">
+          <?php if (!empty($p['badge'])): ?>
+            <div class="product-badge"><?php echo htmlspecialchars($p['badge']); ?></div>
+          <?php endif; ?>
+          <div class="product-img-wrap">
+            <img src="<?php echo htmlspecialchars($p['image']); ?>"
+              alt="<?php echo htmlspecialchars($p['title']); ?>"
+              onerror="this.src='assets/images/icons/product-placeholder.svg'"
+              loading="lazy">
           </div>
-          <a href="product-details.php?slug=<?php echo urlencode($p['slug']); ?>" class="btn btn-primary btn-sm">View Details</a>
+          <div class="product-card-body">
+            <div class="product-brand"><?php echo htmlspecialchars($p['brand']); ?></div>
+            <h3 class="product-name"><?php echo htmlspecialchars($p['title']); ?></h3>
+            <p class="product-short-desc"><?php echo htmlspecialchars($p['short_desc']); ?></p>
+            <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC. Not affiliated with <?php echo htmlspecialchars($p['brand']); ?>.</p>
+          </div>
+          <div class="product-card-footer">
+            <div>
+              <div class="product-price">$<?php echo htmlspecialchars($p['price']); ?></div>
+              <small class="product-stock-status"><i class="fas fa-circle-check" style="color:#22c55e;font-size:0.7rem;"></i> In Stock &middot; Ships 1–2 days</small>
+            </div>
+            <a href="product-details.php?slug=<?php echo urlencode($p['slug']); ?>" class="btn btn-primary btn-sm">View Details</a>
+          </div>
         </div>
-      </div>
       <?php endforeach; ?>
     </div>
 
@@ -218,11 +258,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="trust-logos-ticker">
       <div class="trust-logos-track">
         <?php
-        $brands = ['McAfee','Bitdefender','Malwarebytes','Western Digital','Seagate','TP-Link','Logitech','Microsoft','iolo','Crucial','Canon','Epson'];
-        foreach($brands as $b): ?>
+        $brands = ['McAfee', 'Bitdefender', 'Malwarebytes', 'Western Digital', 'Seagate', 'TP-Link', 'Logitech', 'Microsoft', 'iolo', 'Crucial', 'Canon', 'Epson'];
+        foreach ($brands as $b): ?>
           <div class="trust-logo-item"><span><?php echo $b; ?></span></div>
         <?php endforeach; ?>
-        <?php foreach($brands as $b): ?>
+        <?php foreach ($brands as $b): ?>
           <div class="trust-logo-item"><span><?php echo $b; ?></span></div>
         <?php endforeach; ?>
       </div>

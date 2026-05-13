@@ -72,6 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </a>
     <a href="mailto:<?php echo SITE_SUPPORT_EMAIL; ?>" class="top-bar-email">
   <i class="fas fa-envelope"></i> 
+  After Sale:
   <?php echo SITE_SUPPORT_EMAIL; ?>
 </a>
   </div>

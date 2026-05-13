@@ -133,6 +133,71 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // ── Hero Background Slider ──────────────────────────────
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    const slideInterval = 3000;
+    let slideTimer;
+
+    const dotsContainer = document.getElementById('sliderDots');
+    const nextBtn = document.getElementById('sliderNext');
+    const prevBtn = document.getElementById('sliderPrev');
+
+    // Create dots
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('slider-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        resetTimer();
+      });
+      if (dotsContainer) dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides[currentSlide].classList.add('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function resetTimer() {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, slideInterval);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetTimer();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetTimer();
+      });
+    }
+
+    slideTimer = setInterval(nextSlide, slideInterval);
+  }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -314,10 +379,10 @@ if (window.innerWidth < 768) {
     // scroll down -> move header to top
     if (currentScroll > lastScroll && currentScroll > 20) {
       header.style.top = '0px';
-    } 
+    }
     // scroll up -> keep below top-bar
     else {
-      header.style.top = '50px';
+      header.style.top = '30px';
     }
 
     lastScroll = currentScroll;

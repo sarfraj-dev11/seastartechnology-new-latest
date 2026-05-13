@@ -89,6 +89,25 @@
     </div>
   </div>
 
+  <!-- Payment & Trust Badges -->
+  <div class="footer-trust-row">
+    <div class="container footer-trust-inner">
+      <div class="footer-payment-logos">
+        <span>Accepted:</span>
+        <i class="fab fa-cc-visa" title="Visa"></i>
+        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fab fa-cc-amex" title="American Express"></i>
+        <i class="fab fa-cc-paypal" title="PayPal"></i>
+      </div>
+      <div class="footer-trust-badge">
+        <i class="fas fa-lock"></i> SSL Secure Checkout
+      </div>
+      <div class="footer-trust-badge">
+        <i class="fas fa-certificate"></i> Authorized Reseller
+      </div>
+    </div>
+  </div>
+
   <!-- Disclaimer -->
   <div class="footer-disclaimer">
     <div class="container">

@@ -112,7 +112,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>One-time license activation guidance is included with eligible software purchases to confirm your license is registered correctly.</p>
         </div>
       </div>
-      <p class="product-reseller-note" style="font-size:0.8rem;color:#666;margin-top:1rem;">Sold by SEASTAR TECHNOLOGIES LLC. Not affiliated with <?php echo htmlspecialchars($p['brand']); ?>.</p>
+      <?php if($p['slug'] === 'windows-11-home-pro-usb'): ?>
+      <p class="pd-physical-note" style="font-size:.82rem;color:#444;margin-top:.75rem;padding:.55rem .75rem;background:#f4fdf6;border-left:3px solid #22c55e;border-radius:3px;line-height:1.55;">
+        <i class="fas fa-box-open" style="color:#22c55e;margin-right:.3rem;"></i>
+        This is a sealed physical USB shipped from our US warehouse. We do not provide pirated or unauthorized license keys.
+      </p>
+      <?php endif; ?>
+      <p class="product-reseller-note" style="font-size:0.8rem;color:#666;margin-top:.6rem;">Sold by SEASTAR TECHNOLOGIES LLC, an independent authorized reseller. Not affiliated with or endorsed by <?php echo htmlspecialchars($p['brand']); ?>.</p>
     </div>
   </div>
 </section>

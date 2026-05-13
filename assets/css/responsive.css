@@ -1102,7 +1102,7 @@ body {
 }
 
 .top-bar-email {
-    display: none;
+    display: block;
 }
 
 /* Header Fixed Below Top Bar */
@@ -1133,7 +1133,7 @@ body {
     }
 
     .site-header {
-        top: 50px;
+        top: 30px;
         /* mobile top-bar height */
     }
 
@@ -1142,7 +1142,7 @@ body {
     }
 
     .top-bar-email {
-        display: block;
+        display: none;
 
     }
 
@@ -1320,8 +1320,9 @@ body {
     border: none;
     cursor: pointer;
 }
-.mobile-search-btn .fa-search{
-        font-size: 20px;
+
+.mobile-search-btn .fa-search {
+    font-size: 20px;
     color: #000d18;
 }
 
@@ -1333,5 +1334,56 @@ body {
 
     .search-modal {
         padding: 20px;
+    }
+}
+
+/* ── New Trust Elements — Mobile ≤ 768px ── */
+@media (max-width: 768px) {
+    .hero-payment-logos {
+        gap: .45rem;
+    }
+
+    .hero-payment-logos i.fab {
+        font-size: 1.25rem;
+    }
+
+    .who-we-are-inner {
+        gap: .3rem .9rem;
+        justify-content: flex-start;
+    }
+
+    .wwa-divider {
+        display: none;
+    }
+
+    .footer-trust-inner {
+        gap: .5rem 1rem;
+    }
+
+    .footer-trust-badge {
+        font-size: .7rem;
+        padding: .22rem .5rem;
+    }
+
+    .footer-payment-logos i.fab {
+        font-size: 1.3rem;
+    }
+
+    .usp-payment-logos i {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .who-we-are-strip {
+        padding: .5rem 0;
+    }
+
+    .wwa-item {
+        font-size: .72rem;
+    }
+
+    .footer-trust-row {
+        padding: .6rem 0;
     }
 }

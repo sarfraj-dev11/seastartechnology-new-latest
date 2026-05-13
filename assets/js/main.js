@@ -153,19 +153,19 @@ document.addEventListener('DOMContentLoaded', function () {
         goToSlide(index);
         resetTimer();
       });
-      if(dotsContainer) dotsContainer.appendChild(dot);
+      if (dotsContainer) dotsContainer.appendChild(dot);
     });
 
     const dots = document.querySelectorAll('.slider-dot');
 
     function goToSlide(index) {
       slides[currentSlide].classList.remove('active');
-      if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
-      
+      if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+
       currentSlide = (index + slides.length) % slides.length;
-      
+
       slides[currentSlide].classList.add('active');
-      if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+      if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     }
 
     function nextSlide() {
@@ -379,10 +379,10 @@ if (window.innerWidth < 768) {
     // scroll down -> move header to top
     if (currentScroll > lastScroll && currentScroll > 20) {
       header.style.top = '0px';
-    } 
+    }
     // scroll up -> keep below top-bar
     else {
-      header.style.top = '50px';
+      header.style.top = '30px';
     }
 
     lastScroll = currentScroll;

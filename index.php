@@ -40,7 +40,7 @@ include 'includes/header.php';
     <div class="hero-slide">
       <picture>
         <!-- MOBILE IMAGE: 767px wide or less -->
-        <source media="(max-width: 767px)" srcset="assets/images/banners/mobile-slide-3.webp">
+        <source media="(max-width: 767px)" srcset="https://seastartechnology.com/assets/images/icons/trusted-computer4.webp">
         <!-- DESKTOP IMAGE: Default -->
         <img src="https://seastartechnology.com/assets/images/icons/trusted-computer4.webp" alt="Cyber Security Slide 3" onerror="this.src='https://images.unsplash.com/photo-1614064641913-6b7140414c71?auto=format&fit=crop&w=1920&q=80'">
       </picture>
@@ -48,7 +48,7 @@ include 'includes/header.php';
     <div class="hero-slider-overlay"></div>
     <button class="slider-btn prev" id="sliderPrev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
     <button class="slider-btn next" id="sliderNext" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
-    <div class="slider-dots" id="sliderDots"></div>
+    <!-- <div class="slider-dots" id="sliderDots"></div> -->
   </div>
 
   <div class="container hero-inner">
@@ -78,6 +78,14 @@ include 'includes/header.php';
         <span><i class="fas fa-truck-fast"></i> Fast Shipping</span>
         <span><i class="fas fa-headset"></i> Activation Guidance Included</span>
       </div>
+      <div class="hero-payment-logos">
+        <span class="pay-label">Accepted:</span>
+        <i class="fab fa-cc-visa" title="Visa"></i>
+        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fab fa-cc-amex" title="American Express"></i>
+        <i class="fab fa-cc-paypal" title="PayPal"></i>
+        <span class="ssl-note"><i class="fas fa-lock"></i> SSL Encrypted</span>
+      </div>
     </div>
   </div>
 </section>
@@ -85,7 +93,7 @@ include 'includes/header.php';
 <!-- ═══════════════════════════════════════════════
      FEATURES STRIP
 ═══════════════════════════════════════════════ -->
-<section class="features-strip">
+<!-- <section class="features-strip">
   <div class="container features-strip-inner">
     <div class="fs-item">
       <div class="fs-icon"><i class="fas fa-shield-halved"></i></div>
@@ -104,7 +112,7 @@ include 'includes/header.php';
       <div class="fs-text">Computers &amp; Printers</div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 
@@ -119,6 +127,23 @@ include 'includes/header.php';
 
 
 
+
+<!-- ── Who We Are Strip ── -->
+<div class="who-we-are-strip">
+  <div class="container who-we-are-inner">
+    <div class="wwa-item"><i class="fas fa-building"></i> <strong>US‑based LLC</strong> &nbsp;D‑U‑N‑S #13‑996‑7974</div>
+    <span class="wwa-divider" aria-hidden="true">·</span>
+    <div class="wwa-item"><i class="fas fa-location-dot"></i> Tampa, FL</div>
+    <span class="wwa-divider" aria-hidden="true">·</span>
+    <div class="wwa-item"><i class="fas fa-box-open"></i> Security software, storage, networking &amp; accessories</div>
+    <!-- <span class="wwa-divider" aria-hidden="true">·</span>
+    <div class="wwa-item"><i class="fa-brands fa-servicestack"></i> Antivirus Protection
+      , Storage Upgrades
+      , Networking
+      &amp; Computers & Printers
+    </div> -->
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════
      FEATURED PRODUCTS
@@ -206,11 +231,19 @@ include 'includes/header.php';
         <div class="usp-icon"><i class="fas fa-lock"></i></div>
         <h3>Secure Transactions</h3>
         <p>SSL-encrypted checkout. Your payment and personal information are protected at every step.</p>
+        <div class="usp-payment-logos">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-amex" title="American Express"></i>
+          <i class="fab fa-cc-paypal" title="PayPal"></i>
+        </div>
+        <p class="usp-ssl-note"><i class="fas fa-shield-halved"></i> Payments processed with SSL encryption</p>
       </div>
       <div class="usp-card">
         <div class="usp-icon"><i class="fas fa-star"></i></div>
-        <h3>US-Based & Registered</h3>
+        <h3>US-Based &amp; Registered</h3>
         <p>Serving customers across the United States with genuine products and excellent service.</p>
+        <p class="usp-duns"><i class="fas fa-building" style="font-size:.68rem;color:var(--accent);"></i> US‑based LLC &nbsp;·&nbsp; D‑U‑N‑S #13‑996‑7974 &nbsp;·&nbsp; Tampa, FL</p>
       </div>
     </div>
   </div>

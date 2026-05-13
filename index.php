@@ -48,6 +48,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span><i class="fas fa-truck-fast"></i> Fast Shipping</span>
         <span><i class="fas fa-headset"></i> Activation Guidance Included</span>
       </div>
+      <div class="hero-payment-logos">
+        <span class="pay-label">Accepted:</span>
+        <i class="fab fa-cc-visa" title="Visa"></i>
+        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fab fa-cc-amex" title="American Express"></i>
+        <i class="fab fa-cc-paypal" title="PayPal"></i>
+        <span class="ssl-note"><i class="fas fa-lock"></i> SSL Encrypted</span>
+      </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card-stack">
@@ -85,6 +93,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+
+<!-- ── Who We Are Strip ── -->
+<div class="who-we-are-strip">
+  <div class="container who-we-are-inner">
+    <div class="wwa-item"><i class="fas fa-building"></i> <strong>US‑based LLC</strong> &nbsp;D‑U‑N‑S #13‑996‑7974</div>
+    <span class="wwa-divider" aria-hidden="true">·</span>
+    <div class="wwa-item"><i class="fas fa-location-dot"></i> Tampa, FL</div>
+    <span class="wwa-divider" aria-hidden="true">·</span>
+    <div class="wwa-item"><i class="fas fa-box-open"></i> Security software, storage, networking &amp; accessories</div>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════
      FEATURED PRODUCTS
@@ -172,11 +191,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="usp-icon"><i class="fas fa-lock"></i></div>
         <h3>Secure Transactions</h3>
         <p>SSL-encrypted checkout. Your payment and personal information are protected at every step.</p>
+        <div class="usp-payment-logos">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-amex" title="American Express"></i>
+          <i class="fab fa-cc-paypal" title="PayPal"></i>
+        </div>
+        <p class="usp-ssl-note"><i class="fas fa-shield-halved"></i> Payments processed with SSL encryption</p>
       </div>
       <div class="usp-card">
         <div class="usp-icon"><i class="fas fa-star"></i></div>
-        <h3>US-Based & Registered</h3>
+        <h3>US-Based &amp; Registered</h3>
         <p>Serving customers across the United States with genuine products and excellent service.</p>
+        <p class="usp-duns"><i class="fas fa-building" style="font-size:.68rem;color:var(--accent);"></i> US‑based LLC &nbsp;·&nbsp; D‑U‑N‑S #13‑996‑7974 &nbsp;·&nbsp; Tampa, FL</p>
       </div>
     </div>
   </div>

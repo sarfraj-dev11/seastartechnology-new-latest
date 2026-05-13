@@ -454,3 +454,40 @@
   border: 0;
 }
 
+
+/* ── Footer Trust Row ── */
+.footer-trust-row {
+  border-top: 1px solid var(--border);
+  padding: .8rem 0;
+  background: var(--bg-sec);
+}
+.footer-trust-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.8rem;
+  align-items: center;
+  justify-content: center;
+}
+.footer-payment-logos {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+.footer-payment-logos span {
+  font-size: .73rem;
+  color: var(--text-3);
+  margin-right: .2rem;
+}
+.footer-payment-logos i.fab { font-size: 1.45rem; color: var(--text-2); }
+.footer-trust-badge {
+  font-size: .73rem;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: .28rem;
+  padding: .28rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.footer-trust-badge i { color: var(--accent); font-size: .7rem; }

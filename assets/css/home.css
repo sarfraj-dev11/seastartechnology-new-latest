@@ -356,3 +356,79 @@
   flex-wrap: wrap;
   flex-shrink: 0;
 }
+
+/* ── Who We Are Strip ── */
+.who-we-are-strip {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+  padding: .6rem 0;
+}
+.who-we-are-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.4rem;
+  align-items: center;
+  justify-content: center;
+}
+.wwa-item {
+  font-size: .76rem;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: .32rem;
+}
+.wwa-item i { color: var(--accent); font-size: .7rem; }
+.wwa-item strong { color: var(--text); font-weight: 600; }
+.wwa-divider { color: var(--border); font-size: .9rem; }
+
+/* ── USP Payment Logos ── */
+.usp-payment-logos {
+  display: flex;
+  gap: .55rem;
+  align-items: center;
+  margin-top: .65rem;
+  flex-wrap: wrap;
+}
+.usp-payment-logos i { font-size: 1.55rem; color: var(--text-2); }
+.usp-ssl-note {
+  font-size: .74rem !important;
+  color: var(--text-3) !important;
+  margin-top: .35rem !important;
+  display: flex;
+  align-items: center;
+  gap: .28rem;
+}
+.usp-ssl-note i { color: var(--accent); font-size: .7rem; }
+
+/* ── USP DUNS note ── */
+.usp-duns {
+  font-size: .74rem !important;
+  color: var(--text-3) !important;
+  margin-top: .4rem !important;
+  line-height: 1.55 !important;
+}
+
+/* ── Hero Payment Logos ── */
+.hero-payment-logos {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: .8rem;
+  padding-top: .75rem;
+  border-top: 1px solid rgba(253,255,252,.1);
+}
+.hero-payment-logos .pay-label {
+  font-size: .72rem;
+  color: rgba(253,255,252,.5);
+}
+.hero-payment-logos i.fab { font-size: 1.45rem; color: rgba(253,255,252,.65); }
+.hero-payment-logos .ssl-note {
+  font-size: .71rem;
+  color: rgba(253,255,252,.5);
+  display: flex;
+  align-items: center;
+  gap: .22rem;
+  margin-left: .2rem;
+}
+.hero-payment-logos .ssl-note i { font-size: .68rem; color: var(--color-teal); }

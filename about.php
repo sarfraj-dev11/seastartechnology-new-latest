@@ -6,7 +6,7 @@ include 'includes/header.php';
 ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJT36XWT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <section class="page-hero">
   <div class="container">
@@ -19,7 +19,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- Section 1: Who We Are -->
-<section class="section">
+<section class="section paddingTop">
   <div class="container about-grid">
     <div class="about-content">
       <div class="section-badge">Our Story</div>
@@ -29,7 +29,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>We are a retailer of consumer technology products. We do not provide standalone technical support services. License activation guidance is included with eligible software purchases to confirm your license is registered correctly.</p>
       <p>We believe in transparent pricing, honest service, and delivering genuine products to customers across the United States.</p>
       <div class="about-stats">
-        
+
         <div class="stat-item">
           <span class="stat-num">25+</span>
           <span class="stat-label">Product Lines</span>

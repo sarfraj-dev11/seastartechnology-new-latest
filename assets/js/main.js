@@ -198,6 +198,17 @@ document.addEventListener('DOMContentLoaded', function () {
     slideTimer = setInterval(nextSlide, slideInterval);
   }
 
+  // ── About Card Ticker Clone (Mobile Only) ──────────
+  const aboutGrid = document.querySelector('.about-card-grid');
+  if (aboutGrid) {
+    const cards = aboutGrid.querySelectorAll('.about-icon-card');
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.classList.add('ticker-clone');
+      aboutGrid.appendChild(clone);
+    });
+  }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -91,6 +91,8 @@
 
 .about-icon-card span { font-size: .84rem; font-weight: 600; color: var(--text) }
 
+.about-icon-card.ticker-clone { display: none; }
+
 /* ── Contact Page ── */
 .contact-grid {
   display: grid;

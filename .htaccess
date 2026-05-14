@@ -15,7 +15,7 @@ Options -Indexes
 </IfModule>
 
 # Protect sensitive directories
-<FilesMatch "\.(json|log|env|sql|bak|ini)$">
+<FilesMatch "\.(log|env|sql|bak|ini)$">
     Order Deny,Allow
     Deny from all
 </FilesMatch>
@@ -34,8 +34,7 @@ Options -Indexes
 # Protect includes & data
 RewriteEngine On
 RewriteRule ^includes/ - [F,L]
-RewriteRule ^data/ - [F,L]
-
+RewriteRule ^data/(?!products\.json$).* - [F,L]
 # Protect admin (optional: IP whitelist)
 # <Directory "/admin">
 #     Order Deny,Allow

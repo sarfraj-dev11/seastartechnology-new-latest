@@ -65,14 +65,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1 class="pd-title"><?php echo htmlspecialchars($p['title']); ?></h1>
       <p class="pd-category"><i class="fas fa-tag"></i> <?php echo htmlspecialchars($p['category']); ?></p>
       <div class="pd-price">$<?php echo htmlspecialchars($p['price']); ?></div>
-      <p style="font-size:0.85rem;color:#22c55e;margin-bottom:0.5rem;"><i class="fas fa-circle-check"></i> In Stock &middot; Ships within 1–2 business days from US warehouse</p>
+      <p style="font-size:0.85rem;color:#22c55e;margin-bottom:0.5rem;"><i class="fas fa-circle-check"></i> In Stock &middot; Digital license emailed within 24 hours for instant use; physical media, if ordered, ships from our US warehouse in 1–2 business days.</p>
       <p class="pd-short-desc"><?php echo htmlspecialchars($p['short_desc']); ?></p>
-      <p class="product-pricing">(* Pricing may vary - specify your edition when placing your order.)</p>
+      <p class="product-pricing">(* Other editions available on request; pricing may differ.)</p>
 
       <div class="pd-cta-group">
         <a href="mailto:<?php echo SITE_EMAIL; ?>?subject=Purchase%20Order%20%E2%80%93%20<?php echo rawurlencode($p['title']); ?>%20(%24<?php echo rawurlencode($p['price']); ?>)&body=Hi%20Seastar%20Technology%20Team%2C%0A%0AI%20would%20like%20to%20purchase%3A%0AProduct%3A%20<?php echo rawurlencode($p['title']); ?>%0APrice%3A%20%24<?php echo rawurlencode($p['price']); ?>%0A%0APlease%20send%20me%20a%20secure%20payment%20invoice.%0A%0AName%3A%0APhone%3A%0AShipping%20Address%20(if%20physical)%3A%0A%0AThank%20you."
            class="btn btn-primary btn-lg pd-cta">
-          <i class="fas fa-cart-shopping"></i> Order Now — Invoice by Email
+          <i class="fas fa-cart-shopping"></i> Order Now — Request Secure Invoice
         </a>
         <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn btn-outline btn-lg">
           <i class="fas fa-phone"></i> Call Sales: <?php echo SITE_PHONE; ?>
@@ -233,6 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="product-brand"><?php echo htmlspecialchars($rp['brand']); ?></div>
           <h3 class="product-name"><?php echo htmlspecialchars($rp['title']); ?></h3>
           <p class="product-short-desc"><?php echo htmlspecialchars($rp['short_desc']); ?></p>
+          <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC, an independent authorized reseller. Not affiliated with or endorsed by <?php echo htmlspecialchars($rp['brand']); ?>.</p>
         </div>
         <div class="product-card-footer">
           <div class="product-price">$<?php echo htmlspecialchars($rp['price']); ?></div>

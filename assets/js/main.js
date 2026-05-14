@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const slides = document.querySelectorAll('.hero-slide');
   if (slides.length > 0) {
     let currentSlide = 0;
-    const slideInterval = 3000;
+    const slideInterval = 7000;
     let slideTimer;
 
     const dotsContainer = document.getElementById('sliderDots');

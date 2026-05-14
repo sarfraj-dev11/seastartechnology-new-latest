@@ -209,9 +209,52 @@
         grid-template-columns: 1fr
     }
 
-    /* About */
+    /* About - Inner Border Grid for Mobile */
     .about-card-grid {
-        grid-template-columns: 1fr 1fr
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
+    .about-icon-card {
+        padding: 1.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--border-lt);
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+        transition: none;
+    }
+    .about-icon-card:nth-child(odd) {
+        border-right: 1px solid var(--border-lt);
+    }
+    .about-icon-card:nth-last-child(1),
+    .about-icon-card:nth-last-child(2) {
+        border-bottom: none;
+    }
+    .about-icon-card i {
+        margin-bottom: 0;
+        font-size: 1.6rem;
+        color: var(--accent);
+        width: auto;
+        height: auto;
+        background: transparent;
+        display: block;
+    }
+    .about-icon-card span {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text);
     }
 
     .about-stats {
@@ -284,10 +327,6 @@
 
     .hero-title {
         font-size: 1.55rem
-    }
-
-    .about-card-grid {
-        grid-template-columns: 1fr
     }
 
     .top-bar-text {

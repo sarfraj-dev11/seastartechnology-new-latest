@@ -52,6 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_product'])) {
     foreach ($products as $k => $p) {
         if ($p['slug'] === $slug) {
             delete_product_image($p['image'] ?? '', $products, $slug);
+            // Delete gallery images if any
+            if (!empty($p['gallery_images']) && is_array($p['gallery_images'])) {
+                foreach ($p['gallery_images'] as $gImg) {
+                    delete_product_image($gImg, $products, $slug);
+                }
+            }
             unset($products[$k]);
             $deleted = true;
             break;
@@ -105,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
         'whats_included' => [],
         'specs' => [],
         'image' => 'assets/images/icons/product-placeholder.svg', // Default image
+        'gallery_images' => [],
         'related' => []
     ];
 
@@ -139,6 +146,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
             $new_product['image'] = $imgPath;
         }
     }
+
+    // Gallery images upload
+    $gallery_images = [];
+    for ($i = 1; $i <= 4; $i++) {
+        if (isset($_FILES['gallery_image_'.$i]) && $_FILES['gallery_image_'.$i]['error'] === UPLOAD_ERR_OK) {
+            $gPath = handle_image_upload($_FILES['gallery_image_'.$i]);
+            if ($gPath) {
+                $gallery_images[] = $gPath;
+            }
+        }
+    }
+    $new_product['gallery_images'] = $gallery_images;
 
     $products[] = $new_product;
     file_put_contents(DATA_PATH, json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
@@ -192,6 +211,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_product'])) {
                     $p['image'] = $imgPath;
                 }
             }
+
+            // Gallery images handling
+            if (!isset($p['gallery_images']) || !is_array($p['gallery_images'])) {
+                $p['gallery_images'] = [];
+            }
+
+            $current_gallery = $p['gallery_images'];
+            $updated_gallery = [];
+
+            for ($i = 0; $i < 4; $i++) {
+                $input_idx = $i + 1;
+                $has_existing = isset($current_gallery[$i]);
+                $existing_path = $has_existing ? $current_gallery[$i] : '';
+
+                // Check if user wants to delete existing
+                if ($has_existing && isset($_POST['delete_gallery_image_'.$input_idx])) {
+                    delete_product_image($existing_path, $products, $slug);
+                    $existing_path = ''; // cleared
+                }
+
+                // Check if new file uploaded
+                if (isset($_FILES['gallery_image_'.$input_idx]) && $_FILES['gallery_image_'.$input_idx]['error'] === UPLOAD_ERR_OK) {
+                    $new_path = handle_image_upload($_FILES['gallery_image_'.$input_idx]);
+                    if ($new_path) {
+                        // Delete old one if replaced
+                        if ($existing_path) {
+                            delete_product_image($existing_path, $products, $slug);
+                        }
+                        $existing_path = $new_path;
+                    }
+                }
+
+                if ($existing_path) {
+                    $updated_gallery[] = $existing_path;
+                }
+            }
+            $p['gallery_images'] = array_values($updated_gallery);
 
             break;
         }
@@ -304,10 +360,33 @@ $products = get_all_products();
             <textarea name="specs" rows="5"></textarea>
           </div>
           <div class="form-group" style="margin-top:.75rem">
-            <label>Product Image <small style="font-weight:400;color:#888">(Optional)</small></label>
+            <label>Main Product Image <small style="font-weight:400;color:#888">(Optional)</small></label>
             <input type="file" name="product_image" accept="image/*" style="display:block;margin-top:.3rem">
           </div>
-          <button type="submit" class="btn-admin" style="margin-top:.85rem; background: var(--color-teal); border: none;">
+
+          <div style="margin-top:1.5rem; border-top:1px solid var(--border-lt); padding-top:1rem;">
+            <h5 style="margin-bottom:1rem; font-size:.9rem; color:var(--text);"><i class="fas fa-images"></i> Product Gallery (Up to 4 images)</h5>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Gallery Image 1</label>
+                <input type="file" name="gallery_image_1" accept="image/*" style="display:block;margin-top:.3rem">
+              </div>
+              <div class="form-group">
+                <label>Gallery Image 2</label>
+                <input type="file" name="gallery_image_2" accept="image/*" style="display:block;margin-top:.3rem">
+              </div>
+              <div class="form-group">
+                <label>Gallery Image 3</label>
+                <input type="file" name="gallery_image_3" accept="image/*" style="display:block;margin-top:.3rem">
+              </div>
+              <div class="form-group">
+                <label>Gallery Image 4</label>
+                <input type="file" name="gallery_image_4" accept="image/*" style="display:block;margin-top:.3rem">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-admin" style="margin-top:1.2rem; background: var(--color-teal); border: none;">
             <i class="fas fa-plus"></i> Create Product
           </button>
         </form>
@@ -384,7 +463,7 @@ $products = get_all_products();
             ?></textarea>
           </div>
           <div class="form-group" style="margin-top:.75rem">
-            <label>Product Image <small style="font-weight:400;color:#888">(Upload new to replace current)</small></label>
+            <label>Main Product Image <small style="font-weight:400;color:#888">(Upload new to replace current)</small></label>
             <?php if (!empty($p['image'])): ?>
               <div style="margin-bottom:.5rem;">
                 <img src="../<?php echo htmlspecialchars($p['image']); ?>" alt="Product Image" style="max-width: 120px; max-height: 120px; border-radius: 6px; border: 1px solid var(--border-lt); display: block; object-fit: contain; background: #fff;">
@@ -392,7 +471,35 @@ $products = get_all_products();
             <?php endif; ?>
             <input type="file" name="product_image" accept="image/*" style="display:block;margin-top:.3rem">
           </div>
-          <div style="display:flex; gap:1rem; align-items:center; margin-top:.85rem">
+
+          <div style="margin-top:1.5rem; border-top:1px solid var(--border-lt); padding-top:1rem;">
+            <h5 style="margin-bottom:1rem; font-size:.9rem; color:var(--text);"><i class="fas fa-images"></i> Product Gallery (Up to 4 images)</h5>
+            <div class="form-grid">
+              <?php 
+                $gImages = isset($p['gallery_images']) && is_array($p['gallery_images']) ? $p['gallery_images'] : [];
+                for ($i = 1; $i <= 4; $i++): 
+                  $gImg = $gImages[$i-1] ?? null;
+              ?>
+              <div class="form-group" style="background:var(--surface); padding:1rem; border-radius:6px; border:1px solid var(--border-lt);">
+                <label>Gallery Image <?php echo $i; ?></label>
+                <?php if ($gImg): ?>
+                  <div style="margin: .5rem 0;">
+                    <img src="../<?php echo htmlspecialchars($gImg); ?>" alt="Gallery Image <?php echo $i; ?>" style="max-width: 80px; max-height: 80px; border-radius: 4px; border: 1px solid var(--border-lt); display: block; object-fit: contain; background: #fff;">
+                  </div>
+                  <label style="display:flex; align-items:center; gap:.4rem; font-weight:normal; font-size:.8rem; margin-bottom:.5rem; color:#ef4444; cursor:pointer;">
+                    <input type="checkbox" name="delete_gallery_image_<?php echo $i; ?>" value="1"> Delete this image
+                  </label>
+                <?php endif; ?>
+                <label style="font-size:.75rem; color:var(--text-3); font-weight:normal; display:block; margin-bottom:.3rem;">
+                  <?php echo $gImg ? 'Replace with new:' : 'Upload image:'; ?>
+                </label>
+                <input type="file" name="gallery_image_<?php echo $i; ?>" accept="image/*" style="display:block;">
+              </div>
+              <?php endfor; ?>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:1rem; align-items:center; margin-top:1.2rem">
             <button type="submit" class="btn-admin">
               <i class="fas fa-floppy-disk"></i> Save Changes
             </button>

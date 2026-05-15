@@ -192,6 +192,7 @@
 .pd-image-col { position: sticky; top: 6rem }
 
 .pd-image-wrap {
+  position: relative;
   background: linear-gradient(145deg, #EAF9F8, #D6F7F5);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
@@ -199,21 +200,66 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  height: 380px;
   box-shadow: var(--shadow-sm);
 }
 
 .pd-image-wrap img {
-  max-height: 260px;
+  max-height: 280px;
   max-width: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
   filter: drop-shadow(0 8px 24px rgba(1,22,39,.12));
 }
 
+.pd-thumbnails {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pd-thumbnail-wrap {
+  width: 70px;
+  height: 70px;
+  background: var(--surface, #fff);
+  border: 2px solid var(--border-lt);
+  border-radius: var(--r-md);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.pd-thumbnail-wrap:hover {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.pd-thumbnail-wrap.active {
+  opacity: 1;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(19,88,184,0.15);
+}
+
+.pd-thumbnail-wrap img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
 .pd-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 10;
   display: inline-block;
-  margin-top: .7rem;
+  margin-top: 0;
   background: linear-gradient(135deg, var(--alert), var(--alert-h));
   color: var(--bg);
   font-size: .72rem;

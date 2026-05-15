@@ -278,7 +278,7 @@ include 'includes/header.php';
     <div class="cta-banner-content">
       <h2>Not Sure Which Product You Need?</h2>
       <p>Call our sales team — product questions, bundles, bulk orders.</p>
-      <p class="cta-note" style="font-size:0.8rem;opacity:0.8;margin-top:0.5rem;">Existing customers: <a href="mailto:<?php echo SITE_SUPPORT_EMAIL; ?>" style="color:inherit;"><?php echo SITE_SUPPORT_EMAIL; ?></a></p>
+      <p class="cta-note" style="font-size:0.8rem;opacity:0.8;margin-top:0.5rem;">Sales: <a href="mailto:<?php echo SITE_SALES_EMAIL; ?>" style="color:inherit;"><?php echo SITE_SALES_EMAIL; ?></a></p>
     </div>
     <div class="cta-banner-actions">
       <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn btn-white btn-lg">

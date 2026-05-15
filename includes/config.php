@@ -9,7 +9,7 @@ define('SITE_LEGAL_NAME',   'SEASTAR TECHNOLOGIES LLC');
 define('SITE_TAGLINE', 'Authorized Reseller of Trusted Computer & Security Products');
 define('SITE_URL',     'https://www.seastartechnology.com');
 define('SITE_EMAIL',          'sales@seastartechnology.com');
-define('SITE_SUPPORT_EMAIL',  'support@seastartechnology.com');
+define('SITE_SALES_EMAIL',  'sales@seastartechnology.com');
 define('SITE_PHONE',        '(855) 460-3303');
 define('SITE_PHONE_RAW',    '+18554603303');
 define('SITE_OPTOUT_PHONE',     SITE_PHONE);

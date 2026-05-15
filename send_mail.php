@@ -1,5 +1,11 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| LOAD ENV
+|--------------------------------------------------------------------------
+*/
+
 function loadEnv($path)
 {
     if (!file_exists($path)) {
@@ -20,22 +26,16 @@ function loadEnv($path)
 
         list($key, $value) = explode('=', $line, 2);
 
-        $key = trim($key);
-
+        $key   = trim($key);
         $value = trim($value);
-
-        // REMOVE QUOTES
         $value = trim($value, "\"'");
 
         putenv("$key=$value");
-
         $_ENV[$key] = $value;
     }
 }
 
 loadEnv(__DIR__ . '/.env');
-
-
 
 session_start();
 
@@ -45,17 +45,17 @@ error_reporting(E_ALL);
 
 /*
 |--------------------------------------------------------------------------
-| MICROSOFT GRAPH MAIL CONFIG
+| PHPMAILER AUTOLOAD
 |--------------------------------------------------------------------------
 */
 
-$tenantId     = getenv('AZURE_TENANT_ID');
- 
-$clientId     = getenv('AZURE_CLIENT_ID');
- 
-$clientSecret = trim(getenv('AZURE_CLIENT_SECRET'));
- 
-$senderEmail  = getenv('AZURE_SENDER_EMAIL');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer/PHPMailer.php';
+require __DIR__ . '/PHPMailer/SMTP.php';
+require __DIR__ . '/PHPMailer/Exception.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -108,42 +108,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 /*
 |--------------------------------------------------------------------------
-| GET ACCESS TOKEN
-|--------------------------------------------------------------------------
-*/
-
-$tokenUrl = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token";
-
-$tokenData = http_build_query([
-    'client_id' => $clientId,
-    'client_secret' => $clientSecret,
-    'scope' => 'https://graph.microsoft.com/.default',
-    'grant_type' => 'client_credentials'
-]);
-
-$tokenOptions = [
-    'http' => [
-        'method'  => 'POST',
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'content' => $tokenData,
-        'ignore_errors' => true
-    ]
-];
-
-$tokenContext = stream_context_create($tokenOptions);
-
-$tokenResult = file_get_contents($tokenUrl, false, $tokenContext);
-
-$tokenJson = json_decode($tokenResult, true);
-
-$accessToken = $tokenJson['access_token'] ?? null;
-
-if (!$accessToken) {
-    die("Authentication failed. " . $tokenResult);
-}
-
-/*
-|--------------------------------------------------------------------------
 | EMAIL TEMPLATE
 |--------------------------------------------------------------------------
 */
@@ -178,90 +142,59 @@ $emailBody = "
 
 /*
 |--------------------------------------------------------------------------
-| GRAPH API PAYLOAD
+| SMTP CONFIG FROM ENV
 |--------------------------------------------------------------------------
 */
 
-$emailPayload = json_encode([
-    "message" => [
-        "subject" => "[$source] Seastar technology Inquiry From $name",
-        "body" => [
-            "contentType" => "HTML",
-            "content" => $emailBody
-        ],
-        "toRecipients" => [
-            [
-                "emailAddress" => [
-                    "address" => "support@seastarfix.com"
-                ]
-            ]
-        ],
-        "bccRecipients" => [
-            [
-                "emailAddress" => [
-                    "address" => "developerbrocus@gmail.com"
-                ]
-            ],
-             [
-                "emailAddress" => [
-                    "address" => "knowledgemarket@gmail.com"
-                ]
-            ],
-        ],
-        "replyTo" => [
-            [
-                "emailAddress" => [
-                    "address" => $email
-                ]
-            ]
-        ]
-    ],
-    "saveToSentItems" => true
-]);
+$smtpHost     = getenv('SMTP_HOST')      ?: 'smtp.hostinger.com';
+$smtpPort     = (int)(getenv('SMTP_PORT') ?: 465);
+$smtpUser     = getenv('SMTP_USER')      ?: 'Sales@seastartechnology.com';
+$smtpPass     = getenv('SMTP_PASS');
+$smtpFromName = getenv('SMTP_FROM_NAME') ?: 'Seastar Technology';
+$smtpTo       = getenv('SMTP_TO')        ?: 'Sales@seastartechnology.com';
 
 /*
 |--------------------------------------------------------------------------
-| SEND MAIL
+| SEND VIA PHPMAILER + HOSTINGER SMTP
 |--------------------------------------------------------------------------
 */
 
-$sendUrl = "https://graph.microsoft.com/v1.0/users/$senderEmail/sendMail";
+$mail = new PHPMailer(true);
 
-$sendOptions = [
-    'http' => [
-        'method'  => 'POST',
-        'header'  =>
-            "Authorization: Bearer $accessToken\r\n" .
-            "Content-Type: application/json\r\n",
-        'content' => $emailPayload,
-        'ignore_errors' => true
-    ]
-];
+try {
 
-$sendContext = stream_context_create($sendOptions);
+    // ── Server ──────────────────────────────────────────────
+    $mail->isSMTP();
+    $mail->Host       = $smtpHost;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $smtpUser;
+    $mail->Password   = $smtpPass;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL port 465
+    $mail->Port       = $smtpPort;
 
-$sendResult = file_get_contents($sendUrl, false, $sendContext);
+    // ── Sender ──────────────────────────────────────────────
+    $mail->setFrom($smtpUser, $smtpFromName);
+    $mail->addReplyTo($email, $name);
 
-/*
-|--------------------------------------------------------------------------
-| RESPONSE
-|--------------------------------------------------------------------------
-*/
+    // ── Recipients ──────────────────────────────────────────
+    $mail->addAddress($smtpTo, $smtpFromName);
+    $mail->addBCC('developerbrocus@gmail.com');
+    $mail->addBCC('knowledgemarket@gmail.com');
 
-$statusCode = $http_response_header[0] ?? '';
+    // ── Content ─────────────────────────────────────────────
+    $mail->isHTML(true);
+    $mail->Subject = "[$source] Seastar Technology Inquiry From $name";
+    $mail->Body    = $emailBody;
 
-if (strpos($statusCode, '202') !== false) {
+    $mail->send();
 
     header("Location: thank-you.php?status=success");
     exit;
 
-} else {
+} catch (Exception $e) {
 
     echo "<pre>";
     echo "Mail Send Failed\n\n";
-    print_r($http_response_header);
-    echo "\n\n";
-    echo $sendResult;
+    echo "Error: " . $mail->ErrorInfo;
     echo "</pre>";
 }
-?>

@@ -50,11 +50,11 @@ error_reporting(E_ALL);
 */
 
 $tenantId     = getenv('AZURE_TENANT_ID');
- 
+
 $clientId     = getenv('AZURE_CLIENT_ID');
- 
+
 $clientSecret = trim(getenv('AZURE_CLIENT_SECRET'));
- 
+
 $senderEmail  = getenv('AZURE_SENDER_EMAIL');
 
 /*
@@ -192,7 +192,7 @@ $emailPayload = json_encode([
         "toRecipients" => [
             [
                 "emailAddress" => [
-                    "address" => "support@seastarfix.com"
+                    "address" => "sales@seastarfix.com"
                 ]
             ]
         ],
@@ -202,7 +202,7 @@ $emailPayload = json_encode([
                     "address" => "developerbrocus@gmail.com"
                 ]
             ],
-             [
+            [
                 "emailAddress" => [
                     "address" => "knowledgemarket@gmail.com"
                 ]
@@ -231,7 +231,7 @@ $sendOptions = [
     'http' => [
         'method'  => 'POST',
         'header'  =>
-            "Authorization: Bearer $accessToken\r\n" .
+        "Authorization: Bearer $accessToken\r\n" .
             "Content-Type: application/json\r\n",
         'content' => $emailPayload,
         'ignore_errors' => true
@@ -254,7 +254,6 @@ if (strpos($statusCode, '202') !== false) {
 
     header("Location: thank-you.php?status=success");
     exit;
-
 } else {
 
     echo "<pre>";
@@ -264,4 +263,3 @@ if (strpos($statusCode, '202') !== false) {
     echo $sendResult;
     echo "</pre>";
 }
-?>

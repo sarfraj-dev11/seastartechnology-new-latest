@@ -70,10 +70,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="top-bar-phone">
       <i class="fas fa-shopping-cart"></i> Sales: <?php echo SITE_PHONE; ?> &middot; Mon–Fri 9–6 EST
     </a>
-    <a href="mailto:<?php echo SITE_SUPPORT_EMAIL; ?>" class="top-bar-email">
+    <a href="mailto:<?php echo SITE_SALES_EMAIL; ?>" class="top-bar-email">
   <i class="fas fa-envelope"></i> 
-  After Sale:
-  <?php echo SITE_SUPPORT_EMAIL; ?>
+  Sales:
+  <?php echo SITE_SALES_EMAIL; ?>
 </a>
   </div>
 </div>

@@ -50,12 +50,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- LEFT: Image -->
     <div class="pd-image-col">
       <div class="pd-image-wrap">
-        <img src="<?php echo htmlspecialchars($p['image']); ?>"
+        <?php if(!empty($p['badge'])): ?>
+          <div class="pd-badge"><?php echo htmlspecialchars($p['badge']); ?></div>
+        <?php endif; ?>
+        <img id="main-product-image" src="<?php echo htmlspecialchars($p['image'] ?? 'assets/images/icons/product-placeholder.svg'); ?>"
              alt="<?php echo htmlspecialchars($p['title']); ?>"
              onerror="this.src='assets/images/icons/product-placeholder.svg'">
       </div>
-      <?php if(!empty($p['badge'])): ?>
-        <div class="pd-badge"><?php echo htmlspecialchars($p['badge']); ?></div>
+      
+      <?php if(!empty($p['gallery_images'])): ?>
+      <div class="pd-thumbnails">
+        <?php 
+          // Include main image as first thumbnail
+          $all_images = array_merge([$p['image'] ?? 'assets/images/icons/product-placeholder.svg'], $p['gallery_images']);
+          foreach($all_images as $index => $gImg): 
+            if(empty($gImg)) continue;
+        ?>
+          <div class="pd-thumbnail-wrap <?php echo $index === 0 ? 'active' : ''; ?>" onclick="swapMainImage(this, '<?php echo htmlspecialchars($gImg); ?>')">
+            <img src="<?php echo htmlspecialchars($gImg); ?>" alt="Thumbnail" onerror="this.src='assets/images/icons/product-placeholder.svg'">
+          </div>
+        <?php endforeach; ?>
+      </div>
+      
+      <script>
+      function swapMainImage(thumbElement, newSrc) {
+          // Update main image source
+          document.getElementById('main-product-image').src = newSrc;
+          
+          // Update active class on thumbnails
+          const thumbnails = document.querySelectorAll('.pd-thumbnail-wrap');
+          thumbnails.forEach(t => t.classList.remove('active'));
+          thumbElement.classList.add('active');
+      }
+      </script>
       <?php endif; ?>
     </div>
 

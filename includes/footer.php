@@ -73,7 +73,7 @@
           </li>
           <li><i class="fas fa-phone"></i>
             <span>Sales &amp; Orders: <a href="tel:<?php echo SITE_PHONE_RAW; ?>"><?php echo SITE_PHONE; ?></a><br>
-            <small>Existing customers: <a href="mailto:<?php echo SITE_SUPPORT_EMAIL; ?>"><?php echo SITE_SUPPORT_EMAIL; ?></a></small></span>
+            <small>Sales enquiries: <a href="mailto:<?php echo SITE_SALES_EMAIL; ?>"><?php echo SITE_SALES_EMAIL; ?></a></small></span>
           </li>
           <li><i class="fas fa-envelope"></i>
             <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a>

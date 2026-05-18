@@ -6,8 +6,8 @@ $slug = isset($_GET['slug']) ? trim($_GET['slug']) : '';
 $p    = $slug ? get_product_by_slug($slug) : null;
 
 if (!$p) {
-    header('Location: products.php');
-    exit;
+  header('Location: products.php');
+  exit;
 }
 
 $related  = get_related_products($p['related'] ?? []);
@@ -33,7 +33,7 @@ include 'includes/header.php';
 ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJT36XWT"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <section class="page-hero page-hero--sm">
   <div class="container breadcrumb-bar">
@@ -50,39 +50,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- LEFT: Image -->
     <div class="pd-image-col">
       <div class="pd-image-wrap">
-        <?php if(!empty($p['badge'])): ?>
+        <?php if (!empty($p['badge'])): ?>
           <div class="pd-badge"><?php echo htmlspecialchars($p['badge']); ?></div>
         <?php endif; ?>
         <img id="main-product-image" src="<?php echo htmlspecialchars($p['image'] ?? 'assets/images/icons/product-placeholder.svg'); ?>"
-             alt="<?php echo htmlspecialchars($p['title']); ?>"
-             onerror="this.src='assets/images/icons/product-placeholder.svg'">
+          alt="<?php echo htmlspecialchars($p['title']); ?>"
+          onerror="this.src='assets/images/icons/product-placeholder.svg'">
       </div>
-      
-      <?php if(!empty($p['gallery_images'])): ?>
-      <div class="pd-thumbnails">
-        <?php 
+
+      <?php if (!empty($p['gallery_images'])): ?>
+        <div class="pd-thumbnails">
+          <?php
           // Include main image as first thumbnail
           $all_images = array_merge([$p['image'] ?? 'assets/images/icons/product-placeholder.svg'], $p['gallery_images']);
-          foreach($all_images as $index => $gImg): 
-            if(empty($gImg)) continue;
-        ?>
-          <div class="pd-thumbnail-wrap <?php echo $index === 0 ? 'active' : ''; ?>" onclick="swapMainImage(this, '<?php echo htmlspecialchars($gImg); ?>')">
-            <img src="<?php echo htmlspecialchars($gImg); ?>" alt="Thumbnail" onerror="this.src='assets/images/icons/product-placeholder.svg'">
-          </div>
-        <?php endforeach; ?>
-      </div>
-      
-      <script>
-      function swapMainImage(thumbElement, newSrc) {
-          // Update main image source
-          document.getElementById('main-product-image').src = newSrc;
-          
-          // Update active class on thumbnails
-          const thumbnails = document.querySelectorAll('.pd-thumbnail-wrap');
-          thumbnails.forEach(t => t.classList.remove('active'));
-          thumbElement.classList.add('active');
-      }
-      </script>
+          foreach ($all_images as $index => $gImg):
+            if (empty($gImg)) continue;
+          ?>
+            <div class="pd-thumbnail-wrap <?php echo $index === 0 ? 'active' : ''; ?>" onclick="swapMainImage(this, '<?php echo htmlspecialchars($gImg); ?>')">
+              <img src="<?php echo htmlspecialchars($gImg); ?>" alt="Thumbnail" onerror="this.src='assets/images/icons/product-placeholder.svg'">
+            </div>
+          <?php endforeach; ?>
+        </div>
+
+        <script>
+          function swapMainImage(thumbElement, newSrc) {
+            // Update main image source
+            document.getElementById('main-product-image').src = newSrc;
+
+            // Update active class on thumbnails
+            const thumbnails = document.querySelectorAll('.pd-thumbnail-wrap');
+            thumbnails.forEach(t => t.classList.remove('active'));
+            thumbElement.classList.add('active');
+          }
+        </script>
       <?php endif; ?>
     </div>
 
@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="pd-cta-group">
         <a href="mailto:<?php echo SITE_EMAIL; ?>?subject=Purchase%20Order%20%E2%80%93%20<?php echo rawurlencode($p['title']); ?>%20(%24<?php echo rawurlencode($p['price']); ?>)&body=Hi%20Seastar%20Technology%20Team%2C%0A%0AI%20would%20like%20to%20purchase%3A%0AProduct%3A%20<?php echo rawurlencode($p['title']); ?>%0APrice%3A%20%24<?php echo rawurlencode($p['price']); ?>%0A%0APlease%20send%20me%20a%20secure%20payment%20invoice.%0A%0AName%3A%0APhone%3A%0AShipping%20Address%20(if%20physical)%3A%0A%0AThank%20you."
-           class="btn btn-primary btn-lg pd-cta">
+          class="btn btn-primary btn-lg pd-cta">
           <i class="fas fa-cart-shopping"></i> Order Now — Request Secure Invoice
         </a>
         <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn btn-outline btn-lg">
@@ -110,26 +110,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         We'll email a secure payment link within 1 business hour &middot; No account needed
       </p>
 
-        <!-- Description -->
+      <!-- Description -->
       <div class="pd-block">
         <h3><i class="fas fa-circle-info"></i> Description</h3>
-       <p class="pd-short-desc" style="margin-bottom: 1.4rem;"><?php echo htmlspecialchars($p['description1']); ?></p>
-       <p class="pd-short-desc"><?php echo htmlspecialchars($p['description2']); ?></p>
+        <p class="pd-short-desc" style="margin-bottom: 1.4rem;"><?php echo htmlspecialchars($p['description1']); ?></p>
+        <p class="pd-short-desc"><?php echo htmlspecialchars($p['description2']); ?></p>
       </div>
 
       <!-- What's Included -->
       <div class="pd-block">
         <h3><i class="fas fa-box-open"></i> What's Included</h3>
         <ul class="pd-list">
-          <?php foreach($p['whats_included'] as $item): ?>
+          <?php foreach ($p['whats_included'] as $item): ?>
             <li><i class="fas fa-check"></i> <?php echo htmlspecialchars($item); ?></li>
           <?php endforeach; ?>
         </ul>
       </div>
-      
 
-          <!-- What's Included -->
-      
+
+      <!-- What's Included -->
+
 
       <!-- Activation Guidance USP -->
       <div class="pd-assistance-usp">
@@ -139,11 +139,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>One-time license activation guidance is included with eligible software purchases to confirm your license is registered correctly.</p>
         </div>
       </div>
-      <?php if($p['slug'] === 'windows-11-home-pro-usb'): ?>
-      <p class="pd-physical-note" style="font-size:.82rem;color:#444;margin-top:.75rem;padding:.55rem .75rem;background:#f4fdf6;border-left:3px solid #22c55e;border-radius:3px;line-height:1.55;">
-        <i class="fas fa-box-open" style="color:#22c55e;margin-right:.3rem;"></i>
-        This is a sealed physical USB shipped from our US warehouse. We do not provide pirated or unauthorized license keys.
-      </p>
+      <?php if ($p['slug'] === 'windows-11-home-pro-usb'): ?>
+        <p class="pd-physical-note" style="font-size:.82rem;color:#444;margin-top:.75rem;padding:.55rem .75rem;background:#f4fdf6;border-left:3px solid #22c55e;border-radius:3px;line-height:1.55;">
+          <i class="fas fa-box-open" style="color:#22c55e;margin-right:.3rem;"></i>
+          This is a sealed physical USB shipped from our US warehouse. We do not provide pirated or unauthorized license keys.
+        </p>
       <?php endif; ?>
       <p class="product-reseller-note" style="font-size:0.8rem;color:#666;margin-top:.6rem;">Sold by SEASTAR TECHNOLOGIES LLC, an independent authorized reseller. Not affiliated with or endorsed by <?php echo htmlspecialchars($p['brand']); ?>.</p>
     </div>
@@ -151,22 +151,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- Specs -->
-<?php if(!empty($p['specs'])): ?>
-<section class="section pd-specs-section">
-  <div class="container">
-    <h2 class="section-title">Specifications</h2>
-    <div class="specs-table-wrap">
-      <table class="specs-table">
-        <?php foreach($p['specs'] as $key => $val): ?>
-        <tr>
-          <th><?php echo htmlspecialchars($key); ?></th>
-          <td><?php echo htmlspecialchars($val); ?></td>
-        </tr>
-        <?php endforeach; ?>
-      </table>
+<?php if (!empty($p['specs'])): ?>
+  <section class="section pd-specs-section">
+    <div class="container">
+      <h2 class="section-title">Specifications</h2>
+      <div class="specs-table-wrap">
+        <table class="specs-table">
+          <?php foreach ($p['specs'] as $key => $val): ?>
+            <tr>
+              <th><?php echo htmlspecialchars($key); ?></th>
+              <td><?php echo htmlspecialchars($val); ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </table>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 <?php endif; ?>
 
 <!-- Key Features -->
@@ -174,15 +174,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="section-title">Key Features</h2>
     <div class="problems-grid">
-      <?php foreach($p['problem_solved'] as $feature): ?>
-      <div class="problem-card">
-        <i class="fas fa-check-circle" style="color:#22c55e;font-size:1.3rem;flex-shrink:0;"></i>
-        <div class="problem-text">
-          <span><?php echo htmlspecialchars($feature); ?></span>
+      <?php foreach ($p['problem_solved'] as $feature): ?>
+        <div class="problem-card">
+          <i class="fas fa-check-circle" style="color:#22c55e;font-size:1.3rem;flex-shrink:0;"></i>
+          <div class="problem-text">
+            <span><?php echo htmlspecialchars($feature); ?></span>
+          </div>
         </div>
-      </div>
       <?php endforeach; ?>
     </div>
+  </div>
+</section>
+
+<!-- Long Description -->
+<section class="section pd-desc-section" style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 4rem 0;">
+  <div class="container pd-desc-inner">
+    <h2 class="section-title">About This Product</h2>
+    <p style="font-size: 1.05rem; line-height: 1.7; color: #4b5563; max-width: 800px; margin: 0 auto; text-align: center;"><?php echo htmlspecialchars($p['long_desc']); ?></p>
   </div>
 </section>
 
@@ -232,55 +240,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
-<!-- Long Description -->
-<section class="section pd-desc-section">
-  <div class="container pd-desc-inner">
-    <h2 class="section-title">About This Product</h2>
-    <p><?php echo htmlspecialchars($p['long_desc']); ?></p>
-  </div>
-</section>
+
 
 <!-- Related Products -->
-<?php if(!empty($related)): ?>
-<section class="section related-section">
-  <div class="container">
-    <h2 class="section-title">Related Products</h2>
-    <div class="products-grid">
-      <?php foreach($related as $rp): ?>
-      <div class="product-card">
-        <?php if(!empty($rp['badge'])): ?>
-          <div class="product-badge"><?php echo htmlspecialchars($rp['badge']); ?></div>
-        <?php endif; ?>
-        <div class="product-img-wrap">
-          <img src="<?php echo htmlspecialchars($rp['image']); ?>"
-               alt="<?php echo htmlspecialchars($rp['title']); ?>"
-               onerror="this.src='assets/images/icons/product-placeholder.svg'" loading="lazy">
-        </div>
-        <div class="product-card-body">
-          <div class="product-brand"><?php echo htmlspecialchars($rp['brand']); ?></div>
-          <h3 class="product-name"><?php echo htmlspecialchars($rp['title']); ?></h3>
-          <p class="product-short-desc"><?php echo htmlspecialchars($rp['short_desc']); ?></p>
-          <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC, an independent authorized reseller. Not affiliated with or endorsed by <?php echo htmlspecialchars($rp['brand']); ?>.</p>
-        </div>
-        <div class="product-card-footer">
-          <div class="product-price">$<?php echo htmlspecialchars($rp['price']); ?></div>
-          <a href="product-details.php?slug=<?php echo urlencode($rp['slug']); ?>" class="btn btn-primary btn-sm">View Details</a>
-        </div>
+<?php if (!empty($related)): ?>
+  <section class="section related-section">
+    <div class="container">
+      <h2 class="section-title">Related Products</h2>
+      <div class="products-grid">
+        <?php foreach ($related as $rp): ?>
+          <div class="product-card">
+            <?php if (!empty($rp['badge'])): ?>
+              <div class="product-badge"><?php echo htmlspecialchars($rp['badge']); ?></div>
+            <?php endif; ?>
+            <div class="product-img-wrap">
+              <img src="<?php echo htmlspecialchars($rp['image']); ?>"
+                alt="<?php echo htmlspecialchars($rp['title']); ?>"
+                onerror="this.src='assets/images/icons/product-placeholder.svg'" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <div class="product-brand"><?php echo htmlspecialchars($rp['brand']); ?></div>
+              <h3 class="product-name"><?php echo htmlspecialchars($rp['title']); ?></h3>
+              <p class="product-short-desc"><?php echo htmlspecialchars($rp['short_desc']); ?></p>
+              <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC, an independent authorized reseller. Not affiliated with or endorsed by <?php echo htmlspecialchars($rp['brand']); ?>.</p>
+            </div>
+            <div class="product-card-footer">
+              <div class="product-price">$<?php echo htmlspecialchars($rp['price']); ?></div>
+              <a href="product-details.php?slug=<?php echo urlencode($rp['slug']); ?>" class="btn btn-primary btn-sm">View Details</a>
+            </div>
+          </div>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
     </div>
-  </div>
-</section>
+  </section>
 <?php endif; ?>
 
 <!-- Sticky Mobile CTA -->
 <div class="sticky-cta-mobile" id="sticky-cta">
   <a href="mailto:<?php echo SITE_EMAIL; ?>?subject=Purchase%20Order%20%E2%80%93%20<?php echo rawurlencode($p['title']); ?>%20(%24<?php echo rawurlencode($p['price']); ?>)&body=Hi%20Seastar%20Technology%20Team%2C%0A%0AI%20would%20like%20to%20purchase%3A%0AProduct%3A%20<?php echo rawurlencode($p['title']); ?>%0APrice%3A%20%24<?php echo rawurlencode($p['price']); ?>%0A%0APlease%20send%20me%20a%20secure%20payment%20invoice.%0A%0AName%3A%0APhone%3A%0AShipping%20Address%20(if%20physical)%3A%0A%0AThank%20you."
-     class="btn btn-primary" style="flex:6;justify-content:center;">
+    class="btn btn-primary" style="flex:6;justify-content:center;">
     <i class="fas fa-cart-shopping"></i> Invoice by Email
   </a>
   <a href="tel:<?php echo SITE_PHONE_RAW; ?>"
-     class="btn btn-outline" style="flex:4;justify-content:center;padding-left:.5rem;padding-right:.5rem;">
+    class="btn btn-outline" style="flex:4;justify-content:center;padding-left:.5rem;padding-right:.5rem;">
     <i class="fas fa-phone"></i> Call Sales
   </a>
 </div>

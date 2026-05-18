@@ -150,6 +150,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- Specs -->
+<?php if(!empty($p['specs'])): ?>
+<section class="section pd-specs-section">
+  <div class="container">
+    <h2 class="section-title">Specifications</h2>
+    <div class="specs-table-wrap">
+      <table class="specs-table">
+        <?php foreach($p['specs'] as $key => $val): ?>
+        <tr>
+          <th><?php echo htmlspecialchars($key); ?></th>
+          <td><?php echo htmlspecialchars($val); ?></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+<!-- Key Features -->
+<section class="section pd-problems-section">
+  <div class="container">
+    <h2 class="section-title">Key Features</h2>
+    <div class="problems-grid">
+      <?php foreach($p['problem_solved'] as $feature): ?>
+      <div class="problem-card">
+        <i class="fas fa-check-circle" style="color:#22c55e;font-size:1.3rem;flex-shrink:0;"></i>
+        <div class="problem-text">
+          <span><?php echo htmlspecialchars($feature); ?></span>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
 <!-- How to Purchase -->
 <section class="section pd-how-to-buy-section">
   <div class="container">
@@ -195,42 +231,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-
-<!-- Key Features -->
-<section class="section pd-problems-section">
-  <div class="container">
-    <h2 class="section-title">Key Features</h2>
-    <div class="problems-grid">
-      <?php foreach($p['problem_solved'] as $feature): ?>
-      <div class="problem-card">
-        <i class="fas fa-check-circle" style="color:#22c55e;font-size:1.3rem;flex-shrink:0;"></i>
-        <div class="problem-text">
-          <span><?php echo htmlspecialchars($feature); ?></span>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
-<!-- Specs -->
-<?php if(!empty($p['specs'])): ?>
-<section class="section pd-specs-section">
-  <div class="container">
-    <h2 class="section-title">Specifications</h2>
-    <div class="specs-table-wrap">
-      <table class="specs-table">
-        <?php foreach($p['specs'] as $key => $val): ?>
-        <tr>
-          <th><?php echo htmlspecialchars($key); ?></th>
-          <td><?php echo htmlspecialchars($val); ?></td>
-        </tr>
-        <?php endforeach; ?>
-      </table>
-    </div>
-  </div>
-</section>
-<?php endif; ?>
 
 <!-- Long Description -->
 <section class="section pd-desc-section">

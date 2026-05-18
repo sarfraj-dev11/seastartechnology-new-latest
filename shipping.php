@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/config.php';
 $page_title = 'Shipping Policy';
-$page_desc  = 'Seastar Technology Shipping Policy — digital delivery within 24 hours, physical hardware ships in 1-2 business days from our US warehouse.';
+$page_desc  = 'Seastar Technology Shipping Policy — license keys sent by email within 1 business day, physical hardware ships in 1-2 business days from our US warehouse.';
 include 'includes/header.php';
 ?>
 <!-- Google Tag Manager (noscript) -->
@@ -15,7 +15,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container policy-content">
 
 <h2>1. Digital Products (Software, License Keys)</h2>
-<p>Digital products — including antivirus licenses, software activation codes, and renewal keys — are delivered by email within <strong>24 hours</strong> of payment confirmation. Most digital orders are fulfilled within 1–4 hours during business hours.</p>
+<p>License keys — including antivirus licenses, renewal keys, and software activation keys — are sent by email within <strong>1 business day</strong> of payment confirmation. Most orders are fulfilled within 1–4 hours during business hours.</p>
 <ul>
   <li>Check your spam/junk folder if you do not receive the email within 24 hours.</li>
   <li>Contact us at <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a> if you experience any delivery issues.</li>

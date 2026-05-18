@@ -225,7 +225,7 @@ include 'includes/header.php';
       <div class="usp-card">
         <div class="usp-icon"><i class="fas fa-truck-fast"></i></div>
         <h3>Fast Delivery</h3>
-        <p>Software delivered digitally within 24 hours. Physical hardware ships within 1–2 business days via tracked carrier.</p>
+        <p>License keys sent by email within 1 business day. Physical hardware ships within 1–2 business days via tracked carrier.</p>
       </div>
       <div class="usp-card">
         <div class="usp-icon"><i class="fas fa-lock"></i></div>

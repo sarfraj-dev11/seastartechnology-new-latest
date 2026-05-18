@@ -92,7 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1 class="pd-title"><?php echo htmlspecialchars($p['title']); ?></h1>
       <p class="pd-category"><i class="fas fa-tag"></i> <?php echo htmlspecialchars($p['category']); ?></p>
       <div class="pd-price">$<?php echo htmlspecialchars($p['price']); ?></div>
-      <p style="font-size:0.85rem;color:#22c55e;margin-bottom:0.5rem;"><i class="fas fa-circle-check"></i> In Stock &middot; Digital license emailed within 24 hours for instant use; physical media, if ordered, ships from our US warehouse in 1–2 business days.</p>
+      <p style="font-size:0.85rem;color:#22c55e;margin-bottom:0.5rem;"><i class="fas fa-circle-check"></i> In Stock &middot; License key sent to your email within 1 business day; physical media ships from our US warehouse in 1–2 business days.</p>
       <p class="pd-short-desc"><?php echo htmlspecialchars($p['short_desc']); ?></p>
       <p class="product-pricing">(* Other editions available on request; pricing may differ.)</p>
 
@@ -188,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="buy-step-number">5</div>
         <div class="buy-step-content">
           <strong>Secure Payment &amp; Invoice</strong>
-          <p>Pay securely online. Software delivered within 24 hrs. Hardware ships in 1–2 business days.</p>
+          <p>Pay securely online. License key sent by email within 1 business day. Hardware ships in 1–2 business days.</p>
         </div>
       </div>
     </div>

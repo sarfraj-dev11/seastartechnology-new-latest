@@ -25,7 +25,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li><strong>Non-returnable:</strong> Items where the factory seal has been broken or that show signs of physical usage by the customer.</li>
 </ul>
 
-<h2>2. Digital Products (Software Licenses, Activation Codes)</h2>
+<h2>2. Software License Keys</h2>
 <ul>
   <li><strong>Refund eligibility:</strong> Software keys are eligible for a full refund within 30 days of purchase if unactivated or proven non-functional.</li>
   <li><strong>Non-functional key:</strong> If your license key fails to activate and we cannot resolve the issue within 48 hours, you are entitled to a full refund (claim must be submitted within 30 days of purchase).</li>

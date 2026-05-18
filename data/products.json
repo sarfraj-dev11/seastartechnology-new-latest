@@ -26,7 +26,7 @@
         "how_to_use": [
             "Go to mcafee.com\/activate and enter your product key",
             "Register or log in to your account",
-            "Download and install McAfee Antivirus",
+            "Set up McAfee Antivirus via the official activation portal",
             "Agree to the license and note your serial number"
         ],
         "specs": {
@@ -669,15 +669,15 @@
         "category": "Driver Software",
         "price": "22.99",
         "badge": "",
-        "short_desc": "Scan and update PC drivers automatically with one click.",
+        "short_desc": "Automatically keeps PC drivers current and compatible — no manual searching needed.",
         "long_desc": "Driver Booster Pro scans your entire PC for outdated, missing, or corrupt drivers and updates them from a database of 8 million+ driver versions — updating hardware drivers without manual searching.",
         "problem_solved": [
             "Scans & updates from a database of 8 million+ certified drivers",
-            "One-click update for hardware compatibility",
+            "Automatic driver updates for full hardware compatibility",
             "Game Boost mode optimizes drivers for better performance"
         ],
         "description1": "Automatically update drivers with Driver Booster Pro for faster performance, smoother gameplay, and improved system stability. Supports up to 3 PCs!",
-        "description2": "Keep your PC running at its best with Driver Booster Pro. This powerful driver update tool scans and downloads the latest drivers for your system, ensuring your computer runs smoothly and is protected from potential issues caused by outdated drivers. With access to a database of over 8 million drivers, Driver Booster Pro provides the most accurate updates for all your devices, improving performance and system stability.",
+        "description2": "Keep your PC running at its best with Driver Booster Pro. This powerful driver management tool identifies and applies the latest certified drivers for your system, ensuring your computer runs smoothly and is protected from potential issues caused by outdated drivers. With access to a database of over 8 million drivers, Driver Booster Pro provides the most accurate updates for all your devices, improving performance and system stability.",
         "whats_included": [
             "1-Year Driver Booster Pro License",
             "3 PCs",
@@ -706,14 +706,14 @@
         "duplicat_price": "49.40",
         "price": "29.95",
         "badge": "",
-        "short_desc": "Find and download the correct drivers for any hardware in minutes — no technical skills needed.",
+        "short_desc": "Automatically identifies and applies the correct certified drivers for any hardware — no technical skills needed.",
         "long_desc": "Driver Easy Pro automatically detects your PC hardware and finds the correct, certified drivers. Offline scan mode lets you fix driver problems even without internet on the affected machine.",
         "problem_solved": [
-            "Offline scan mode — find & install correct drivers without internet",
+            "Offline scan mode — identifies correct certified drivers without internet",
             "WHQL certified drivers for guaranteed hardware compatibility",
             "Supports up to 3 PCs with a single license"
         ],
-        "description1": "Automatically find and download the correct drivers for your PC. Driver Easy Pro supports up to 3 PCs and offers offline scanning for convenience.",
+        "description1": "Automatically identifies and applies the correct certified drivers for your PC. Driver Easy Pro supports up to 3 PCs and includes offline scanning for convenience.",
         "description2": "Keep your system running smoothly and efficiently with Driver Easy Pro. This advanced driver management tool scans your PC for missing or outdated drivers and provides the latest updates to keep your devices performing at their best. Supporting up to 3 PCs, Driver Easy Pro is the perfect solution for households or small offices with multiple computers. Driver Easy Pro also solves common PC issues like missing drivers and printer not responding by quickly fixing the problems that can lead to device malfunctions or slow performance.",
         "whats_included": [
             "1-Year Driver Easy Pro License",
@@ -742,23 +742,23 @@
         "price": "34.99",
         "badge": "Save 30%",
         "short_desc": "Renew any antivirus subscription through us and save up to 30% vs. manufacturer retail price.",
-        "long_desc": "Keep your protection active without paying full retail. We offer renewal pricing on McAfee, Bitdefender, and Malwarebytes subscriptions — delivered as an activation code within 24 hours.",
+        "long_desc": "Keep your protection active without paying full retail. We offer renewal pricing on McAfee, Bitdefender, and Malwarebytes subscriptions — renewal license key sent by email within 1 business day.",
         "problem_solved": [
             "Save up to 30% vs. manufacturer retail renewal price",
-            "Renewal code delivered by email within 24 hours",
+            "Renewal license key sent by email within 1 business day",
             "Covers McAfee, Bitdefender & Malwarebytes subscriptions"
         ],
-        "description1": "Keep your devices protected with a seamless renewal of antivirus coverage for McAfee, Bitdefender, or Malwarebytes. Delivered digitally within 24 hours.",
-        "description2": "Ensure your digital security is always up to date with the Annual Antivirus Renewal Plan. This convenient plan allows you to quickly renew your antivirus coverage for trusted brands like McAfee, Bitdefender, and Malwarebytes. You’ll receive a 1-Year Renewal Activation Code delivered directly to your inbox within 24 hours, ensuring you can continue to protect your devices without interruption.",
+        "description1": "Keep your devices protected with a seamless renewal of antivirus coverage for McAfee, Bitdefender, or Malwarebytes. Renewal license key sent to your inbox within 1 business day.",
+        "description2": "Ensure your digital security is always up to date with the Annual Antivirus Renewal Plan. This convenient plan allows you to quickly renew your antivirus coverage for trusted brands like McAfee, Bitdefender, and Malwarebytes. Your renewal license key is sent directly to your inbox within 1 business day, ensuring you can continue to protect your devices without interruption.",
         "whats_included": [
-            "1-Year Renewal Activation Code",
-            "Delivery within 24 hours",
+            "1-Year Renewal License Key",
+            "License key sent within 1 business day",
             "Renewal activation guidance included"
         ],
         "specs": {
             "Supported Products": "McAfee, Bitdefender, Malwarebytes",
-            "Delivery": "Email (digital code)",
-            "Turnaround": "Within 24 hours"
+            "Delivery": "License key by email",
+            "Turnaround": "Within 1 business day"
         },
         "image": "assets\/images\/products\/Annual Antivirus Renewal-  Plan.webp",
         "related": [

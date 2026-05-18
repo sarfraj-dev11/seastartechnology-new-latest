@@ -32,8 +32,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li>If you did not receive a tracking email, contact us and we will locate your shipment.</li>
     </ol>
 
-    <h2>Software & Digital Orders</h2>
-    <p>Digital license keys and software downloads are delivered by email within 24 hours of order confirmation. Check your inbox and spam folder. If you have not received your license key after 24 hours, contact us immediately at <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a>.</p>
+    <h2>Software License Key Orders</h2>
+    <p>License keys are sent by email within 1 business day of order confirmation. Check your inbox and spam folder. If you have not received your license key after 1 business day, contact us immediately at <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a>.</p>
 
     <h2>Contact Us for Order Status</h2>
     <p>If you have questions about your order, please reach out with your order number and we will respond within 1 business day:</p>
@@ -45,7 +45,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h2>Shipping Timeframes</h2>
     <ul>
-      <li><strong>Digital software:</strong> Delivered by email within 24 hours of order confirmation.</li>
+      <li><strong>Software license keys:</strong> Sent by email within 1 business day of order confirmation.</li>
       <li><strong>Physical hardware:</strong> Ships within 1–2 business days via tracked carrier. Estimated delivery 3–7 business days depending on location.</li>
     </ul>
 

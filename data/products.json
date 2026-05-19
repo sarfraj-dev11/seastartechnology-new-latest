@@ -41,7 +41,8 @@
             "bitdefender",
             "malwarebytes-premium",
             "annual-antivirus-renewal"
-        ]
+        ],
+        "gallery_images": []
     },
     {
         "id": 3,
@@ -677,14 +678,14 @@
             "Game Boost mode optimizes drivers for better performance"
         ],
         "description1": "Driver Booster Pro is the world's leading driver management utility from IObit. It automatically scans your Windows PC and identifies the latest WHQL-certified drivers from a database of over 8 million verified drivers — keeping all hardware running at peak compatibility.",
-        "description2": "Driver Booster Pro covers graphics, audio, network, input devices, cameras, display, USB, and printer/scanner drivers across NVIDIA, AMD, Intel, Realtek, and 1,000+ other manufacturers. It includes a driver backup and restore feature for safe rollback, plus Game Boost mode for optimized gaming performance. Compatible with Windows 7, 8, 10, and 11.",
+        "description2": "Driver Booster Pro covers graphics, audio, network, input devices, cameras, display, USB, and printer\/scanner drivers across NVIDIA, AMD, Intel, Realtek, and 1,000+ other manufacturers. It includes a driver backup and restore feature for safe rollback, plus Game Boost mode for optimized gaming performance. Compatible with Windows 7, 8, 10, and 11.",
         "description_blocks": [
             {
                 "heading": "What the software does:",
                 "items": [
                     "Automatic scan and identification of outdated, missing, and faulty drivers",
                     "Access to 15,000,000+ WHQL-certified drivers",
-                    "Coverage for graphics, audio, network, input devices, cameras, display, USB, and printer/scanner drivers",
+                    "Coverage for graphics, audio, network, input devices, cameras, display, USB, and printer\/scanner drivers",
                     "Driver backup and restore functionality",
                     "Game Boost mode for optimized gaming performance",
                     "Supports Windows 11, 10, 8, and 7"

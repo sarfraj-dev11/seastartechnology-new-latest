@@ -670,14 +670,36 @@
         "price": "22.99",
         "badge": "",
         "short_desc": "Automatically keeps PC drivers current and compatible — no manual searching needed.",
-        "long_desc": "Driver Booster Pro scans your entire PC for outdated, missing, or corrupt drivers and updates them from a database of 8 million+ driver versions — updating hardware drivers without manual searching.",
+        "long_desc": "Driver Booster Pro scans your entire PC for outdated, missing, or corrupt drivers and updates them from a database of 15 million+ driver versions — updating hardware drivers without manual searching.",
         "problem_solved": [
-            "Scans & updates from a database of 8 million+ certified drivers",
+            "Scans & updates from a database of 15 million+ certified drivers",
             "Automatic driver updates for full hardware compatibility",
             "Game Boost mode optimizes drivers for better performance"
         ],
-        "description1": "Automatically update drivers with Driver Booster Pro for faster performance, smoother gameplay, and improved system stability. Supports up to 3 PCs!",
-        "description2": "Keep your PC running at its best with Driver Booster Pro. This powerful driver management tool identifies and applies the latest certified drivers for your system, ensuring your computer runs smoothly and is protected from potential issues caused by outdated drivers. With access to a database of over 8 million drivers, Driver Booster Pro provides the most accurate updates for all your devices, improving performance and system stability.",
+        "description1": "Driver Booster Pro is the world's leading driver management utility from IObit. It automatically scans your Windows PC and identifies the latest WHQL-certified drivers from a database of over 8 million verified drivers — keeping all hardware running at peak compatibility.",
+        "description2": "Driver Booster Pro covers graphics, audio, network, input devices, cameras, display, USB, and printer/scanner drivers across NVIDIA, AMD, Intel, Realtek, and 1,000+ other manufacturers. It includes a driver backup and restore feature for safe rollback, plus Game Boost mode for optimized gaming performance. Compatible with Windows 7, 8, 10, and 11.",
+        "description_blocks": [
+            {
+                "heading": "What the software does:",
+                "items": [
+                    "Automatic scan and identification of outdated, missing, and faulty drivers",
+                    "Access to 15,000,000+ WHQL-certified drivers",
+                    "Coverage for graphics, audio, network, input devices, cameras, display, USB, and printer/scanner drivers",
+                    "Driver backup and restore functionality",
+                    "Game Boost mode for optimized gaming performance",
+                    "Supports Windows 11, 10, 8, and 7"
+                ]
+            },
+            {
+                "heading": "Why customers choose Driver Booster Pro:",
+                "items": [
+                    "WHQL-certified drivers sourced from Microsoft and original manufacturers",
+                    "Automated driver scans with scheduled updates",
+                    "Comprehensive driver database covering NVIDIA, AMD, Intel, Realtek, and 1,000+ other manufacturers",
+                    "Driver backup before any update for safe rollback"
+                ]
+            }
+        ],
         "whats_included": [
             "1-Year Driver Booster Pro License",
             "3 PCs",
@@ -686,7 +708,7 @@
         "specs": {
             "Devices": "3 PCs",
             "OS": "Windows 7\/8\/10\/11",
-            "Driver Database": "8,000,000+",
+            "Driver Database": "15,000,000+",
             "Scan Speed": "60% faster than manual",
             "Game Boost": "Yes"
         },

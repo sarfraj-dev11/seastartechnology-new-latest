@@ -534,3 +534,25 @@
   font-size: 14px;
   color: var(--text-3);
 }
+
+/* ── Description Blocks (structured multiline descriptions) ── */
+.pd-desc-blocks { display: flex; flex-direction: column; gap: .2rem; }
+.pd-desc-block-heading {
+  margin-top: 1rem;
+  margin-bottom: .3rem;
+  font-size: .94rem;
+  color: var(--text);
+}
+.pd-desc-block-heading:first-child { margin-top: .2rem; }
+.pd-desc-block-list {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+.pd-desc-block-list li {
+  font-size: .9rem;
+  color: var(--text-2);
+  line-height: 1.65;
+}

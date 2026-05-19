@@ -58,16 +58,15 @@ include 'includes/header.php';
           onerror="this.src='assets/images/icons/product-placeholder.svg'">
       </div>
 
-      <?php if (!empty($p['gallery_images'])): ?>
+      <?php 
+      $gallery = $p['gallery_images'] ?? [];
+      $all_images = array_filter(array_merge([$p['image'] ?? 'assets/images/icons/product-placeholder.svg'], $gallery));
+      if (count($all_images) > 1): 
+      ?>
         <div class="pd-thumbnails">
-          <?php
-          // Include main image as first thumbnail
-          $all_images = array_merge([$p['image'] ?? 'assets/images/icons/product-placeholder.svg'], $p['gallery_images']);
-          foreach ($all_images as $index => $gImg):
-            if (empty($gImg)) continue;
-          ?>
-            <div class="pd-thumbnail-wrap <?php echo $index === 0 ? 'active' : ''; ?>" onclick="swapMainImage(this, '<?php echo htmlspecialchars($gImg); ?>')">
-              <img src="<?php echo htmlspecialchars($gImg); ?>" alt="Thumbnail" onerror="this.src='assets/images/icons/product-placeholder.svg'">
+          <?php foreach ($all_images as $index => $gImg): ?>
+            <div class="pd-thumbnail-wrap <?php echo $index === 0 ? 'active' : ''; ?>" onclick="swapMainImage(this, '<?php echo htmlspecialchars($gImg, ENT_QUOTES, 'UTF-8'); ?>')">
+              <img src="<?php echo htmlspecialchars($gImg, ENT_QUOTES, 'UTF-8'); ?>" alt="Thumbnail" onerror="this.src='assets/images/icons/product-placeholder.svg'">
             </div>
           <?php endforeach; ?>
         </div>

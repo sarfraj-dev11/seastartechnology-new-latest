@@ -131,6 +131,13 @@
   </div>
 </footer>
 
+<?php if(basename($_SERVER['PHP_SELF']) !== 'product-details.php'): ?>
+<a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="float-call-btn" aria-label="Call Sales">
+  <i class="fas fa-phone"></i>
+  <span>Find Your Product</span>
+</a>
+<?php endif; ?>
+
 <!-- Scripts -->
 <script src="<?php echo isset($depth) ? $depth : ''; ?>assets/js/main.js"></script>
 <?php if(isset($extra_scripts)) echo $extra_scripts; ?>

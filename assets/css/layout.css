@@ -577,3 +577,37 @@
   color: var(--accent);
   font-size: .7rem;
 }
+/* ── Floating Call Button ── */
+.float-call-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .65rem 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 18px rgba(46,196,182,.35);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.float-call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(46,196,182,.45);
+  color: #fff;
+}
+.float-call-btn i { font-size: .9rem; }
+
+@media (max-width: 768px) {
+  .float-call-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: .6rem .95rem;
+    font-size: .8rem;
+  }
+}

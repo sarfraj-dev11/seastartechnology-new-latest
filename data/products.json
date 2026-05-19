@@ -229,33 +229,40 @@
     },
     {
         "id": 8,
-        "slug": "windows-11-home-pro-usb",
-        "title": "Windows 11 Home\/Pro USB",
+        "slug": "windows-11-pro-usb",
+        "title": "Windows 11 Pro 64-bit (OEM) USB",
         "brand": "Microsoft",
         "category": "OS & Recovery",
-        "price": "139.99",
+        "price": "80.99",
         "badge": "Physical Media",
-        "short_desc": "Windows 11 Home or Pro installation USB with genuine license key — sold by authorized reseller. Clean install or upgrade — ready to ship.",
-        "long_desc": "Genuine Microsoft Windows 11 Home or Pro on a bootable USB drive. Use for clean installation or system upgrade. Includes product key card.",
+        "short_desc": "Windows 11 Pro 64-bit OEM on a bootable USB with genuine license key — clean install or upgrade, ready to ship within 2-3 business days.",
+        "long_desc": "Windows 11 Pro 64-bit (OEM Software) on USB delivers a refined interface, powerful multitasking, and robust security to elevate your computing experience. Includes enterprise-grade features like BitLocker encryption, Windows Hello, DirectX 12 Ultimate gaming support, and seamless Microsoft Teams integration — all on a convenient bootable USB drive.",
         "problem_solved": [
-            "Bootable USB for a clean Windows 11 installation",
-            "Supports in-place upgrade from Windows 10 to Windows 11",
-            "Includes genuine product key — Home or Pro edition",
-            "64-bit architecture with TPM 2.0 support"
+            "Redesigned interface with centered Start Menu, streamlined taskbar & improved window management",
+            "Boosted productivity with virtual desktops, snap layouts & smoother multitasking",
+            "Advanced security via BitLocker drive encryption & Windows Hello password-free authentication",
+            "Built-in Microsoft Teams integration directly from the taskbar",
+            "Next-level gaming powered by DirectX 12 Ultimate support",
+            "Revamped Microsoft Store with wider app selection including Win32 & UWP applications"
         ],
-        "description1": "Reinstall or upgrade your system to Windows 11 with this bootable USB. Includes a genuine product key and a full installation guide.",
-        "description2": "Upgrade or reinstall your operating system with the Windows 11 Home\/Pro USB from Microsoft. This bootable USB drive contains a genuine product key for either the Home or Pro edition of Windows 11 (choose at checkout), making it perfect for users who need a fresh installation or want to upgrade their current system to the latest version.",
+        "description1": "Windows 11 Pro 64-bit OEM (USB) delivers a next-generation computing experience with a modern redesigned interface, enhanced productivity tools, and enterprise-grade security. Conveniently packaged on a bootable USB drive with a genuine license key in the box — making installation simple and efficient.",
+        "description2": "Unlock new levels of productivity and entertainment with Windows 11 Pro. Stay connected through built-in Microsoft Teams integration and enjoy an immersive gaming experience with DirectX 12 Ultimate support. Protect your data with BitLocker drive encryption and authenticate securely with Windows Hello — no passwords required. Whether you're performing a clean install or upgrading from Windows 10, this OEM USB edition is the complete solution for your next-generation desktop or laptop.",
         "whats_included": [
-            "Bootable Windows 11 USB Drive",
-            "Genuine Product Key Card",
+            "Bootable Windows 11 Pro USB Drive",
+            "Genuine License Key (in the box)",
             "Installation guide",
             "License activation guidance included"
         ],
         "specs": {
-            "Format": "Bootable USB (32 GB)",
-            "Edition": "Home or Pro (specify at checkout)",
-            "Architecture": "64-bit",
-            "TPM Required": "2.0"
+            "Edition": "Windows 11 Pro 64-bit (OEM)",
+            "Format": "Bootable USB",
+            "Processor": "Compatible 64-bit processor",
+            "RAM": "4 GB minimum",
+            "Storage": "64 GB minimum",
+            "Graphics": "DirectX 12 compatible GPU with WDDM 2.0 driver",
+            "Firmware": "UEFI, Secure Boot capable",
+            "TPM Required": "Version 2.0",
+            "Shipping": "2-3 business days"
         },
         "image": "assets\/images\/products\/Windows 11 HomePro - USB.webp",
         "related": [

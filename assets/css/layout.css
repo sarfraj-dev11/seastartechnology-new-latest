@@ -577,3 +577,98 @@
   color: var(--accent);
   font-size: .7rem;
 }
+
+/* ══════════════════════════════════════════════
+   Floating Call Button — Bottom-Left
+   ══════════════════════════════════════════════ */
+.floating-call-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 24px;
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .65rem 1.2rem .65rem .8rem;
+  background: var(--grad-teal);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .01em;
+  box-shadow: 0 6px 24px rgba(46, 196, 182, .35),
+              0 2px 8px rgba(1, 22, 39, .12);
+  transition: all .3s cubic-bezier(.25, .8, .25, 1);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.floating-call-btn:hover {
+  background: linear-gradient(135deg, #24A99D 0%, #1A9488 100%);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 35px rgba(46, 196, 182, .45),
+              0 4px 12px rgba(1, 22, 39, .15);
+  color: #fff;
+  text-decoration: none;
+}
+
+.floating-call-btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Phone icon circle */
+.floating-call-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  flex-shrink: 0;
+  font-size: .95rem;
+  transition: background .3s ease;
+}
+
+.floating-call-btn:hover .floating-call-icon {
+  background: rgba(255, 255, 255, .32);
+}
+
+/* Phone number label */
+.floating-call-label {
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Pulse ring animation */
+.floating-call-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  border: 2px solid rgba(46, 196, 182, .5);
+  animation: floatingCallPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floatingCallPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: .7;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 0;
+  }
+}

@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
         'long_desc' => trim($_POST['long_desc'] ?? ''),
         'description1' => trim($_POST['description1'] ?? ''),
         'description2' => trim($_POST['description2'] ?? ''),
+        'editorDisc' => trim($_POST['editorDisc'] ?? ''),
         'problem_solved' => [],
         'whats_included' => [],
         'specs' => [],
@@ -176,6 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_product'])) {
             $p['long_desc']  = trim($_POST['long_desc']  ?? $p['long_desc']);
             $p['description1'] = trim($_POST['description1'] ?? ($p['description1'] ?? ''));
             $p['description2'] = trim($_POST['description2'] ?? ($p['description2'] ?? ''));
+            $p['editorDisc'] = trim($_POST['editorDisc'] ?? ($p['editorDisc'] ?? ''));
 
             // whats_included — one per line
             if (isset($_POST['whats_included'])) {
@@ -275,6 +277,14 @@ $products = get_all_products();
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="admin.css">
+  <!-- CKEditor 5 Classic CDN -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+  <style>
+    .ck-editor__editable {
+      min-height: 200px;
+      color: #000 !important;
+    }
+  </style>
 </head>
 <body>
 <div class="admin-wrap">
@@ -346,6 +356,10 @@ $products = get_all_products();
           <div class="form-group" style="margin-top:.75rem">
             <label>Description 2 (Additional details)</label>
             <textarea name="description2" rows="4"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
+            <label>Editor Description (editorDisc) - HTML WYSIWYG Editor</label>
+            <textarea name="editorDisc" class="ckeditor-textarea" rows="6" placeholder="Write rich description here..."></textarea>
           </div>
           <div class="form-group" style="margin-top:.75rem">
             <label>What's Included <small style="font-weight:400;color:#888">(one item per line)</small></label>
@@ -445,6 +459,10 @@ $products = get_all_products();
             <textarea name="description2" rows="4"><?php echo htmlspecialchars($p['description2'] ?? ''); ?></textarea>
           </div>
           <div class="form-group" style="margin-top:.75rem">
+            <label>Editor Description (editorDisc) - HTML WYSIWYG Editor</label>
+            <textarea name="editorDisc" class="ckeditor-textarea" rows="6"><?php echo htmlspecialchars($p['editorDisc'] ?? ''); ?></textarea>
+          </div>
+          <div class="form-group" style="margin-top:.75rem">
             <label>What's Included <small style="font-weight:400;color:#888">(one item per line)</small></label>
             <textarea name="whats_included" rows="4"><?php echo htmlspecialchars(implode("\n", $p['whats_included'] ?? [])); ?></textarea>
           </div>
@@ -517,5 +535,16 @@ $products = get_all_products();
     <?php endforeach; ?>
   </main>
 </div>
+<script>
+  document.querySelectorAll('.ckeditor-textarea').forEach(function(textarea) {
+    ClassicEditor
+      .create(textarea, {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo' ]
+      })
+      .catch(error => {
+        console.error('Error initializing CKEditor:', error);
+      });
+  });
+</script>
 </body>
 </html>

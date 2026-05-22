@@ -112,20 +112,35 @@ include 'includes/header.php';
       <!-- Description -->
       <div class="pd-block">
         <h3><i class="fas fa-circle-info"></i> Description</h3>
-        <p class="pd-short-desc" style="margin-bottom: 1.4rem;"><?php echo htmlspecialchars($p['description1']); ?></p>
-        <?php if (!empty($p['description_blocks'])): ?>
-          <div class="pd-desc-blocks">
-            <?php foreach ($p['description_blocks'] as $block): ?>
-              <p class="pd-desc-block-heading"><strong><?php echo htmlspecialchars($block['heading']); ?></strong></p>
-              <ul class="pd-desc-block-list">
-                <?php foreach ($block['items'] as $item): ?>
-                  <li><?php echo htmlspecialchars($item); ?></li>
-                <?php endforeach; ?>
-              </ul>
-            <?php endforeach; ?>
+        <?php 
+        $has_editor_disc = false;
+        if (!empty($p['editorDisc'])) {
+            $cleaned_disc = trim(str_replace(['&nbsp;', '<p></p>', '<p>&nbsp;</p>', '<br>', '<br/>', '<br />'], '', $p['editorDisc']));
+            if ($cleaned_disc !== '') {
+                $has_editor_disc = true;
+            }
+        }
+        ?>
+        <?php if ($has_editor_disc): ?>
+          <div class="pd-editor-disc">
+            <?php echo $p['editorDisc']; ?>
           </div>
         <?php else: ?>
-          <p class="pd-short-desc"><?php echo htmlspecialchars($p['description2']); ?></p>
+          <p class="pd-short-desc" style="margin-bottom: 1.4rem;"><?php echo htmlspecialchars($p['description1'] ?? ''); ?></p>
+          <?php if (!empty($p['description_blocks'])): ?>
+            <div class="pd-desc-blocks">
+              <?php foreach ($p['description_blocks'] as $block): ?>
+                <p class="pd-desc-block-heading"><strong><?php echo htmlspecialchars($block['heading'] ?? ''); ?></strong></p>
+                <ul class="pd-desc-block-list">
+                  <?php foreach (($block['items'] ?? []) as $item): ?>
+                    <li><?php echo htmlspecialchars($item); ?></li>
+                  <?php endforeach; ?>
+                </ul>
+              <?php endforeach; ?>
+            </div>
+          <?php else: ?>
+            <p class="pd-short-desc"><?php echo htmlspecialchars($p['description2'] ?? ''); ?></p>
+          <?php endif; ?>
         <?php endif; ?>
       </div>
 

@@ -556,3 +556,42 @@
   color: var(--text-2);
   line-height: 1.65;
 }
+
+/* ── PD Editor Rich Description (CKEditor) ── */
+.pd-editor-disc {
+  font-size: .94rem;
+  line-height: 1.74;
+  color: var(--text-2);
+}
+.pd-editor-disc p {
+  margin-bottom: 1rem;
+}
+.pd-editor-disc p:last-child {
+  margin-bottom: 0;
+}
+.pd-editor-disc ul, .pd-editor-disc ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+.pd-editor-disc ul {
+  list-style-type: disc;
+}
+.pd-editor-disc ol {
+  list-style-type: decimal;
+}
+.pd-editor-disc li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+.pd-editor-disc a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: color .2s;
+}
+.pd-editor-disc a:hover {
+  color: var(--accent-light, var(--primary));
+}
+.pd-editor-disc strong {
+  font-weight: 700;
+  color: var(--text);
+}

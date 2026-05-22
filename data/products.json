@@ -23,6 +23,7 @@
         ],
         "description1": "McAfee Antivirus provides strong all-in-one protection with features like safe browsing (WebAdvisor) and a Vulnerability Scanner that detects risks before they become threats. It helps block malicious sites, phishing attacks, and keeps your system updated against the latest vulnerabilities.",
         "description2": "It also focuses on privacy and performance with tools like File Lock, Shredder, and QuickClean, while Safe Family and Identity Theft Protection add extra layers for family safety and personal data security—making it a complete, easy-to-use security solution.",
+        "editorDisc": "<p>Comprehensive protection for up to three devices, combining antivirus, privacy tools, identity monitoring, safe browsing, and a password manager to help protect devices and personal information from common online threats.<\/p><p><strong>Key features<\/strong><\/p><ul><li><strong>Device security:<\/strong> Antivirus with AI-enhanced detection helps identify and block viruses, malware, and ransomware. Regular updates maintain protection against newly discovered threats.<\/li><li><strong>Scam protection:<\/strong> AI-driven detection flags potentially risky emails, messages, suspicious videos, and QR codes to help reduce exposure to phishing and fraud.<\/li><li><strong>Identity monitoring:<\/strong> Monitors selected types of personal information and sends alerts for potential suspicious activity or data exposures so you can respond.<\/li><li><strong>Secure VPN:<\/strong> Encrypts internet traffic to help protect privacy when using public or unsecured networks.<\/li><li><strong>Safe browsing:<\/strong> Provides warnings about sites that may host phishing or other harmful content.<\/li><li><strong>Password manager:<\/strong> Generates and securely stores complex passwords to support stronger account security and convenient sign-ins.<\/li><li><strong>Digital delivery:<\/strong> A digital activation code and setup instructions are sent by email after purchase for immediate activation.<\/li><\/ul><p><strong>Subscription and billing<\/strong><\/p><ul><li><strong>Annual subscription:<\/strong> Service is provided on a yearly basis and includes updates and feature improvements.<\/li><li><strong>Auto-renewal:<\/strong> The subscription renews automatically each year. Customers receive a renewal reminder before the next billing date and can cancel at any time via their account settings.<\/li><li><strong>Payment requirement:<\/strong> A valid payment method is required to activate and renew the subscription.<\/li><\/ul><p><strong>Compatibility<\/strong><\/p><ul><li>Protects up to three devices across commonly used desktop and mobile operating systems. Verify system requirements for specific device compatibility prior to purchase.<\/li><\/ul><p><strong>Listing compliance notes<\/strong><\/p><ul><li>Avoids unverified absolute claims (for example, does not claim 100% protection).<\/li><li>Uses factual, neutral language and includes clear subscription details.<\/li><li>Omits retailer names, promotional codes, and third-party site references.<\/li><\/ul>",
         "how_to_use": [
             "Go to mcafee.com\/activate and enter your product key",
             "Register or log in to your account",
@@ -30,11 +31,12 @@
             "Agree to the license and note your serial number"
         ],
         "specs": {
-            "Devices": "Unlimited",
-            "OS": "Windows, macOS, iOS, Android",
-            "Identity Monitoring": "Yes",
-            "VPN": "Yes",
-            "Password Manager": "Yes"
+            "Brand": "McAfee",
+            "Number of Users": "3",
+            "Subscription Period": "1 years",
+            "Delivery Method": "Send Via Email",
+            "Features": "Parental Controls",
+            "Physical Media Format": "Digital Download"
         },
         "image": "assets\/images\/products\/mcafee-total-protection.webp",
         "related": [
@@ -42,7 +44,12 @@
             "malwarebytes-premium",
             "annual-antivirus-renewal"
         ],
-        "gallery_images": []
+        "gallery_images": [
+            "assets\/images\/products\/McAfee Total Protection product image 1.png",
+            "assets\/images\/products\/McAfee Total Protection prodct image 2.png",
+            "assets\/images\/products\/McAfee Total Protection image 3.png",
+            "assets\/images\/products\/Call image.png"
+        ]
     },
     {
         "id": 3,
@@ -68,16 +75,23 @@
             "License activation guidance included"
         ],
         "specs": {
-            "Devices": "3",
-            "OS": "Windows 7+, macOS 10.12+, iOS, Android",
-            "Real-Time Protection": "Yes",
-            "Ransomware Rollback": "Yes"
+            "Number of Users": "3",
+            "Subscription Period": "1 years",
+            "Physical Media Format": "Digital Download Card",
+            "Version": "4.0",
+            "Product Line": "Malwarebytes Premium",
+            "Model": "MAL951800F120"
         },
         "image": "assets\/images\/products\/Malwarebytes Premium-1.webp",
         "related": [
             "mcafee-total-protection",
             "bitdefender",
             "ccleaner-pro"
+        ],
+        "gallery_images": [
+            "assets\/images\/products\/Malwarebytes Premium Product image 1.png",
+            "assets\/images\/products\/Malwarebytes Premium Product image 2.png",
+            "assets\/images\/products\/malwarebytes Premium Product image 3.png"
         ]
     },
     {
@@ -142,17 +156,23 @@
             "License activation guidance included"
         ],
         "specs": {
-            "Devices": "1 PC",
-            "OS": "Windows 7\/8\/10\/11",
-            "Auto-Clean": "Yes",
-            "Scheduled Cleaning": "Yes",
-            "Registry Cleaner": "Yes"
+            "Operating System": "Windows",
+            "System Requirements": "Latest OS, Processor, RAM",
+            "Brand": "CCleaner",
+            "Number of Users": "1",
+            "Subscription Period": "3 years",
+            "Features": "Parental Controls"
         },
         "image": "assets\/images\/products\/CCleaner -Professional.webp",
         "related": [
             "iolo-system-mechanic",
             "avg-tuneup",
             "driver-booster"
+        ],
+        "gallery_images": [
+            "assets\/images\/products\/CCleaner Professional prodct image 1.jpg",
+            "assets\/images\/products\/CCleaner Professional product design 2.jpg",
+            "assets\/images\/products\/CCleaner Professional product design 3.png"
         ]
     },
     {
@@ -215,18 +235,20 @@
             "License activation guidance included"
         ],
         "specs": {
-            "Devices": "10",
-            "OS": "Windows 7\/8\/10\/11",
-            "Sleep Mode": "Yes",
-            "Disk Cleaner": "Yes",
-            "Bloatware Remover": "Yes"
+            "Operating System": "Windows",
+            "Brand": "AVG",
+            "Number of Users": "3",
+            "Subscription Period": "1 years",
+            "Features": "Parental Controls",
+            "Physical Media Format": "Key Card Format"
         },
         "image": "assets\/images\/products\/AVG - TuneUp.webp",
         "related": [
             "ccleaner-pro",
             "iolo-system-mechanic",
             "driver-booster"
-        ]
+        ],
+        "gallery_images": []
     },
     {
         "id": 8,
@@ -253,16 +275,21 @@
             "License activation guidance included"
         ],
         "specs": {
-            "Format": "Bootable USB (32 GB)",
-            "Edition": "Home or Pro (specify at checkout)",
-            "Architecture": "64-bit",
-            "TPM Required": "2.0"
+            "Model": "FQC_MS1067_WITC",
+            "Physical Media Format": "USB Stick",
+            "Number of Users": "1",
+            "Subscription Period": "5 years"
         },
         "image": "assets\/images\/products\/Windows 11 HomePro - USB.webp",
         "related": [
             "windows-recovery-usb",
             "samsung-ssd-980",
             "ccleaner-pro"
+        ],
+        "gallery_images": [
+            "assets\/images\/products\/Windows 11 HomePro USB image 1.png",
+            "assets\/images\/products\/Windows 11 Home Pro USB prodct image design 2.jpg",
+            "assets\/images\/products\/Windows 11 Home Pro USB prodct image design  file.jpg"
         ]
     },
     {
@@ -648,19 +675,20 @@
             "License activation guidance included"
         ],
         "specs": {
-            "Functions": "Print, Scan, Copy",
-            "Connectivity": "WiFi, USB, Bluetooth",
-            "Print Speed": "Up to 10 ppm (black)",
-            "Duplex": "Auto (2-sided)",
-            "Paper Tray": "100-sheet input",
-            "Warranty": "1 Year"
+            "Printing tech": "Inkjet",
+            "Maximum print resolution": "1200 dpi",
+            "Mono color": "Color",
+            "Compatible OS": "Windows® 10, Windows 8.1, Windows 8, Windows 7",
+            "Wireless": "Wi-Fi; Bluetooth",
+            "Brand": "HP"
         },
         "image": "assets\/images\/products\/HP ENVY All-in-One Printer.webp",
         "related": [
             "driver-booster",
             "wifi-router-tplink",
             "driver-easy-pro"
-        ]
+        ],
+        "gallery_images": []
     },
     {
         "id": 20,

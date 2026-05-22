@@ -126,7 +126,7 @@
         "brand": "CCleaner",
         "category": "PC Optimization",
         "price": "29.95",
-        "badge": "",
+        "badge": "PC Optimizer",
         "short_desc": "Clean, speed up, and protect your PC automatically with a leading PC optimizer for Windows .",
         "long_desc": "CCleaner Professional automatically cleans junk files, fixes registry errors, and updates outdated software so your PC runs faster. Includes real-time monitoring and scheduled cleaning.",
         "problem_solved": [
@@ -199,7 +199,7 @@
         "category": "PC Optimization",
         "duplicat_price": "53.00",
         "price": "39.99",
-        "badge": "",
+        "badge": "Speed Boost",
         "short_desc": "Automatically puts sleeping mode on unused apps to give your PC a speed boost.",
         "long_desc": "AVG TuneUp silently optimizes your PC in the background — freeing up RAM, cleaning disk space, and fixing software issues for up to 10 devices.",
         "problem_solved": [
@@ -306,7 +306,7 @@
         "brand": "Samsung",
         "category": "Storage",
         "price": "79.99",
-        "badge": "Fast Shipping",
+        "badge": "",
         "short_desc": "NVMe M.2 SSD delivering up to 3,500 MB\/s read speeds — breathe new life into any PC.",
         "long_desc": "The Samsung 980 NVMe SSD delivers blazing sequential read speeds up to 3,500 MB\/s. Perfect for upgrading a slow or failing drive, running a clean Windows install, or expanding storage.",
         "problem_solved": [
@@ -556,7 +556,7 @@
         "brand": "TP-Link",
         "category": "Networking",
         "price": "99.99",
-        "badge": "WiFi 6",
+        "badge": "",
         "short_desc": "Dual-band WiFi 6 router with AX3000 speeds — eliminate buffering and dead zones.",
         "long_desc": "The TP-Link Archer AX55 delivers AX3000 WiFi 6 speeds across your entire home. Supports 40+ devices simultaneously, features OFDMA & MU-MIMO, and includes OneMesh compatibility.",
         "problem_solved": [

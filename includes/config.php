@@ -11,7 +11,7 @@ define('SITE_URL',     'https://www.seastartechnology.com');
 define('SITE_EMAIL',          'sales@seastartechnology.com');
 define('SITE_SALES_EMAIL',  'sales@seastartechnology.com');
 define('SITE_PHONE',        '(855) 460-3303');
-define('SITE_PHONE_RAW',    '+18554603303');
+define('SITE_PHONE_RAW',    '(855) 460-3303');
 define('SITE_OPTOUT_PHONE',     SITE_PHONE);
 define('SITE_OPTOUT_PHONE_RAW', SITE_PHONE_RAW);
 

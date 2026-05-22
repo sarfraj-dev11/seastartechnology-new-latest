@@ -295,7 +295,7 @@ include 'includes/header.php';
   </a>
   <a href="tel:<?php echo SITE_PHONE_RAW; ?>"
     class="btn btn-outline" style="flex:4;justify-content:center;padding-left:.5rem;padding-right:.5rem;">
-    <i class="fas fa-phone"></i> Call Sales
+    <i class="fas fa-phone"></i> Call Now
   </a>
 </div>
 

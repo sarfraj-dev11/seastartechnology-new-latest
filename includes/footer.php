@@ -112,7 +112,7 @@
   <div class="footer-disclaimer">
     <div class="container">
       <p><?php echo SITE_LEGAL_NAME; ?> (D-U-N-S #: 13-996-7974 &middot; <?php echo SITE_ADDRESS_FULL; ?>) is an independent authorized reseller of select consumer technology products including antivirus software, storage devices, networking hardware, printers, and peripherals. We are not affiliated with, endorsed by, or acting on behalf of any software manufacturer, technology brand, or OEM unless explicitly stated. Brand names, logos, and trademarks mentioned belong to their respective owners and are used solely for product identification. All software products are sold as-is per their respective manufacturer's terms. License activation guidance is provided as part of eligible software purchases to confirm your license is registered correctly. Prices and availability are subject to change. Software keys are refundable within 30 days only if unactivated or proven non-functional.</p>
-      <p>Opt-Out: To stop receiving communications, call <a href="tel:<?php echo SITE_PHONE_RAW; ?>"><?php echo SITE_PHONE; ?></a> or email <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a>.</p>
+      <p>Opt-Out: To stop receiving communications, call now <a href="tel:<?php echo SITE_PHONE_RAW; ?>"><?php echo SITE_PHONE; ?></a> or email <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a>.</p>
     </div>
   </div>
 
@@ -130,6 +130,18 @@
     </div>
   </div>
 </footer>
+
+<!-- Floating Call Button -->
+<a href="tel:<?php echo SITE_PHONE_RAW; ?>"
+   class="floating-call-btn<?php echo ($current_page === 'product-details') ? ' floating-call-btn--hide-mobile' : ''; ?>"
+   id="floatingCallBtn"
+   aria-label="Call Sales: <?php echo SITE_PHONE; ?>">
+  <span class="floating-call-icon">
+    <i class="fas fa-phone"></i>
+  </span>
+  <span class="floating-call-label"><?php echo SITE_PHONE; ?></span>
+  <span class="floating-call-pulse"></span>
+</a>
 
 <!-- Scripts -->
 <script src="<?php echo isset($depth) ? $depth : ''; ?>assets/js/main.js"></script>

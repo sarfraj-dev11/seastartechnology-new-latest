@@ -374,6 +374,25 @@
     .page-hero h1 {
         font-size: 1.7rem
     }
+
+    /* Floating Call Button — mobile adjustments */
+    .floating-call-btn {
+        bottom: 20px;
+        left: 16px;
+        padding: .55rem 1rem .55rem .65rem;
+        font-size: .82rem;
+    }
+
+    .floating-call-icon {
+        width: 32px;
+        height: 32px;
+        font-size: .88rem;
+    }
+
+    /* Hide floating button on product-details mobile (has its own sticky CTA) */
+    .floating-call-btn--hide-mobile {
+        display: none !important;
+    }
 }
 
 /* ── Small Mobile ≤ 480px ── */
@@ -429,6 +448,7 @@
     .top-bar,
     .site-footer,
     .sticky-cta-mobile,
+    .floating-call-btn,
     .hero,
     .cta-banner,
     .trust-strip {

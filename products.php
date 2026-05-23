@@ -47,7 +47,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="product-brand"><?php echo htmlspecialchars($p['brand']); ?></div>
           <h3 class="product-name"><?php echo htmlspecialchars($p['title']); ?></h3>
           <p class="product-short-desc"><?php echo htmlspecialchars($p['short_desc']); ?></p>
-          <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC. Not affiliated with <?php echo htmlspecialchars($p['brand']); ?>.</p>
+          <!-- <p class="product-reseller-note">Sold by SEASTAR TECHNOLOGIES LLC. Not affiliated with <?php echo htmlspecialchars($p['brand']); ?>.</p> -->
         </div>
         <div class="product-card-footer">
           <div>

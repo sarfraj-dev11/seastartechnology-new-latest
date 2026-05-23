@@ -68,7 +68,7 @@
   background: linear-gradient(135deg, var(--alert), var(--alert-h));
   color: var(--bg);
   font-size: .68rem;
-  font-weight: 700;
+  font-weight: bold;
   padding: .24rem .65rem;
   border-radius: 99px;
   text-transform: uppercase;

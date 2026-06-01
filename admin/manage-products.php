@@ -45,75 +45,43 @@ function handle_image_upload($fileArray) {
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_product'])) {
-    $products = get_all_products();
     $slug = $_POST['slug'] ?? '';
-    $deleted = false;
+    $p = get_product_by_slug($slug);
     
-    foreach ($products as $k => $p) {
-        if ($p['slug'] === $slug) {
-            delete_product_image($p['image'] ?? '', $products, $slug);
-            // Delete gallery images if any
-            if (!empty($p['gallery_images']) && is_array($p['gallery_images'])) {
-                foreach ($p['gallery_images'] as $gImg) {
-                    delete_product_image($gImg, $products, $slug);
-                }
+    if ($p) {
+        $allProducts = get_all_products();
+        delete_product_image($p['image'] ?? '', $allProducts, $slug);
+        // Delete gallery images if any
+        if (!empty($p['gallery_images']) && is_array($p['gallery_images'])) {
+            foreach ($p['gallery_images'] as $gImg) {
+                delete_product_image($gImg, $allProducts, $slug);
             }
-            unset($products[$k]);
-            $deleted = true;
-            break;
         }
-    }
-    
-    if ($deleted) {
-        $products = array_values($products); // Re-index array
-        file_put_contents(DATA_PATH, json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        delete_product($slug);
         $message = 'Product and associated image deleted successfully.';
     }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
-    $products = get_all_products();
-    
-    // Auto-generate ID
-    $max_id = 0;
-    foreach ($products as $p) {
-        if (isset($p['id']) && $p['id'] > $max_id) {
-            $max_id = $p['id'];
-        }
-    }
-    $new_id = $max_id + 1;
-
-    // Generate slug from title
     $title = trim($_POST['title'] ?? 'New Product');
-    $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title), '-'));
-    
-    // Ensure slug uniqueness
-    $original_slug = $slug;
-    $count = 1;
-    while (get_product_by_slug($slug)) {
-        $slug = $original_slug . '-' . $count;
-        $count++;
-    }
 
     $new_product = [
-        'id' => $new_id,
-        'slug' => $slug,
-        'title' => $title,
-        'brand' => trim($_POST['brand'] ?? ''),
-        'category' => trim($_POST['category'] ?? 'Uncategorized'),
-        'price' => trim($_POST['price'] ?? '0.00'),
-        'badge' => trim($_POST['badge'] ?? ''),
-        'short_desc' => trim($_POST['short_desc'] ?? ''),
-        'long_desc' => trim($_POST['long_desc'] ?? ''),
+        'title'        => $title,
+        'brand'        => trim($_POST['brand'] ?? ''),
+        'category'     => trim($_POST['category'] ?? 'Uncategorized'),
+        'price'        => trim($_POST['price'] ?? '0.00'),
+        'badge'        => trim($_POST['badge'] ?? ''),
+        'short_desc'   => trim($_POST['short_desc'] ?? ''),
+        'long_desc'    => trim($_POST['long_desc'] ?? ''),
         'description1' => trim($_POST['description1'] ?? ''),
         'description2' => trim($_POST['description2'] ?? ''),
-        'editorDisc' => trim($_POST['editorDisc'] ?? ''),
-        'problem_solved' => [],
-        'whats_included' => [],
-        'specs' => [],
-        'image' => 'assets/images/icons/product-placeholder.svg', // Default image
-        'gallery_images' => [],
-        'related' => []
+        'editorDisc'   => trim($_POST['editorDisc'] ?? ''),
+        'problem_solved'  => [],
+        'whats_included'  => [],
+        'specs'           => [],
+        'image'           => 'assets/images/icons/product-placeholder.svg',
+        'gallery_images'  => [],
+        'related'         => [],
     ];
 
     // whats_included
@@ -160,104 +128,114 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_product'])) {
     }
     $new_product['gallery_images'] = $gallery_images;
 
-    $products[] = $new_product;
-    file_put_contents(DATA_PATH, json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    $message = 'New product created successfully.';
+    $newId = create_product($new_product);
+    if ($newId > 0) {
+        $message = 'New product created successfully.';
+    } else {
+        $message = 'Error creating product. Please try again.';
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_product'])) {
-    $products = get_all_products();
     $slug = $_POST['slug'] ?? '';
-    foreach ($products as &$p) {
-        if ($p['slug'] === $slug) {
-            $p['title']      = trim($_POST['title']      ?? $p['title']);
-            $p['price']      = trim($_POST['price']      ?? $p['price']);
-            $p['badge']      = trim($_POST['badge']      ?? '');
-            $p['short_desc'] = trim($_POST['short_desc'] ?? $p['short_desc']);
-            $p['long_desc']  = trim($_POST['long_desc']  ?? $p['long_desc']);
-            $p['description1'] = trim($_POST['description1'] ?? ($p['description1'] ?? ''));
-            $p['description2'] = trim($_POST['description2'] ?? ($p['description2'] ?? ''));
-            $p['editorDisc'] = trim($_POST['editorDisc'] ?? ($p['editorDisc'] ?? ''));
+    $current = get_product_by_slug($slug);
 
-            // whats_included — one per line
-            if (isset($_POST['whats_included'])) {
-                $lines = array_map('trim', explode("\n", $_POST['whats_included']));
-                $p['whats_included'] = array_values(array_filter($lines));
-            }
+    if ($current) {
+        $allProducts = null; // Lazy-loaded only if needed for image operations
 
-            // problem_solved — one per line
-            if (isset($_POST['problem_solved'])) {
-                $lines = array_map('trim', explode("\n", $_POST['problem_solved']));
-                $p['problem_solved'] = array_values(array_filter($lines));
-            }
+        $updated = [
+            'title'        => trim($_POST['title']      ?? $current['title']),
+            'price'        => trim($_POST['price']      ?? $current['price']),
+            'badge'        => trim($_POST['badge']      ?? ''),
+            'short_desc'   => trim($_POST['short_desc'] ?? $current['short_desc']),
+            'long_desc'    => trim($_POST['long_desc']  ?? $current['long_desc']),
+            'description1' => trim($_POST['description1'] ?? ($current['description1'] ?? '')),
+            'description2' => trim($_POST['description2'] ?? ($current['description2'] ?? '')),
+            'editorDisc'   => trim($_POST['editorDisc'] ?? ($current['editorDisc'] ?? '')),
+            'image'        => $current['image'],
+            'problem_solved'  => $current['problem_solved'] ?? [],
+            'whats_included'  => $current['whats_included'] ?? [],
+            'specs'           => $current['specs'] ?? [],
+            'gallery_images'  => $current['gallery_images'] ?? [],
+            'related'         => $current['related'] ?? [],
+        ];
 
-            // specs — key: value per line
-            if (isset($_POST['specs'])) {
-                $specs = [];
-                foreach (explode("\n", $_POST['specs']) as $line) {
-                    $line = trim($line);
-                    if ($line === '') continue;
-                    $parts = explode(':', $line, 2);
-                    if (count($parts) === 2) {
-                        $specs[trim($parts[0])] = trim($parts[1]);
-                    }
-                }
-                $p['specs'] = $specs;
-            }
-
-            // Image upload
-            if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
-                $imgPath = handle_image_upload($_FILES['product_image']);
-                if ($imgPath) {
-                    delete_product_image($p['image'] ?? '', $products, $slug);
-                    $p['image'] = $imgPath;
-                }
-            }
-
-            // Gallery images handling
-            if (!isset($p['gallery_images']) || !is_array($p['gallery_images'])) {
-                $p['gallery_images'] = [];
-            }
-
-            $current_gallery = $p['gallery_images'];
-            $updated_gallery = [];
-
-            for ($i = 0; $i < 4; $i++) {
-                $input_idx = $i + 1;
-                $has_existing = isset($current_gallery[$i]);
-                $existing_path = $has_existing ? $current_gallery[$i] : '';
-
-                // Check if user wants to delete existing
-                if ($has_existing && isset($_POST['delete_gallery_image_'.$input_idx])) {
-                    delete_product_image($existing_path, $products, $slug);
-                    $existing_path = ''; // cleared
-                }
-
-                // Check if new file uploaded
-                if (isset($_FILES['gallery_image_'.$input_idx]) && $_FILES['gallery_image_'.$input_idx]['error'] === UPLOAD_ERR_OK) {
-                    $new_path = handle_image_upload($_FILES['gallery_image_'.$input_idx]);
-                    if ($new_path) {
-                        // Delete old one if replaced
-                        if ($existing_path) {
-                            delete_product_image($existing_path, $products, $slug);
-                        }
-                        $existing_path = $new_path;
-                    }
-                }
-
-                if ($existing_path) {
-                    $updated_gallery[] = $existing_path;
-                }
-            }
-            $p['gallery_images'] = array_values($updated_gallery);
-
-            break;
+        // whats_included — one per line
+        if (isset($_POST['whats_included'])) {
+            $lines = array_map('trim', explode("\n", $_POST['whats_included']));
+            $updated['whats_included'] = array_values(array_filter($lines));
         }
+
+        // problem_solved — one per line
+        if (isset($_POST['problem_solved'])) {
+            $lines = array_map('trim', explode("\n", $_POST['problem_solved']));
+            $updated['problem_solved'] = array_values(array_filter($lines));
+        }
+
+        // specs — key: value per line
+        if (isset($_POST['specs'])) {
+            $specs = [];
+            foreach (explode("\n", $_POST['specs']) as $line) {
+                $line = trim($line);
+                if ($line === '') continue;
+                $parts = explode(':', $line, 2);
+                if (count($parts) === 2) {
+                    $specs[trim($parts[0])] = trim($parts[1]);
+                }
+            }
+            $updated['specs'] = $specs;
+        }
+
+        // Image upload
+        if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
+            $imgPath = handle_image_upload($_FILES['product_image']);
+            if ($imgPath) {
+                $allProducts = get_all_products();
+                delete_product_image($current['image'] ?? '', $allProducts, $slug);
+                $updated['image'] = $imgPath;
+            }
+        }
+
+        // Gallery images handling
+        $current_gallery = $current['gallery_images'] ?? [];
+        $updated_gallery = [];
+
+        for ($i = 0; $i < 4; $i++) {
+            $input_idx = $i + 1;
+            $has_existing = isset($current_gallery[$i]);
+            $existing_path = $has_existing ? $current_gallery[$i] : '';
+
+            // Check if user wants to delete existing
+            if ($has_existing && isset($_POST['delete_gallery_image_'.$input_idx])) {
+                if ($allProducts === null) $allProducts = get_all_products();
+                delete_product_image($existing_path, $allProducts, $slug);
+                $existing_path = ''; // cleared
+            }
+
+            // Check if new file uploaded
+            if (isset($_FILES['gallery_image_'.$input_idx]) && $_FILES['gallery_image_'.$input_idx]['error'] === UPLOAD_ERR_OK) {
+                $new_path = handle_image_upload($_FILES['gallery_image_'.$input_idx]);
+                if ($new_path) {
+                    // Delete old one if replaced
+                    if ($existing_path) {
+                        if ($allProducts === null) $allProducts = get_all_products();
+                        delete_product_image($existing_path, $allProducts, $slug);
+                    }
+                    $existing_path = $new_path;
+                }
+            }
+
+            if ($existing_path) {
+                $updated_gallery[] = $existing_path;
+            }
+        }
+        $updated['gallery_images'] = array_values($updated_gallery);
+
+        update_product($slug, $updated);
+        $message = 'Product updated successfully.';
     }
-    unset($p);
-    file_put_contents(DATA_PATH, json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    $message = 'Product updated successfully.';
 }
+
 
 $products = get_all_products();
 ?>

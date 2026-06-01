@@ -4,6 +4,10 @@
 //  Update these values before going live
 // ─────────────────────────────────────────────
 
+// Load environment variables (.env) for database credentials
+require_once __DIR__ . '/env.php';
+load_env(__DIR__ . '/../.env');
+
 define('SITE_NAME',         'Seastar Technology');
 define('SITE_LEGAL_NAME',   'SEASTAR TECHNOLOGIES LLC');
 define('SITE_TAGLINE', 'Authorized Reseller of Trusted Computer & Security Products');
@@ -24,7 +28,7 @@ define('SITE_HOURS_WEEKEND', 'Sat – Sun: 9:00 AM – 6:00 PM EST');
 
 define('ADMIN_PASSWORD_HASH', password_hash('Admin@MCC2024', PASSWORD_DEFAULT));
 
-define('DATA_PATH', __DIR__ . '/../data/products.json');
+// define('DATA_PATH', __DIR__ . '/../data/products.json');  // No longer needed — products are in MySQL
 define('ROOT_PATH', __DIR__ . '/..');
 
 // Social (optional — leave blank to hide)

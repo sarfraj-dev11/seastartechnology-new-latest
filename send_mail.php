@@ -6,6 +6,8 @@
 |--------------------------------------------------------------------------
 */
 
+
+
 function loadEnv($path)
 {
     if (!file_exists($path)) {
@@ -149,7 +151,7 @@ $emailBody = "
 $smtpHost     = getenv('SMTP_HOST')      ?: 'smtp.hostinger.com';
 $smtpPort     = (int)(getenv('SMTP_PORT') ?: 465);
 $smtpUser     = getenv('SMTP_USER')      ?: 'Sales@seastartechnology.com';
-$smtpPass     = getenv('SMTP_PASS');
+$smtpPass     = getenv('SMTP_PASS')      ?: 'sea#Tech2k26Star';
 $smtpFromName = getenv('SMTP_FROM_NAME') ?: 'Seastar Technology';
 $smtpTo       = getenv('SMTP_TO')        ?: 'Sales@seastartechnology.com';
 
@@ -159,9 +161,12 @@ $smtpTo       = getenv('SMTP_TO')        ?: 'Sales@seastartechnology.com';
 |--------------------------------------------------------------------------
 */
 
+
 $mail = new PHPMailer(true);
 
 try {
+
+
 
     // ── Server ──────────────────────────────────────────────
     $mail->isSMTP();

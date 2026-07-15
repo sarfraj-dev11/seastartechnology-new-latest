@@ -22,9 +22,9 @@ include 'includes/header.php';
 
     <div class="hero-slide active">
       <picture>
-        <!-- MOBILE IMAGE: 767px wide or less -->
+         MOBILE IMAGE: 767px wide or less 
         <source media="(max-width: 767px)" srcset="https://seastartechnology.com/assets/images/icons/trusted-computer3.webp">
-        <!-- DESKTOP IMAGE: Default -->
+         DESKTOP IMAGE: Default 
         <img src="https://seastartechnology.com/assets/images/icons/trusted-computer3.webp" alt="Cyber Security Slide 2" onerror="this.src='https://seastartechnology.com/assets/images/icons/trusted-computer3.webp'">
       </picture>
     </div>
@@ -39,9 +39,9 @@ include 'includes/header.php';
 
     <div class="hero-slide">
       <picture>
-        <!-- MOBILE IMAGE: 767px wide or less -->
+         MOBILE IMAGE: 767px wide or less 
         <source media="(max-width: 767px)" srcset="https://seastartechnology.com/assets/images/icons/trusted-computer4.webp">
-        <!-- DESKTOP IMAGE: Default -->
+         DESKTOP IMAGE: Default 
         <img src="https://seastartechnology.com/assets/images/icons/trusted-computer4.webp" alt="Cyber Security Slide 3" onerror="this.src='https://images.unsplash.com/photo-1614064641913-6b7140414c71?auto=format&fit=crop&w=1920&q=80'">
       </picture>
     </div>

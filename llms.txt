@@ -1,0 +1,83 @@
+# Seastar Technology (seastartechnology.com)
+
+> Authorized US reseller of antivirus software, hardware, storage devices, and IT accessories from brands like McAfee, Bitdefender, Malwarebytes, and TP-Link.
+
+---
+
+## Core Pages
+
+- https://seastartechnology.com/
+  Home page — overview of products and services.
+
+- https://seastartechnology.com/about.php
+  About Seastar Technologies LLC — US-registered authorized reseller based in Tampa, Florida.
+
+- https://seastartechnology.com/contact.php
+  Contact page — support, inquiries, and order assistance.
+
+---
+
+## Policies
+
+- https://seastartechnology.com/refund.php
+  Refund policy — 30-day returns for eligible physical products and software key issues.
+
+- https://seastartechnology.com/shipping.php
+  Shipping policy — digital license keys delivered by email within 1 business day; physical items ship in 1–2 business days.
+
+- https://seastartechnology.com/terms.php
+  Terms & Conditions — website and purchase usage rules.
+
+- https://seastartechnology.com/privacy.php
+  Privacy policy — data collection and user information handling.
+
+- https://seastartechnology.com/cookiepolicy.php
+  Cookie policy — tracking and cookie usage details.
+
+---
+
+## Products
+
+### Antivirus & Security
+- https://seastartechnology.com/product-details.php?slug=mcafee-total-protection
+  McAfee Total Protection — multi-device security with identity protection.
+
+- https://seastartechnology.com/product-details.php?slug=malwarebytes-premium
+  Malwarebytes Premium — real-time malware and ransomware protection.
+
+### PC Optimization
+- https://seastartechnology.com/product-details.php?slug=ccleaner-pro
+  CCleaner Professional — system cleanup and performance optimization.
+
+- https://seastartechnology.com/product-details.php?slug=avg-tuneup
+  AVG TuneUp — background optimization and speed improvements.
+
+### Storage & Hardware
+- https://seastartechnology.com/product-details.php?slug=samsung-ssd-980
+  Samsung 980 1TB NVMe SSD — high-speed storage upgrade for PCs.
+
+- https://seastartechnology.com/product-details.php?slug=hp-printer-allinone
+  HP ENVY All-in-One Printer — wireless printing, scanning, and duplex support.
+
+### Operating Systems
+- https://seastartechnology.com/product-details.php?slug=windows-11-home-pro-usb
+  Windows 11 USB (Home/Pro) — genuine installation media with license key.
+
+---
+
+## Product Categories
+
+- https://seastartechnology.com/products.php?cat=Security+Software
+- https://seastartechnology.com/products.php?cat=Storage
+- https://seastartechnology.com/products.php?cat=OS+%26+Recovery
+- https://seastartechnology.com/products.php?cat=PC+Optimization
+- https://seastartechnology.com/products.php?cat=Printers
+- https://seastartechnology.com/products.php?cat=Networking
+- https://seastartechnology.com/products.php?cat=Coverage+Plans
+
+---
+
+## Order Tracking
+
+- https://seastartechnology.com/order-tracking.php
+  Track orders using order ID — shipping updates sent via email.

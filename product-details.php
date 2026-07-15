@@ -60,6 +60,10 @@ include 'includes/header.php';
 
       <?php 
       $gallery = $p['gallery_images'] ?? [];
+      // Only include gallery images that actually exist on the server
+      $gallery = array_filter($gallery, function($img) {
+          return !empty($img) && file_exists($img);
+      });
       $all_images = array_filter(array_merge([$p['image'] ?? 'assets/images/icons/product-placeholder.svg'], $gallery));
       if (count($all_images) > 1): 
       ?>
